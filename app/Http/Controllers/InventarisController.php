@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inventaris;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class InventarisController extends Controller
@@ -9,7 +11,8 @@ class InventarisController extends Controller
 
     public function index()
     {
-        return view('inventaris.index');
+        $data = DB::table('inventaris')->select('*')->get();
+        return view('inventaris.index', compact('data'));
     }
 
     public function create(Request $request)
@@ -20,7 +23,18 @@ class InventarisController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_user' => 'required',
+            'nama_bagian' => 'required',
+            'th_pembelian' => 'required',
+            'kode' => 'required',
+            'ram' => 'required',
+            'cpu' => 'required',
+            'merk' => 'required'
+        ]);
+
+        Inventaris::create($request->all());
+        return redirect()->route('inventaris.index')->with('success', 'Data berhasil ditambah!');
     }
 
 

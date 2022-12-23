@@ -24,7 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/inventaris', [InventarisController::class, 'index']);
-Route::get('inventaris/tambah', [InventarisController::class, 'create'])->name('tambah');
+Route::get('/inventaris', [InventarisController::class, 'index'])->name('inventaris.index');
+Route::get('inventaris/tambah', [InventarisController::class, 'create'])->name('inventaris.tambah');
+Route::post('/inventaris/tambah', [InventarisController::class, 'store'])->name('inventaris.store');
 
 require __DIR__.'/auth.php';

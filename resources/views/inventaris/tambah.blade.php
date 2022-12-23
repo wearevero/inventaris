@@ -6,7 +6,7 @@
             </a>
         </x-slot>
 
-        <form method="POST" action="{{ route('tambah') }}">
+        <form method="POST" action="{{ route('inventaris.tambah') }}">
             @csrf
 
             <!-- Name User -->
@@ -31,7 +31,7 @@
             <div>
                 <x-input-label for="kode" :value="__('Kode')" />
 
-                <x-text-input id="kode" class="block mt-1 w-full" type="text" name="name" :value="old('kode')" required autofocus />
+                <x-text-input id="kode" class="block mt-1 w-full" type="text" name="kode" :value="old('kode')" required autofocus />
 
                 <x-input-error :messages="$errors->get('kode')" class="mt-2" />
             </div>
@@ -44,6 +44,25 @@
 
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
+
+            <!-- RAM -->
+            <div>
+                <x-input-label for="ram" :value="__('RAM')" />
+
+                <x-text-input id="ram" class="block mt-1 w-full" type="text" name="ram" :value="old('ram')" required autofocus />
+
+                <x-input-error :messages="$errors->get('ram')" class="mt-2" />
+            </div>
+
+            <!-- CPU -->
+            <div>
+                <x-input-label for="cpu" :value="__('CPU')" />
+
+                <x-text-input id="cpu" class="block mt-1 w-full" type="text" name="cpu" :value="old('cpu')" required autofocus />
+
+                <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
+            </div>
+
 
             <!-- Merk -->
             <div>

@@ -11,8 +11,10 @@ class Inventaris extends Model
     protected $fillable = [
         'nama_user',
         'nama_bagian',
-        'tahun_pembelian',
+        'th_pembelian',
         'kode',
+        'ram',
+        'cpu',
         'merk'
     ];
 }
