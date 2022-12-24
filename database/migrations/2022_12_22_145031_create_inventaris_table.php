@@ -12,8 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama_user');
             $table->string('nama_bagian');
-            $table->string('kode')->unique();
             $table->string('th_pembelian');
+            $table->string('ram');
+            $table->string('cpu');
+            $table->string('kode')->unique();
             $table->string('merk');
             $table->timestamps();
         });
