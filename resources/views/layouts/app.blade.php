@@ -6,6 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{ url('/favicon.ico') }}">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
         <title>{{ config('app.name', 'Inventaris') }}</title>
 
         <!-- Fonts -->

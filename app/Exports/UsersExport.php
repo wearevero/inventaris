@@ -18,7 +18,7 @@ class UsersExport implements FromCollection
     public function headings(): array
     {
 
-        return ["ID", "Name", "Email"];
+        return ["ID", "Name", "Email", "Created_at"];
 
     }
 }
