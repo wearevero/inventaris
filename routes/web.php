@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -30,8 +30,10 @@ Route::middleware('auth')->group(function () {
 // Inventaris Route
 Route::controller(InventarisController::class)->group(function () {
     Route::get('/inventaris', 'index')->name('inventaris.index');
-    Route::get('inventaris/tambah', 'create')->name('inventaris.tambah');
+    Route::get('/inventaris/tambah', 'create')->name('inventaris.tambah');
     Route::post('/inventaris/tambah', 'store')->name('inventaris.store');
+    Route::get('/inventaris/detail/{id}', 'show')->name('inventaris.show');
+    Route::delete('/inventaris/destroy/{id}', 'destroy')->name('inventaris.destroy');
 });
 
 // Import and Export to Excel Route

@@ -43,8 +43,10 @@
                 <td class="">{{ $n->merk }}</td>
                 <td class="">{{ $n->created_at }}</td>
                 <td>
-                    <button class="bg-blue-400 p-3 rounded-lg">
-                        <a href={{ route('inventaris.index') }}>Detail</a>
+                    <button type="submit" class="bg-blue-400 p-3 rounded-lg">
+                        <a href="{{ route('inventaris.show', $n->id) }}">
+                            Detail
+                        </a>
                     </button>
                 </td>
             </tr>

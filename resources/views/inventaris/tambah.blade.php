@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="Tambah Data">
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
