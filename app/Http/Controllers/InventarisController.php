@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inventaris;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class InventarisController extends Controller
