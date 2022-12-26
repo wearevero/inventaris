@@ -26,11 +26,6 @@
                     <td class="">{{ $data->merk }}</td>
                     <td class="">{{ $data->created_at }}</td>
                     <td>
-                        <button class="bg-blue-400 p-3 rounded-lg">
-                        <a href="">Update</a>
-                        </button>
-                    </td>
-                    <td>
                         <form action="{{ route('inventaris.destroy', $data->id) }}" method="post">
                             @method('delete')
                             @csrf
