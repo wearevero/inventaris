@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "wearevero/inventaris",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "An system for managing Veronique's inventaris stuff.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {

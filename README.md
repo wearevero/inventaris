@@ -2,4 +2,4 @@
 
 ## License
 
-Jasmine is open-sourced mini software licensed under the [MIT license](./LICENSE).
+Inventaris is open-sourced mini software licensed under the [MIT license](./LICENSE).
