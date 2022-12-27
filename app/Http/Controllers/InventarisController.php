@@ -57,8 +57,8 @@ class InventarisController extends Controller
 
     public function destroy($id)
     {
-        $data = Inventaris::findOrFail($id);
+        $data = Inventaris::find($id);
         $data->delete();
-        return view('inventaris.index', compact('data'));
+        return redirect('/inventaris');
     }
 }

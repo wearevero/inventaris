@@ -31,7 +31,7 @@
             </tr>
         </thead>
         <tbody class="">
-        @forelse ($data as $n)
+        @foreach ($data as $n)
             <tr class="items-center text-center">
             <td class="">{{ $n->id }}</td>
                 <td class="">{{ $n->nama_user }}</td>
@@ -50,7 +50,7 @@
                     </button>
                 </td>
             </tr>
-        @endforelse
+        @endforeach
         </tbody>
     </table>    
     </div>
