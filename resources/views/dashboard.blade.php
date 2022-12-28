@@ -1,7 +1,8 @@
 <x-app-layout title="Dashboard">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard was not uwu again!') }}
+            Selamat Datang 
+            {{ $data->email }}
         </h2>
     </x-slot>
 

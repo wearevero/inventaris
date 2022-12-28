@@ -34,6 +34,7 @@ Route::controller(InventarisController::class)->group(function () {
     Route::post('/inventaris/tambah', 'store')->name('inventaris.store');
     Route::get('/inventaris/detail/{id}', 'show')->name('inventaris.show');
     Route::delete('/inventaris/destroy/{id}', 'destroy')->name('inventaris.destroy');
+    Route::get('/inventaris/edit/{id}', 'edit')->name('inventaris.edit');
 });
 
 // Import and Export to Excel Route

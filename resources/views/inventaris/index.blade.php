@@ -50,6 +50,11 @@
                                Detail 
                             </a>
                         </button>
+                        <button type="submit" class="bg-green-400 p-1 rounded-md">
+                            <a href="{{ route('inventaris.show', $n->id) }}">
+                               Ubah 
+                            </a>
+                        </button>
                         <form action="{{ route('inventaris.destroy', $n->id) }}" method="post">
                             @method('delete')
                             @csrf

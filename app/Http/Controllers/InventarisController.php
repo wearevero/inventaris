@@ -46,7 +46,8 @@ class InventarisController extends Controller
 
     public function edit($id)
     {
-        //
+        $data = Inventaris::findOrFail($id);
+        return view('inventaris.edit', compact('data'));
     }
 
 
