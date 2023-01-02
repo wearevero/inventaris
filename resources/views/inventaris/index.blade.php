@@ -18,7 +18,7 @@
             <button class="bg-green-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Cari Data</button>
         </div>
 
-    <table class="border-separate mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-slate-500 border-collapse">
+    <table class="border-separate text-black dark:text-white mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-slate-500 border-collapse">
         <thead class="">
             <tr class="text-2xl font-mono">
                 <th class="">ID</th>

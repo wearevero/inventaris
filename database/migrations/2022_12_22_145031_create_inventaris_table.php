@@ -15,8 +15,9 @@ return new class extends Migration
             $table->string('th_pembelian');
             $table->string('ram');
             $table->string('cpu');
-            $table->string('kode')->unique();
+            $table->string('kode');
             $table->string('merk');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

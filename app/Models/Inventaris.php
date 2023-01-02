@@ -15,6 +15,7 @@ class Inventaris extends Model
         'kode',
         'ram',
         'cpu',
-        'merk'
+        'merk',
+        'keterangan'
     ];
 }

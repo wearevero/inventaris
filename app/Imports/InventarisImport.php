@@ -17,7 +17,8 @@ class InventarisImport implements ToModel
             'kode' => $row[4],
             'ram' => $row[5],
             'cpu' => $row[6],
-            'merk' => $row[7]
+            'merk' => $row[7],
+            'keterangan' => $row[8]
         ]);
     }
 }

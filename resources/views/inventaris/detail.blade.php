@@ -3,10 +3,10 @@
         <!-- Tombol Tambah -->
         <div class="mx-auto text-center">
             <!-- Search Function -->
-                <button class="bg-yellow-300 text-black rounded-lg p-1">
-                    <a href={{ route('inventaris.index') }}>
-                        Kembali
-                    </a>
+            <button class="bg-white text-black rounded-lg p-3 hover:bg-gray-500 hover:text-white">
+                <a href="{{ route('inventaris.index') }}">
+                    Kembali
+                </a>
             </button>
         </div>
         <!-- end -->
@@ -22,6 +22,7 @@
                 <th class="">CPU</th>
                 <th class="">Kode</th>
                 <th class="">Merk</th>
+                <th class="">Keterangan</th>
                 <th class="">Waktu input</th>
                 <th class="">Waktu update</th>
                 <th class="">DxDiag</th>
@@ -37,6 +38,7 @@
                 <td class="">{{ $data->cpu }}</td>
                 <td class="">{{ $data->kode }}</td>
                 <td class="">{{ $data->merk }}</td>
+                <td class="">{{ $data->keterangan }}</td>
                 <td class="">{{ $data->created_at }}</td>
                 <td class="">{{ $data->updated_at }}</td>
             </tr>
