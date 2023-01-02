@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Inventaris;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\InventarisExport;
+use App\Imports\InventarisImport;
 
 class InventarisController extends Controller
 {
 
     public function index()
     {
-        $data = Inventaris::get();
-        return view('inventaris.index', compact('data'));
+        $datas = Inventaris::get();
+        return view('inventaris.index', compact('datas'));
     }
 
     public function create(Request $request)
@@ -46,13 +49,16 @@ class InventarisController extends Controller
 
     public function edit($id)
     {
-        //
+        $data = Inventaris::findOrFail($id);
+        return view('inventaris.edit', compact('data'));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $data = Inventaris::findOrFail($id);
+        $data->update($request->except(['_token']));
+        return redirect('inventaris');
     }
 
     public function destroy($id)
@@ -60,5 +66,21 @@ class InventarisController extends Controller
         $data = Inventaris::find($id);
         $data->delete();
         return redirect('/inventaris');
+    }
+
+    public function importData()
+    {
+        return view('inventaris.import');
+    }
+
+    public function import()
+    {
+        Excel::import(new InventarisImport, request()->file('file'));
+        return redirect('/inventaris');
+    }
+
+    public function export()
+    {
+        return Excel::download(new InventarisExport, 'inventaris.xlsx');
     }
 }
