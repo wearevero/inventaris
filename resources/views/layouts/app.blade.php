@@ -8,7 +8,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
-        <title>{{ config('app.name', 'Vero Inventaris') }}</title>
+        <title>{{ $title == config('app.name') ? $title : config('app.name') .' — ' .$title  }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -20,6 +20,7 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
+            <div class="">
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white dark:bg-gray-800 shadow">
@@ -28,9 +29,10 @@
                     </div>
                 </header>
             @endif
+            </div>
 
             <!-- Page Content -->
-            <main>
+            <main class="">
                 {{ $slot }}
             </main>
         </div>
