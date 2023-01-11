@@ -28,11 +28,11 @@ Route::middleware('auth')->group(function () {
 });
 
 // Inventaris Route
-Route::controller(InventarisController::class)->prefix('inventaris')->group(function () {
+Route::controller(InventarisController::class)->prefix('inventaris')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('inventaris.index');
     Route::get('/tambah', 'create')->name('inventaris.tambah');
     Route::post('/tambah', 'store')->name('inventaris.store');
-    Route::get('//detail/{id}', 'show')->name('inventaris.show');
+    Route::get('/detail/{id}', 'show')->name('inventaris.show');
     Route::delete('/destroy/{id}', 'destroy')->name('inventaris.destroy');
     Route::get('/edit/{id}', 'edit')->name('inventaris.edit');
     Route::put('/edit/{id}', 'update')->name('inventaris.update');
