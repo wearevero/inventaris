@@ -41,11 +41,5 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/export', 'export')->name('inventaris.export');
 });
 
-// Import and Export to Excel Route
-Route::controller(UserController::class)->group(function(){
-    Route::get('users', 'index');
-    Route::get('users-export', 'export')->name('users.export');
-    Route::post('users-import', 'import')->name('users.import');
-});
 
 require __DIR__.'/auth.php';

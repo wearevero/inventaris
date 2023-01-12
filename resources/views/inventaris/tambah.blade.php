@@ -1,15 +1,31 @@
-<x-app-layout title="Tambah Data">
-    <x-auth-card>
+<x-app-layout title="Tambah Data" class="mt-20">
+    <x-auth-card class="pb-10">
         <div class="">
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current mt-10 text-gray-500" />
             </a>
         </x-slot>
+        <div class="">
+            <h1 class="text-center font-bold text-2xl my-5">
+                Import Data (excel)
+            </h1>
+            <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="p-1 text-center items-center rounded-lg bg-transparent border border-slate-300 border-dashed" required />
+                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Upload</button>
+            </form>
+        </div>
 
+        <hr class="dark:background-white my-10 border-b dark:border-white dark:border-dotted"/>
+
+        {{-- Input Manual --}}
+        <div class="">
+        <h1 class="text-center font-bold mb-5 text-2xl">
+            Input Data Manual
+        </h1>
         <form method="POST" action="{{ route('inventaris.tambah') }}">
             @csrf
-
             {{-- Name User --}}
             <div>
                 <x-input-label for="nama_user" :value="__('Nama User')" />
@@ -73,6 +89,7 @@
                 </x-primary-button>
             </div>
         </form>
+    </div>
     </x-auth-card>
 </div>
 </x-app-layout>

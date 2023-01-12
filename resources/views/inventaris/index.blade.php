@@ -2,7 +2,7 @@
     <div class="px-20 my-10">
         <div class="flex justify-between text-center">
             <a href="{{ route('inventaris.tambah') }}">
-                <button class="bg-sky-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Tambah Data</button>
+                <button class="bg-sky-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Input Data</button>
             </a>
             <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                 @csrf
