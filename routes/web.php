@@ -39,6 +39,7 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/import', 'importData')->name('inventaris.importData');
     Route::post('/import', 'import')->name('inventaris.import');
     Route::get('/export', 'export')->name('inventaris.export');
+    Route::get('/cari', 'cari')->name('inventaris.cari');
 });
 
 

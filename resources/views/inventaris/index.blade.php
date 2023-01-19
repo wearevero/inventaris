@@ -14,11 +14,13 @@
                     Export ke Excel
                 </a>
             </button>
-            <input type="text" class="p-1 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
-            <button class="bg-green-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Cari Data</button>
+            <form method="GET" action="inventaris/cari">
+                <input type="text" name="cari" value="{{ old('cari') }}" class="p-1 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
+                <button value="cari" class="bg-green-400 text-white rounded-lg p-3 hover:bg-white hover:text-black" type="submit">Cari Data</button>
+            </form>
         </div>
 
-    <table class="border-separate text-black dark:text-white mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-slate-500 border-collapse">
+    <table class="border-separate items-center align-middle text-black dark:text-white mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-dotted border-black">
         <thead class="">
             <tr class="text-2xl font-mono">
                 <th class="">ID</th>

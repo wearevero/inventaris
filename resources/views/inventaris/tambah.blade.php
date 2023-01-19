@@ -50,7 +50,7 @@
             {{-- Th Pembelian --}}
             <div>
                 <x-input-label for="th_pembelian" :value="__('Tahun Pembelian')" />
-                <x-text-input id="th_pembelian" class="block mt-1 w-full" type="text" name="th_pembelian" :value="old('name')" required autofocus />
+                <x-text-input id="th_pembelian" class="block mt-1 w-full" type="date" name="th_pembelian" :value="old('name')" required autofocus />
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
 
@@ -79,7 +79,7 @@
             {{-- Keterangan --}}
             <div>
                 <x-input-label for="keterangan" :value="__('Keterangan')" />
-                <x-text-input id="keterangan" class="block mt-1 w-full" type="text" name="keterangan" :value="old('keterangan')" required autofocus />
+                <x-text-input id="keterangan" class="block mt-1 w-full" type="text" name="keterangan" :value="old('keterangan')" autofocus />
                 <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
             </div>
 
