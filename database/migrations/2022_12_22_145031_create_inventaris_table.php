@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_user');
             $table->string('nama_bagian');
-            $table->date('th_pembelian');
+            $table->string('th_pembelian')->nullable();
             $table->string('ram');
             $table->string('cpu');
             $table->string('kode');

@@ -14,7 +14,7 @@ class InventarisController extends Controller
 
     public function index()
     {
-        $datas = Inventaris::get();
+        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')->get();
         return view('inventaris.index', compact('datas'));
     }
 

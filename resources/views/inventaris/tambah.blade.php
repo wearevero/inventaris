@@ -8,12 +8,12 @@
         </x-slot>
         <div class="">
             <h1 class="text-center font-bold text-2xl my-5">
-                Import Data (excel)
+                Import data template excel
             </h1>
             <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="p-1 text-center items-center rounded-lg bg-transparent border border-slate-300 border-dashed" required />
-                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Upload</button>
+                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Upload</button>
             </form>
         </div>
 
@@ -50,7 +50,7 @@
             {{-- Th Pembelian --}}
             <div>
                 <x-input-label for="th_pembelian" :value="__('Tahun Pembelian')" />
-                <x-text-input id="th_pembelian" class="block mt-1 w-full" type="date" name="th_pembelian" :value="old('name')" required autofocus />
+                <x-text-input id="th_pembelian" class="block mt-1 w-full" type="number" min="1976" max="2100" name="th_pembelian" :value="old('name')" autofocus />
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
 

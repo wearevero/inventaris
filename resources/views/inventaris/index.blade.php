@@ -2,21 +2,21 @@
     <div class="px-20 my-10">
         <div class="flex justify-between text-center">
             <a href="{{ route('inventaris.tambah') }}">
-                <button class="bg-sky-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Input Data</button>
+                <button class="bg-sky-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Input Data</button>
             </a>
             <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="p-1 text-center items-center rounded-lg bg-transparent border border-slate-300 border-dashed" required />
-                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Upload</button>
+                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Upload</button>
             </form>
-            <button class="bg-rose-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">
+            <button class="bg-rose-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">
                 <a href="{{ route('inventaris.export') }}">
                     Export ke Excel
                 </a>
             </button>
-            <form method="GET" action="inventaris/cari">
-                <input type="text" name="cari" value="{{ old('cari') }}" class="p-1 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
-                <button value="cari" class="bg-green-400 text-white rounded-lg p-3 hover:bg-white hover:text-black" type="submit">Cari Data</button>
+            <form method="GET">
+                <input type="text" name="cari" value="{{ old('cari') }}" class="p-2 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
+                <button value="cari" class="bg-green-400 text-white rounded-lg p-2 hover:bg-white hover:text-black" type="submit">Cari Data</button>
             </form>
         </div>
 

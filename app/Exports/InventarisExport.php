@@ -4,9 +4,10 @@ namespace App\Exports;
 
 use App\Models\Inventaris;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class InventarisExport implements FromCollection
+class InventarisExport implements FromCollection, WithHeadingRow
 {
 
     public function collection()

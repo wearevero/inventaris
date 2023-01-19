@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\InventarisController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +17,7 @@ Route::get('/dashboard', function () {
 // Chirp Route
 Route::resource('chirps', ChirpController::class)
 ->only(['index', 'store', 'edit', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
+->middleware(['auth', 'verified']);
 
 // Authentication Route
 Route::middleware('auth')->group(function () {

@@ -20,9 +20,4 @@ class Inventaris extends Model
         'merk',
         'keterangan'
     ];
-
-    // public function searchableAs()
-    // {
-    //     return 'inventaris.index';
-    // }
 }
