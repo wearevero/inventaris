@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800/30 border-b border-gray-100/30 dark:border-gray-700/30">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800/30 border-b border-gray-100/30 dark:border-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -14,9 +14,6 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')">
-                        {{ __('Tuit') }}
                     </x-nav-link>
                     <x-nav-link :href="route('inventaris.index')" :active="request()->routeIs('inventaris.index')">
                         {{ __('Inventaris') }}

@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    color: white;
+:root {
+    background-color: rgb(202, 202, 202) !important;
 }

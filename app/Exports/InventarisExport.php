@@ -6,7 +6,7 @@ use App\Models\Inventaris;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class InventarisExport implements FromCollection
+class InventarisExport implements FromCollection, WithHeadings
 {
 
     public function collection()
