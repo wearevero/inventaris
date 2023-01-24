@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BagianController;
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,5 +43,10 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/cari', 'cari')->name('inventaris.cari');
 });
 
+// Route untuk menu Bagian
+Route::get('/bagian', [BagianController::class, 'index'])->name('bagian.index');
+
+// Search route
+Route::get('/search', [SearchController::class, 'search'])->name('search.show');
 
 require __DIR__.'/auth.php';

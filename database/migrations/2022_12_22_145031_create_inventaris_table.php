@@ -12,12 +12,12 @@ return new class extends Migration
             $table->id();
             $table->string('nama_user');
             $table->string('nama_bagian');
-            $table->string('th_pembelian')->nullable();
-            $table->string('ram');
-            $table->string('cpu');
-            $table->string('kode');
+            $table->year('th_pembelian')->nullable();
+            $table->string('ram')->nullable();
+            $table->string('cpu')->nullable();
+            $table->string('kode')->nullable("-");
             $table->string('merk');
-            $table->string('keterangan')->nullable();
+            $table->string('keterangan')->nullable("-");
             $table->timestamps();
         });
     }

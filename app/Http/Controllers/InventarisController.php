@@ -20,7 +20,8 @@ class InventarisController extends Controller
 
     public function create(Request $request)
     {
-        return view('inventaris.tambah');
+        $waktu = now();
+        return view('inventaris.tambah', compact('waktu'));
     }
 
 

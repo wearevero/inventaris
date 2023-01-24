@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\DBAL\TimestampType;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@inventaris.com',
             'password' => bcrypt('admin123'),
             'remember_token' => null,
-            'created_at' => date_create(),
-            'updated_at' => date_create(),
+            'created_at' => Carbon::now()->format('Y-m-d h:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d h:i:s')
         ]);
     }
 }
