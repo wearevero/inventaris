@@ -2,23 +2,25 @@
     <div class="px-20 my-10">
         <div class="flex justify-between text-center">
             <a href="{{ route('inventaris.tambah') }}">
-                <button class="bg-sky-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Input Data</button>
+                <button class="bg-sky-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Input Data</button>
             </a>
             <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="p-1 text-center items-center rounded-lg bg-transparent border border-slate-300 border-dashed" required />
-                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Upload</button>
+                <button type="submit" class="bg-yellow-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Upload</button>
             </form>
-            <button class="bg-rose-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">
+            <button class="bg-rose-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">
                 <a href="{{ route('inventaris.export') }}">
                     Export ke Excel
                 </a>
             </button>
-            <input type="text" class="p-1 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
-            <button class="bg-green-400 text-white rounded-lg p-3 hover:bg-white hover:text-black">Cari Data</button>
+            <form method="GET">
+                <input type="text" name="cari" value="{{ old('cari') }}" class="p-2 text-center rounded-lg bg-transparent" placeholder="Cari data di sini...">
+                <button value="cari" class="bg-green-400 text-white rounded-lg p-2 hover:bg-white hover:text-black" type="submit">Cari Data</button>
+            </form>
         </div>
 
-    <table class="border-separate text-black dark:text-white mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-slate-500 border-collapse">
+    <table class="border-separate items-center align-middle text-black dark:text-white mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-dotted border-black">
         <thead class="">
             <tr class="text-2xl font-mono">
                 <th class="">ID</th>

@@ -7,19 +7,21 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
+use Illuminate\Support\Facades\DB;
 
 class InventarisController extends Controller
 {
 
     public function index()
     {
-        $datas = Inventaris::get();
+        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')->get();
         return view('inventaris.index', compact('datas'));
     }
 
     public function create(Request $request)
     {
-        return view('inventaris.tambah');
+        $waktu = now();
+        return view('inventaris.tambah', compact('waktu'));
     }
 
 
@@ -79,8 +81,17 @@ class InventarisController extends Controller
         return redirect('/inventaris');
     }
 
+
+    //  fungsi unutk meng-eksport data ke dalam file excel (template)
     public function export()
     {
         return Excel::download(new InventarisExport, 'inventaris.xlsx');
+    }
+
+    public function cari(Request $request)
+    {
+        $cari = $request->cari;
+        $datas = DB::table('inventaris')->where('nama_user', 'like', "%".$cari."%")->paginate();
+        return view('inventaris.index', ['datas' => $datas]);
     }
 }
