@@ -15,9 +15,9 @@ return new class extends Migration
             $table->year('th_pembelian')->nullable();
             $table->string('ram')->nullable();
             $table->string('cpu')->nullable();
-            $table->string('kode')->nullable("-");
+            $table->string('kode')->nullable();
             $table->string('merk');
-            $table->string('keterangan')->nullable("-");
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }

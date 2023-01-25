@@ -26,6 +26,7 @@
                 <th class="">Waktu input</th>
                 <th class="">Waktu update</th>
                 <th class="">DxDiag</th>
+                <th class="">Kategori</th>
             </tr>
         </thead>
         <tbody class="">

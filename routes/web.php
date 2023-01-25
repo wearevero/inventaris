@@ -3,6 +3,7 @@
 use App\Http\Controllers\BagianController;
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Bagian Route
+Route::get('/bagian', function() {
+    return view('welcome');
+});
+
 // Inventaris Route
 Route::controller(InventarisController::class)->prefix('inventaris')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('inventaris.index');
@@ -43,8 +49,7 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/cari', 'cari')->name('inventaris.cari');
 });
 
-// Route untuk menu Bagian
-Route::get('/bagian', [BagianController::class, 'index'])->name('bagian.index');
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
 
 // Search route
 Route::get('/search', [SearchController::class, 'search'])->name('search.show');
