@@ -30,9 +30,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // Bagian Route
-Route::get('/bagian', function() {
-    return view('welcome');
-});
+Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
+    Route::get('/', 'index')->name('bagian.index');
+});                                       
 
 // Inventaris Route
 Route::controller(InventarisController::class)->prefix('inventaris')->middleware('auth')->group(function () {

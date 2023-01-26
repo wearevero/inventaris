@@ -15,17 +15,16 @@ class InventarisController extends Controller
     public function index()
     {
         $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')
-                                // ->join('kategori', 'kategori.id_kategori', '=', 'kategori.nama_kategori')
-                                ->get();
+                                // ->leftJoin('bagian', 'bagian.id_bagian', '=', 'inventaris.nama_bagian')
+                                ->orderBy('created_at', 'asc')->get();
         return view('inventaris.index', compact('datas'));
     }
 
     public function create(Request $request)
     {
-        $waktu = now();
-        return view('inventaris.tambah', compact('waktu'));
+        $data = Inventaris::get();
+        return view('inventaris.tambah', compact('data'));
     }
-
 
     public function store(Request $request)
     {

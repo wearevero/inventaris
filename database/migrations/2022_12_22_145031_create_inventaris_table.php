@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ram')->nullable();
             $table->string('cpu')->nullable();
             $table->string('kode')->nullable();
-            $table->string('merk');
+            $table->string('merk')->nullable();
             $table->string('keterangan')->nullable();
             $table->timestamps();
         });

@@ -11,8 +11,7 @@ class BagianController extends Controller
 
     public function index()
     {
-        // $bagians = Bagian::select('nama_bagian')->get();
-        return view('welcome');
+        return redirect(route('inventaris.index'));
     }
 
     public function create()

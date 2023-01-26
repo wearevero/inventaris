@@ -36,6 +36,13 @@
             {{-- Nama Bagian --}}
             <div>
                 <x-input-label for="nama_bagian" :value="__('Nama Bagian')" />
+                
+                {{-- <select name="role_id">
+                    @if($data->id->count() 0)
+                        <option value="{{ $data->nama_bagian }}" @selected(old('role_id'))>{{ $data->nama_bagian }}</option>
+                    @endif
+                </select> --}}
+
                 <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" :value="old('nama_bagian')" placeholder="Office" required autofocus />
                 <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
             </div>
@@ -50,7 +57,7 @@
             {{-- Th Pembelian --}}
             <div>
                 <x-input-label for="th_pembelian" :value="__('Tahun Pembelian')" />
-                <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="9999" type="year" name="th_pembelian" placeholder="{{ date('Y', strtotime($waktu)) }}" :value="old('name')" autofocus />
+                <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="9999" type="year" name="th_pembelian" placeholder="{{ date('Y', strtotime(now())) }}" :value="old('name')" autofocus />
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
 

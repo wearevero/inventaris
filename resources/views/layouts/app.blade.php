@@ -37,4 +37,5 @@
             </main>
         </div>
     </body>
+    <script src="{{ asset('jquery.js') }}"></script>
 </html>
