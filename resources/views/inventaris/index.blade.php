@@ -4,6 +4,11 @@
             <a href="{{ route('inventaris.tambah') }}">
                 <button class="bg-sky-400 text-white rounded-lg p-2 hover:bg-white hover:text-black">Input Data</button>
             </a>
+            <a href="{{ route('bagian.index') }}">
+                <button>
+                    Master Bagian
+                </button>
+            </a>
             <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="p-1 text-center items-center rounded-lg bg-transparent border border-slate-300 border-dashed" required />
@@ -27,7 +32,7 @@
                 <th class="">Nama User</th>
                 <th class="">Nama Bagian</th>
                 <th class="">Tahun Pembelian</th>
-                <th class="">RAM</th>
+                <th class="">Memory</th>
                 <th class="">CPU</th>
                 <th class="">Kode</th>
                 <th class="">Merk</th>

@@ -36,13 +36,6 @@
             {{-- Nama Bagian --}}
             <div>
                 <x-input-label for="nama_bagian" :value="__('Nama Bagian')" />
-                
-                {{-- <select name="role_id">
-                    @if($data->id->count() 0)
-                        <option value="{{ $data->nama_bagian }}" @selected(old('role_id'))>{{ $data->nama_bagian }}</option>
-                    @endif
-                </select> --}}
-
                 <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" :value="old('nama_bagian')" placeholder="Office" required autofocus />
                 <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
             </div>
@@ -57,14 +50,14 @@
             {{-- Th Pembelian --}}
             <div>
                 <x-input-label for="th_pembelian" :value="__('Tahun Pembelian')" />
-                <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="9999" type="year" name="th_pembelian" placeholder="{{ date('Y', strtotime(now())) }}" :value="old('name')" autofocus />
+                <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="9999" type="text" name="th_pembelian" placeholder="{{ date('Y', strtotime(now())) }}" :value="old('th_pembelian')" autofocus />
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
 
-            {{-- RAM --}}
+            {{-- Memory --}}
             <div>
-                <x-input-label for="ram" :value="__('RAM')" />
-                <x-text-input id="ram" class="block mt-1 w-full" type="text" name="ram" :value="old('ram')" required autofocus placeholder="RAM" />
+                <x-input-label for="memory" :value="__('Memory')" />
+                <x-text-input id="memory" class="block mt-1 w-full" type="text" name="memory" :value="old('memory')" required autofocus placeholder="Memory" />
                 <x-input-error :messages="$errors->get('ram')" class="mt-2" />
             </div>
 

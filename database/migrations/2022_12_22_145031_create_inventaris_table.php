@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('nama_user');
             $table->string('nama_bagian');
             $table->year('th_pembelian')->nullable();
-            $table->string('ram')->nullable();
+            $table->string('memory')->nullable();
             $table->string('cpu')->nullable();
             $table->string('kode')->nullable();
             $table->string('merk')->nullable();

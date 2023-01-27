@@ -15,7 +15,7 @@ class Inventaris extends Model
         'nama_bagian',
         'th_pembelian',
         'kode',
-        'ram',
+        'memory',
         'cpu',
         'merk',
         'keterangan'

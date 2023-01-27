@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('inventaris.index')" :active="request()->routeIs('inventaris.index')">
                         {{ __('Inventaris') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('bagian.index')" :active="request()->routeIs('bagian.index')">
+                        {{ __('Master Bagian') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('kategori.index')" :active="request()->routeIs('kategori.index')">
+                        {{ __('Master Kategori') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -43,7 +49,7 @@
                         <x-dropdown-link :href="route('inventaris.tambah')">
                             {{ __('Tambah Kategori') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('inventaris.tambah')">
+                        <x-dropdown-link :href="route('bagian.tambah')">
                             {{ __('Tambah Bagian') }}
                         </x-dropdown-link>
                     </x-slot>

@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
+// Master kategori route
+Route::get('/kategori', [KategoriController::class])->name('kategori.index');
 
 Route::get('/', function () {
     return view('auth.login');
@@ -47,6 +49,12 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::post('/import', 'import')->name('inventaris.import');
     Route::get('/export', 'export')->name('inventaris.export');
     Route::get('/cari', 'cari')->name('inventaris.cari');
+});
+
+// Master bagian route
+Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
+    Route::get('/', 'index')->name('bagian.index');
+    Route::get('/tambah', 'create')->name('bagian.tambah');
 });
 
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');

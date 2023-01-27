@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{ url('/favicon.png') }}" type="image/x-icon">
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
         <title>{{ $title == config('app.name') ? $title : config('app.name') .' — ' .$title  }}</title>
 
         <!-- Fonts -->
@@ -19,7 +17,6 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
-
             <div class="">
             <!-- Page Heading -->
             @if (isset($header))

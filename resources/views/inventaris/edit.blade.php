@@ -37,11 +37,11 @@
                 <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
             </div>
 
-            <!-- RAM -->
+            <!-- Memory -->
             <div>
-                <x-input-label for="ram" :value="__('RAM')" />
-                <x-text-input id="ram" class="block mt-1 w-full" type="text" name="ram" value="{{ $data->ram }}" autofocus />
-                <x-input-error :messages="$errors->get('ram')" class="mt-2" />
+                <x-input-label for="memory" :value="__('Memory')" />
+                <x-text-input id="memory" class="block mt-1 w-full" type="text" name="memory" value="{{ $data->memory }}" autofocus />
+                <x-input-error :messages="$errors->get('memory')" class="mt-2" />
             </div>
 
             <!-- CPU -->

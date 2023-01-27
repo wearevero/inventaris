@@ -14,7 +14,7 @@ class InventarisController extends Controller
 
     public function index()
     {
-        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')
+        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')
                                 // ->leftJoin('bagian', 'bagian.id_bagian', '=', 'inventaris.nama_bagian')
                                 ->orderBy('created_at', 'asc')->get();
         return view('inventaris.index', compact('datas'));
@@ -33,7 +33,7 @@ class InventarisController extends Controller
             'nama_bagian' => 'required',
             'th_pembelian' => 'required',
             'kode' => 'required',
-            'ram' => 'required',
+            'memory' => 'required',
             'cpu' => 'required',
             'merk' => 'required'
         ]);

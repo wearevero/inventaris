@@ -18,7 +18,7 @@
                 <th class="">Nama User</th>
                 <th class="">Nama Bagian</th>
                 <th class="">Tahun Pembelian</th>
-                <th class="">RAM</th>
+                <th class="">Memory</th>
                 <th class="">CPU</th>
                 <th class="">Kode</th>
                 <th class="">Merk</th>
@@ -35,7 +35,7 @@
                 <td class="">{{ $data->nama_user }}</td>
                 <td class="">{{ $data->nama_bagian }}</td>
                 <td class="">{{ $data->th_pembelian }}</td>
-                <td class="">{{ $data->ram }}</td>
+                <td class="">{{ $data->memory }}</td>
                 <td class="">{{ $data->cpu }}</td>
                 <td class="">{{ $data->kode }}</td>
                 <td class="">{{ $data->merk }}</td>
