@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\BagianExport;
+use App\Imports\BagianImport;
 use App\Models\Bagian;
 use Database\Seeders\BagianSeeder;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BagianController extends Controller
 {
@@ -49,5 +52,16 @@ class BagianController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new BagianExport, 'master-bagian.xlsx');
+    }
+
+    public function import() 
+    {
+        Excel::import(new BagianImport,request()->file('file'));
+        return back();
     }
 }

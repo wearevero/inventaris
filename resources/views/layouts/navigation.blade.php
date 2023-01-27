@@ -46,7 +46,7 @@
                         <x-dropdown-link :href="route('inventaris.tambah')">
                             {{ __('Tambah Item') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('inventaris.tambah')">
+                        <x-dropdown-link :href="route('kategori.tambah')">
                             {{ __('Tambah Kategori') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('bagian.tambah')">

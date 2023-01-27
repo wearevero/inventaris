@@ -21,8 +21,8 @@ Route::get('/dashboard', function () {
 
 // Chirp Route
 Route::resource('chirps', ChirpController::class)
-->only(['index', 'store', 'edit', 'update', 'destroy'])
-->middleware(['auth', 'verified']);
+    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
 
 // Authentication Route
 Route::middleware('auth')->group(function () {
@@ -55,11 +55,18 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
 Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('bagian.index');
     Route::get('/tambah', 'create')->name('bagian.tambah');
+    Route::post('/tambah', 'store')->name('bagian.store');
+    Route::delete('/delete', 'destroy')->name('bagian.delete');
+    Route::put('/edit', 'update')->name('bagian.update');
+    Route::get('/import', 'import')->name('bagian.import');
+    Route::get('/export', 'export')->name('bagian.export');
 });
 
-Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
-
-// Search route
-Route::get('/search', [SearchController::class, 'search'])->name('search.show');
+// Master kategori route
+Route::controller(KategoriController::class)->prefix('kategori')->middleware('auth')->group(function (){
+    Route::get('/', 'index')->name('kategori.index');
+    Route::get('/tambah', 'create')->name('kategori.tambah');
+    Route::post('/tambah', 'store')->name('kategori.store');
+});
 
 require __DIR__.'/auth.php';
