@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800/30 border-b border-gray-100/30 dark:border-white">
+<nav x-data="{ open: false }" class="bg-black/30 text-white backdrop-blur-md dark:bg-gray-800/30 border-b-2 border-white sticky top-0 dark:border-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,12 +6,12 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                         <x-application-logo class="block h-9 w-auto fill-current hover:text-gray-200 text-gray-800 dark:text-rose-500" />
+                         <x-application-logo class="block animate animate-bounce h-9 w-auto fill-oranged hover:text-gray-200 text-gray-800 dark:text-rose-500" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -29,10 +29,10 @@
 
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="left" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-white bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center tracking-wider px-3 py-2 border-2 border-transparent uppercase text-sm leading-4 font-medium rounded-md text-oranged border-oranged dark:text-white bg-transparent dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>Tambah</div>
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -44,7 +44,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('inventaris.tambah')">
-                            {{ __('Tambah Item') }}
+                            {{ __('Tambah Barang') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('kategori.tambah')">
                             {{ __('Tambah Kategori') }}
@@ -59,7 +59,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
 
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-white bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex tracking-wider uppercase items-center px-3 py-2 border-2 border-transparent text-sm leading-4 font-medium rounded-md text-oranged border-oranged dark:text-white bg-transparent dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->email }}</div>
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

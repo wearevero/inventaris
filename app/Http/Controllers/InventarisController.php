@@ -17,7 +17,8 @@ class InventarisController extends Controller
         $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')
                                 // ->leftJoin('bagian', 'bagian.id_bagian', '=', 'inventaris.nama_bagian')
                                 ->orderBy('created_at', 'asc')->get();
-        return view('inventaris.index', compact('datas'));
+        $jumlah = Inventaris::count();
+        return view('inventaris.index', compact('datas', 'jumlah'));
     }
 
     public function create(Request $request)

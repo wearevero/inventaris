@@ -7,11 +7,11 @@
         <link rel="shortcut icon" href="{{ url('/favicon.png') }}" type="image/x-icon">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <title>{{ $title == config('app.name') ? $title : config('app.name') .' — ' .$title  }}</title>
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen bg-black dark:bg-gray-900">
             @include('layouts.navigation')
             <div class="">
                 <!-- Page Heading -->
@@ -28,8 +28,14 @@
             <main class="">
                 {{ $slot }}
             </main>
-        </div>
         @include('layouts.footer')
+    </div>
     </body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            "once": true
+        });
+    </script>
     <script src="{{ asset('jquery.js') }}"></script>
 </html>

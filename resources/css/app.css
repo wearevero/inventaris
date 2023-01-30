@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    background-color: rgb(202, 202, 202) !important;
+@font-face {
+    font-family: "BasementGrotesque-Black";
+    src: url("/public/fonts/Basement/BasementGrotesque-Black.woff2")
+        format("woff2");
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BasementGrotesque-Display";
+    src: url("/public/fonts/Basement/BasementGrotesque-Display.woff2")
+        format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Neue-Montreal-Regular-400";
+    src: url("/public/fonts/Neue/Neue-Montreal-Regular-400.woff2")
+        format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "SpaceMono-Regular";
+    src: url("/public/fonts/Space/SpaceMono-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+}
+
+::root {
+    background-color: #000 !important;
 }

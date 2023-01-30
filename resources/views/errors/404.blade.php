@@ -39,12 +39,9 @@
       <h1
         class="mt-6 text-2xl font-display font-bold tracking-tight text-gray-900 sm:text-4xl"
       >
-        503 — Server Down
+        404 — Unavailable
       </h1>
-      <p class="mt-4 font-space text-gray-500">Our lovely server was down currently.
-        <br>
-        Its a good time to freshen up and get some fresh air outside.
-      </p>
+      <p class="mt-4 font-space text-gray-500">Why show a generic 404 when We can make it sound mysterious? <br> It seems you've found something that used to exist, or you spelled something wrong. <br> We guessing you spelled something wrong. Can you double check that URL?</p>
     </div>
   </div>
   
