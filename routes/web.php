@@ -49,6 +49,7 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::post('/import', 'import')->name('inventaris.import');
     Route::get('/export', 'export')->name('inventaris.export');
     Route::get('/cari', 'cari')->name('inventaris.cari');
+    Route::get('/search', 'search')->name('inventaris.search');
 });
 
 // Master bagian route

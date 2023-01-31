@@ -90,10 +90,10 @@ class InventarisController extends Controller
         return Excel::download(new InventarisExport, 'inventaris.xlsx');
     }
 
-    public function cari(Request $request)
+    public function search(Request $request)
     {
-        $cari = $request->cari;
-        $datas = DB::table('inventaris')->where('nama_user', 'like', "%".$cari."%")->paginate();
-        return view('inventaris.index', ['datas' => $datas]);
+        $keyword = $request->search;
+        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->get();
+        return view('inventaris.index', compact('datas'));
     }
 }

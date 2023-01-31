@@ -14,7 +14,7 @@
                 <p class="font-montreal tracking-wide text-2xl text-white" data-aos="fade=down" data-aos-easing="linear" data-aos-duration="2500">
                     It was a hot summer day in Banjarnegara, Indonesia.
                     <br> 
-                    AC running full steam at the Veronique HQ. We got a call. It was a big 
+                    AC running full steam at the Veronique HQ. We got a call. 
                 </p>
             </div>
         </div>
