@@ -4,7 +4,6 @@ namespace App\Imports;
 
 use App\Models\Inventaris;
 use Maatwebsite\Excel\Concerns\ToModel;
-// use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class InventarisImport implements ToModel
 {
@@ -18,7 +17,10 @@ class InventarisImport implements ToModel
             'ram' => $row[5],
             'cpu' => $row[6],
             'merk' => $row[7],
-            'keterangan' => $row[8]
+            'keterangan' => $row[8],
+            'posisi' => $row[9],
+            'size_monitor' => $row[10],
+            'kategori' => $row[11]
         ]);
     }
 }

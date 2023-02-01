@@ -13,11 +13,14 @@ return new class extends Migration
             $table->string('nama_user');
             $table->string('nama_bagian');
             $table->year('th_pembelian')->nullable();
-            $table->string('ram')->nullable();
+            $table->string('memory')->nullable();
             $table->string('cpu')->nullable();
-            $table->string('kode')->nullable("-");
-            $table->string('merk');
-            $table->string('keterangan')->nullable("-");
+            $table->string('kode')->nullable();
+            $table->string('merk')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('posisi')->nullable();
+            $table->string('size_monitor')->nullable();
+            $table->string('kategori')->nullable();
             $table->timestamps();
         });
     }

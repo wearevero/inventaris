@@ -2,7 +2,10 @@
     "name": "wearevero/inventaris",
     "type": "project",
     "description": "An system for managing Veronique's inventaris stuff.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -13,7 +16,8 @@
         "laravel/scout": "^9.8",
         "laravel/tinker": "^2.7",
         "maatwebsite/excel": "^3.1",
-        "psr/simple-cache": "^1.0"
+        "psr/simple-cache": "^1.0",
+        "realrashid/sweet-alert": "^5.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",

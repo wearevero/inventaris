@@ -1,49 +1,32 @@
 <x-app-layout title="Detail {{ $data->nama_user }}">
-    <div class="px-20 my-10 mx-auto justify-center items-center">
+    <div class="px-20 my-20 mx-auto uppercase justify-center items-center">
+        <h1 class="text-white font-display text-2xl text-center tracking-wider">THE DETAIL OF : <span class="text-oranged">{{ $data->nama_user }}</span> </h1>
+        <div class="text my-10 pl-10 font-basement text-white tracking-wider">
+            <ul class="text-xl">
+                <li>Nama: <span class="text-oranged">{{ $data->nama_user }}</span></li>
+                <li>Bagian: <span class="text-oranged">{{ $data->nama_bagian }}</span></li>
+                <li>Kode: <span class="text-oranged">{{ $data->kode }}</span></li>
+                <li>Th. Pembelian: <span class="text-oranged">{{ $data->th_pembelian }}</span></li>
+                <li>CPU: <span class="text-oranged">{{ $data->cpu }}</span></li>
+                <li>Memory: <span class="text-oranged">{{ $data->memory }}</span></li>
+                <li>Merk: <span class="text-oranged">{{ $data->merk }}</span></li>
+                <li>Size Monitor: <span class="text-oranged">{{ $data->size_monitor }}</span></li>
+                <li>Kategori: <span class="text-oranged">{{ $data->kategori }}</span></li>
+                <li>Keterangan: <span class="text-oranged">{{ $data->keterangan }}</span></li>
+                <li>Current location: <span class="text-oranged">{{ $data->posisi }}</span></li>
+                <li>last updated: <span class="text-oranged">{{ $data->updated_at }} wib</span></li>
+            </ul>
+        </div>
+        
         <!-- Tombol Tambah -->
         <div class="mx-auto text-center">
             <!-- Search Function -->
-            <button class="bg-white text-black rounded-lg p-3 hover:bg-gray-500 hover:text-white">
+            <button class="px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
                 <a href="{{ route('inventaris.index') }}">
-                    Kembali
+                    Back
                 </a>
             </button>
         </div>
         <!-- end -->
-
-    <table class="border-separate mx-auto rounded-lg border-spacing-4 table-auto my-10 border border-slate-500 border-collapse">
-        <thead class="">
-            <tr class="text-2xl font-mono">
-                <th class="">ID</th>
-                <th class="">Nama User</th>
-                <th class="">Nama Bagian</th>
-                <th class="">Tahun Pembelian</th>
-                <th class="">RAM</th>
-                <th class="">CPU</th>
-                <th class="">Kode</th>
-                <th class="">Merk</th>
-                <th class="">Keterangan</th>
-                <th class="">Waktu input</th>
-                <th class="">Waktu update</th>
-                <th class="">DxDiag</th>
-            </tr>
-        </thead>
-        <tbody class="">
-            <tr class="items-center text-center">
-                <td class="">{{ $data->id }}</td>
-                <td class="">{{ $data->nama_user }}</td>
-                <td class="">{{ $data->nama_bagian }}</td>
-                <td class="">{{ $data->th_pembelian }}</td>
-                <td class="">{{ $data->ram }}</td>
-                <td class="">{{ $data->cpu }}</td>
-                <td class="">{{ $data->kode }}</td>
-                <td class="">{{ $data->merk }}</td>
-                <td class="">{{ $data->keterangan }}</td>
-                <td class="">{{ $data->created_at }}</td>
-                <td class="">{{ $data->updated_at }}</td>
-            </tr>
-        </tbody>
-    </table>    
-        </div> 
     </div>
 </x-app-layout>

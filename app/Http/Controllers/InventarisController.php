@@ -14,16 +14,16 @@ class InventarisController extends Controller
 
     public function index()
     {
-        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')->get();
-        return view('inventaris.index', compact('datas'));
+        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')->paginate(10);
+        $jumlah = Inventaris::count();
+        return view('inventaris.index', compact('datas', 'jumlah'));
     }
 
     public function create(Request $request)
     {
-        $waktu = now();
-        return view('inventaris.tambah', compact('waktu'));
+        $data = Inventaris::get();
+        return view('inventaris.tambah', compact('data'));
     }
-
 
     public function store(Request $request)
     {
@@ -32,7 +32,7 @@ class InventarisController extends Controller
             'nama_bagian' => 'required',
             'th_pembelian' => 'required',
             'kode' => 'required',
-            'ram' => 'required',
+            'memory' => 'required',
             'cpu' => 'required',
             'merk' => 'required'
         ]);
@@ -88,10 +88,10 @@ class InventarisController extends Controller
         return Excel::download(new InventarisExport, 'inventaris.xlsx');
     }
 
-    public function cari(Request $request)
+    public function search(Request $request)
     {
-        $cari = $request->cari;
-        $datas = DB::table('inventaris')->where('nama_user', 'like', "%".$cari."%")->paginate();
-        return view('inventaris.index', ['datas' => $datas]);
+        $keyword = $request->search;
+        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->paginate(100);
+        return view('inventaris.index', compact('datas'));
     }
 }
