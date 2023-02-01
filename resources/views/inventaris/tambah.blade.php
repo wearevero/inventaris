@@ -47,6 +47,16 @@
                         <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
                     </div>
 
+                    <div>
+                        <select>
+                            @foreach($data as $d)
+                                <option value="{{ $d->id }}">
+                                    {{ $d->nama_bagian }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     {{-- Kode --}}
                     <div>
                         <x-input-label for="kode" :value="__('Kode')" />

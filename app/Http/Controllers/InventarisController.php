@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
+use App\Models\Bagian;
 use Illuminate\Support\Facades\DB;
 
 class InventarisController extends Controller
@@ -21,7 +22,7 @@ class InventarisController extends Controller
 
     public function create(Request $request)
     {
-        $data = Inventaris::get();
+        $data = Bagian::get();
         return view('inventaris.tambah', compact('data'));
     }
 

@@ -12,4 +12,9 @@ class Bagian extends Model
     protected $fillable = [
         'nama_bagian'
     ];
+
+    public function user()
+    {
+        return $this->hasMany(Inventaris::class);
+    }
 }

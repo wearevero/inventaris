@@ -52,8 +52,8 @@
         @endforeach
         </tbody>
     </table>
-    <div class="text-center items-center justify-center mx-auto">
-        {{ $datas->links() }}
-    </div>
+        <div class="text-center mx-auto items-center">
+          {{ $datas->links() }}
+        </div>
     </div>
 </x-app-layout>
