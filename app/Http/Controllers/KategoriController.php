@@ -51,4 +51,12 @@ class KategoriController extends Controller
     {
         //
     }
+
+
+    // custom function untuk menampilkan barang berdasarkan kategori
+    public function monitor()
+    {
+        $monitors = Kategori::where('kode_kategori', 'MT')->get();
+        return view('kategori.monitor', compact('monitors'));
+    }
 }

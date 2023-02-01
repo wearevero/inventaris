@@ -18,6 +18,9 @@ class Inventaris extends Model
         'memory',
         'cpu',
         'merk',
-        'keterangan'
+        'keterangan',
+        'posisi',
+        'size_monitor',
+        'kategori'
     ];
 }

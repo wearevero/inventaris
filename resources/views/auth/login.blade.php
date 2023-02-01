@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="Login">
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -36,12 +36,11 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-white dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-oranged dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+                    <a class="underline text-white font-montreal text-xl hover:text-oranged dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-oranged dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
                         {{ __('Wanna join?') }}
                     </a>
            
-
-                <x-primary-button class="ml-3 bg-oranged text-white">
+                <x-primary-button class="ml-3 px-4 py-2 uppercase rounded-lg font-montreal hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged active:">
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>

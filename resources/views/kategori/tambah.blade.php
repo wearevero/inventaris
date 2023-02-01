@@ -1,18 +1,18 @@
 <x-app-layout>
-    <div class="">
+    <div class="-mt-10">
         <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current mt-10 text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current mt-10 text-white" />
             </a>
         </x-slot>
 
         {{-- Input Manual --}}
         <div class="">
-        <h1 class="text-center font-bold mb-5 text-2xl">
+        {{-- <h1 class="text-center font-bold mb-5 text-2xl">
             Input Kategori
-        </h1>
-        <form method="POST" action="{{ route('kategori.store') }}">
+        </h1> --}}
+        <form method="POST" action="{{ route('kategori.store') }}" class="p-4">
             @csrf
 
             {{-- Nama Kategori --}}
@@ -25,12 +25,12 @@
             {{-- Kode Kategori --}}
             <div>
                 <x-input-label for="kode_kategori" :value="__('Kode Kategori')" />
-                <x-text-input id="kode_kategori" class="block mt-1 w-full" type="text" name="kode_kategori" :value="old('kode_kategori')" placeholder="NB-6969" required autofocus />
+                <x-text-input id="kode_kategori" class="block mt-1 w-full" type="text" name="kode_kategori" :value="old('kode_kategori')" placeholder="NB" required autofocus />
                 <x-input-error :messages="$errors->get('kode_kategori')" class="mt-2" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-primary-button class="ml-4">
+            <div class="flex items-center justify-end mt-8">
+                <x-primary-button class="ml-4 px-2 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
                     {{ __('Tambah Kategori') }}
                 </x-primary-button>
             </div>

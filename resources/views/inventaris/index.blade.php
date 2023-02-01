@@ -51,6 +51,9 @@
             </tr>
         @endforeach
         </tbody>
-    </table>    
+    </table>
+    <div class="text-center items-center justify-center mx-auto">
+        {{ $datas->links() }}
+    </div>
     </div>
 </x-app-layout>

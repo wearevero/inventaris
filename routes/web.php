@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
+use function Ramsey\Uuid\v1;
+
 // Master kategori route
 Route::get('/kategori', [KategoriController::class])->name('kategori.index');
 
@@ -52,6 +54,22 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/search', 'search')->name('inventaris.search');
 });
 
+// Master kategori route
+Route::controller(KategoriController::class)->prefix('kategori')->middleware('auth')->group(function (){
+    Route::get('/', 'index')->name('kategori.index');
+    Route::get('/tambah', 'create')->name('kategori.tambah');
+    Route::post('/tambah', 'store')->name('kategori.store');
+
+    // custom kategori route
+    Route::get('/monitor', 'monitor')->name('kategori.monitor');
+    Route::get('/notebook', 'notebook')->name('kategori.notebook');
+    Route::get('/camera', 'camera')->name('kategori.camera');
+    Route::get('/ups', 'ups')->name('kategori.ups');
+    Route::get('/cpu', 'cpu')->name('kategori.cpu');
+    Route::get('/printer', 'printer')->name('kategori.printer');
+    Route::get('/dvr', 'dvr')->name('kategori.dvr'); 
+});
+
 // Master bagian route
 Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('bagian.index');
@@ -63,11 +81,5 @@ Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')
     Route::get('/export', 'export')->name('bagian.export');
 });
 
-// Master kategori route
-Route::controller(KategoriController::class)->prefix('kategori')->middleware('auth')->group(function (){
-    Route::get('/', 'index')->name('kategori.index');
-    Route::get('/tambah', 'create')->name('kategori.tambah');
-    Route::post('/tambah', 'store')->name('kategori.store');
-});
 
 require __DIR__.'/auth.php';

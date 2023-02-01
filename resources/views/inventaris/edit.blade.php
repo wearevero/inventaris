@@ -1,8 +1,11 @@
-<x-app-layout title="Edit Data {{ $data->nama_user }}">
-    <x-auth-card>
+<x-app-layout title="Edit {{ $data->nama_user }}">
+    <div class="mb-10">
+        {{-- space --}}
+    </div>
+    <x-auth-card class="pb-20">
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="animate animate-bounce  w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="animate w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -21,6 +24,13 @@
                 <x-input-label for="nama_bagian" :value="__('Nama Bagian')" />
                 <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" value="{{ $data->nama_bagian }}" autofocus />
                 <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
+            </div>
+
+            {{-- Kategori --}}
+            <div>
+                <x-input-label for="kategori" :value="__('Kategori')" />
+                <x-text-input id="kategori" class="block mt-1 w-full" type="text" name="kategori" value="{{ $data->kategori }}" placeholder="Kategori" autofocus />
+                <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
             </div>
 
             <!-- Kode -->
@@ -59,9 +69,23 @@
                 <x-input-error :messages="$errors->get('merk')" class="mt-2" />
             </div>
 
+            <!-- POSISI -->
+            <div>
+                <x-input-label for="posisi" :value="__('posisi')" />
+                <x-text-input id="posisi" class="block mt-1 w-full" type="text" name="posisi" value="{{ $data->posisi }}" autofocus />
+                <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
+            </div>
+
+            <!-- SIZE MONITOR -->
+            <div>
+                <x-input-label for="size_monitor" :value="__('Size Monitor')" />
+                <x-text-input id="size_monitor" class="block mt-1 w-full" type="text" name="size_monitor" value="{{ $data->size_monitor }}" autofocus />
+                <x-input-error :messages="$errors->get('size_monitor')" class="mt-2" />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
-                <x-primary-button class="ml-4">
-                    {{ __('Update Data') }}
+                <x-primary-button class="ml-4 px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
+                    {{ __('Update') }}
                 </x-primary-button>
             </div>
         </form>

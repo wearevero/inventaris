@@ -14,9 +14,7 @@ class InventarisController extends Controller
 
     public function index()
     {
-        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')
-                                // ->leftJoin('bagian', 'bagian.id_bagian', '=', 'inventaris.nama_bagian')
-                                ->orderBy('created_at', 'asc')->get();
+        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')->paginate(10);
         $jumlah = Inventaris::count();
         return view('inventaris.index', compact('datas', 'jumlah'));
     }
@@ -93,7 +91,7 @@ class InventarisController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->search;
-        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->get();
+        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->paginate(100);
         return view('inventaris.index', compact('datas'));
     }
 }

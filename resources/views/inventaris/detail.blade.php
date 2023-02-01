@@ -7,13 +7,14 @@
                 <li>Bagian: <span class="text-oranged">{{ $data->nama_bagian }}</span></li>
                 <li>Kode: <span class="text-oranged">{{ $data->kode }}</span></li>
                 <li>Th. Pembelian: <span class="text-oranged">{{ $data->th_pembelian }}</span></li>
-                <li>CPU: <span class="text-oranged">{{ $data->nama_user }}</span></li>
-                <li>Memory: <span class="text-oranged">{{ $data->cpu }}</span></li>
+                <li>CPU: <span class="text-oranged">{{ $data->cpu }}</span></li>
+                <li>Memory: <span class="text-oranged">{{ $data->memory }}</span></li>
                 <li>Merk: <span class="text-oranged">{{ $data->merk }}</span></li>
-                <li>Kategori: <span class="text-oranged">{{ $data->nama_kategori }}</span></li>
+                <li>Size Monitor: <span class="text-oranged">{{ $data->size_monitor }}</span></li>
+                <li>Kategori: <span class="text-oranged">{{ $data->kategori }}</span></li>
                 <li>Keterangan: <span class="text-oranged">{{ $data->keterangan }}</span></li>
-                <li>Created at: <span class="text-oranged">{{ $data->created_at }} wib</span></li>
-                <li>Updated at: <span class="text-oranged">{{ $data->updated_at }} wib</span></li>
+                <li>Current location: <span class="text-oranged">{{ $data->posisi }}</span></li>
+                <li>last updated: <span class="text-oranged">{{ $data->updated_at }} wib</span></li>
             </ul>
         </div>
         

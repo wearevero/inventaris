@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('kode')->nullable();
             $table->string('merk')->nullable();
             $table->string('keterangan')->nullable();
+            $table->string('posisi')->nullable();
+            $table->string('size_monitor')->nullable();
+            $table->string('kategori')->nullable();
             $table->timestamps();
         });
     }

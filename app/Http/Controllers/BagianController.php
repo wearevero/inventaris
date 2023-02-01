@@ -36,17 +36,22 @@ class BagianController extends Controller
 
     public function show($id)
     {
-        //
+        return view('inventaris.detail', [
+            'data' => Bagian::findOrFail($id)
+        ]);
     }
 
     public function edit($id)
     {
-        //
+        $data = Bagian::findOrFail($id);
+        return view('inventaris.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $data = Bagian::findOrFail($id);
+        $data->update($request->except(['_token']));
+        return redirect('bagian');
     }
 
     public function destroy($id)
