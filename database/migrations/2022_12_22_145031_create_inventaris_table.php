@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('inventaris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_user');
-            $table->string('nama_bagian');
+            $table->string('id_bagian');
             $table->year('th_pembelian')->nullable();
             $table->string('memory')->nullable();
             $table->string('cpu')->nullable();

@@ -6,6 +6,7 @@ use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 use function Ramsey\Uuid\v1;
@@ -52,6 +53,12 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/export', 'export')->name('inventaris.export');
     Route::get('/cari', 'cari')->name('inventaris.cari');
     Route::get('/search', 'search')->name('inventaris.search');
+});
+
+// Team page controller
+Route::controller(TeamController::class)->prefix('team')->middleware('auth')->group(function() {
+    Route::get('/', 'index')->name('team.index');
+    Route::get('/tambah', 'create')->name('team.tambah');
 });
 
 // Master kategori route

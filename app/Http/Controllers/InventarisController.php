@@ -8,6 +8,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
 use App\Models\Bagian;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\DB;
 
 class InventarisController extends Controller
@@ -15,22 +16,22 @@ class InventarisController extends Controller
 
     public function index()
     {
-        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'memory', 'cpu', 'kode', 'merk')->paginate(10);
+        $datas = Inventaris::paginate(10);
         $jumlah = Inventaris::count();
         return view('inventaris.index', compact('datas', 'jumlah'));
     }
 
     public function create(Request $request)
     {
-        $data = Bagian::get();
-        return view('inventaris.tambah', compact('data'));
+        $bagians = Bagian::all();
+        return view('inventaris.tambah', compact('bagians'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'nama_user' => 'required',
-            'nama_bagian' => 'required',
+            'id_bagian' => 'required',
             'th_pembelian' => 'required',
             'kode' => 'required',
             'memory' => 'required',
@@ -53,7 +54,8 @@ class InventarisController extends Controller
     public function edit($id)
     {
         $data = Inventaris::findOrFail($id);
-        return view('inventaris.edit', compact('data'));
+        $bagians = Bagian::all();
+        return view('inventaris.edit', compact('data', 'bagians'));
     }
 
 

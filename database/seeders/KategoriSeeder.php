@@ -48,6 +48,12 @@ class KategoriSeeder extends Seeder
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
+            [
+                'nama_kategori' => 'OTHERS',
+                'kode_kategori' => 'ETC',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
         ]);      
     }
 }

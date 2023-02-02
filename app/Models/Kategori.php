@@ -14,4 +14,9 @@ class Kategori extends Model
         "nama_kategori",
         "kode_kategori"
     ];
+
+    public function inventaris()
+    {
+        return $this->hasMany(Inventaris::class);
+    }
 }

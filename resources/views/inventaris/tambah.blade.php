@@ -35,26 +35,32 @@
 
                     {{-- Bagian --}}
                     <div>
-                        <x-input-label for="nama_bagian" :value="__('Bagian')" />
-                        <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" :value="old('nama_bagian')" placeholder="Office" required autofocus />
-                        <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
-                    </div>
-
-                    {{-- Kategori --}}
-                    <div>
-                        <x-input-label for="kategori" :value="__('Kategori')" />
-                        <x-text-input id="kategori" class="block mt-1 w-full" type="text" name="kategori" :value="old('kategori')" placeholder="Monitor" autofocus />
-                        <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
-                    </div>
-
-                    <div>
-                        <select>
-                            @foreach($data as $d)
-                                <option value="{{ $d->id }}">
-                                    {{ $d->nama_bagian }}
-                                </option>
+                        <x-input-label for="id_bagian" :value="__('Bagian')" />
+                        <select name="id_bagian" id="id_bagian" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                            <option value="">-- PILIH --</option>
+                            @foreach($bagians as $bagian)
+                            <option value="{{ $bagian->id_bagian }}" {{ old('id_bagian') == $bagian->id_bagian ? 'selected' : null }}>{{ $bagian->nama_bagian }}</option>
                             @endforeach
                         </select>
+                    </div>
+
+
+
+                    {{-- Kategori --}}
+                    {{-- <div>
+                        <x-input-label for="id_kategori" :value="__('Kategori')" />
+                        <select name="id_kategori" id="id_kategori">
+                            <option value="">-- PILIH --</option>
+                            @foreach($kategoris as $kategori)
+                                <option value="{{ $kategori->id_kategori }}" {{ old('id_kategori') == $bagian->id_kategori ? 'selected' : null }}>{{ $kategori->nama_kategori }}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
+
+                    <div>
+                        <x-input-label for="Kategori" :value="__('Kategori')" />
+                        <x-text-input id="kategori" class="block mt-1 w-full" type="text" name="kategori" :value="old('kategori')" required autofocus placeholder="MT" />
+                        <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
                     </div>
 
                     {{-- Kode --}}
@@ -84,7 +90,6 @@
                         <x-text-input id="cpu" class="block mt-1 w-full" type="text" name="cpu" :value="old('cpu')" placeholder="CPU" required autofocus />
                         <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
                     </div>
-
 
                     {{-- Merk --}}
                     <div>

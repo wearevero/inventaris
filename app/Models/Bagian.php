@@ -13,8 +13,10 @@ class Bagian extends Model
         'nama_bagian'
     ];
 
-    public function user()
+    public function Inventaris()
     {
         return $this->hasMany(Inventaris::class);
     }
+
+    
 }

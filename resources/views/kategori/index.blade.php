@@ -13,12 +13,12 @@
                 </tr>
             </thead>
             <tbody class="text-2xl font-montreal text-slate-300">
-            @foreach ($kategoris as $kategori)
+            @foreach ($datas as $d)
                 <tr class="items-center text-center">
-                    <td class="">{{ $kategori->id_kategori }}</td>
-                    <td class="">{{ $kategori->nama_kategori }}</td>
-                    <td class="">{{ $kategori->kode_kategori }}</td>
-                    <td class="">{{ $kategori->updated_at }}</td>
+                    <td class="">{{ $d->id_kategori }}</td>
+                    <td class="">{{ $d->nama_kategori }}</td>
+                    <td class="">{{ $d->kode_kategori }}</td>
+                    <td class="">{{ $d->updated_at }}</td>
                 </tr>
             @endforeach
             </tbody>

@@ -21,11 +21,15 @@
 
             <!-- Nama Bagian -->
             <div>
-                <x-input-label for="nama_bagian" :value="__('Nama Bagian')" />
-                <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" value="{{ $data->nama_bagian }}" autofocus />
-                <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
+                <x-input-label for="id_bagian" :value="__('Bagian')" />
+                <select name="id_bagian" id="id_bagian" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value=""> {{ $data->bagian->nama_bagian }} </option>
+                    @foreach($bagians as $bagian)
+                    <option value="{{ $bagian->id_bagian }}" {{ old('id_bagian') == $bagian->id_bagian ? 'selected' : null }}>{{ $bagian->nama_bagian }}</option>
+                    @endforeach
+                </select>
             </div>
-
+            
             {{-- Kategori --}}
             <div>
                 <x-input-label for="kategori" :value="__('Kategori')" />

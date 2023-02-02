@@ -21,6 +21,26 @@ class BagianSeeder extends Seeder
                 'nama_bagian' => 'BOM',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama_bagian' => 'WAX',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama_bagian' => 'PPIC',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama_bagian' => 'SEGONG',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama_bagian' => 'CAD ROOM',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
             ]
         ]);
     }

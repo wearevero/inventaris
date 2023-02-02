@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Inventaris;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -30,9 +32,10 @@ class KategoriController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Kategori $kategori)
     {
-        //
+        $dataKategori = $kategori->inventaris()->latest()->paginate(10);
+        return view('inventaris.index', compact('dataKategori', 'kategori'));
     }
 
     public function edit($id)
@@ -56,7 +59,7 @@ class KategoriController extends Controller
     // custom function untuk menampilkan barang berdasarkan kategori
     public function monitor()
     {
-        $monitors = Kategori::where('kode_kategori', 'MT')->get();
+        $monitors = Inventaris::where('kategori', '=', 'MT')->first();
         return view('kategori.monitor', compact('monitors'));
     }
 }
