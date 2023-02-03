@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
 
 class Inventaris extends Model
 {
@@ -12,7 +11,7 @@ class Inventaris extends Model
 
     protected $fillable = [
         'nama_user',
-        'nama_bagian',
+        'bagian_id',
         'th_pembelian',
         'kode',
         'memory',
@@ -21,6 +20,17 @@ class Inventaris extends Model
         'keterangan',
         'posisi',
         'size_monitor',
-        'kategori'
+        'kategori_id'
     ];
+
+    public function bagian()
+    {
+        return $this->belongsTo(Bagian::class);
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+
 }

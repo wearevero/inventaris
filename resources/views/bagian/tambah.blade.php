@@ -7,6 +7,19 @@
             </a>
         </x-slot>
 
+        <div class="z-50">
+            <h1 class="text-center text-white font-basement font-bold text-2xl my-5">
+                Import Data
+            </h1>
+            <form method="POST" class="flex space-x-5" action="{{ route('bagian.import') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="p-1 text-center items-center rounded-md bg-transparent border border-slate-300 border-dashed" required />
+                <button type="submit" class="px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">Upload</button>
+            </form>
+        </div>
+
+        <hr class="dark:background-white mt-10 mb-5 border-b border-dotted border-oranged"/>
+
         {{-- Input Manual --}}
         <div class="">
         <form method="POST" action="{{ route('bagian.store') }}" class="p-4">

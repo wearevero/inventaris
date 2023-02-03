@@ -8,16 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('bagian', function (Blueprint $table) {
+        Schema::create('team', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('slug');
+            $table->string('name');
+            $table->string('username');
+            $table->longText('bio');
             $table->timestamps();
         });
     }
-    
+
     public function down()
     {
-        Schema::dropIfExists('bagian');
+        Schema::dropIfExists('team');
     }
 };

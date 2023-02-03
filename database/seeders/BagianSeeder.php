@@ -13,12 +13,38 @@ class BagianSeeder extends Seeder
     {
         DB::table('bagian')->insert([
             [
-                'nama_bagian' => 'OFFICE',
+                'nama' => 'OFFICE',
+                'slug' => 'office',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_bagian' => 'BOM',
+                'nama' => 'BOM',
+                'slug' => 'bom',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama' => 'WAX',
+                'slug' => 'wax',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama' => 'PPIC',
+                'slug' => 'slug',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama' => 'SEGONG',
+                'slug' => 'slug',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'nama' => 'CAD ROOM',
+                'slug' => 'cad-room',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ]

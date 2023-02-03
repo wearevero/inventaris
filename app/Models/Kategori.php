@@ -9,9 +9,10 @@ class Kategori extends Model
 {
     use HasFactory;
     protected $table = 'kategori';
-    
-    protected $fillable = [
-        "nama_kategori",
-        "kode_kategori"
-    ];
+    protected $guarded = ['id'];
+
+    public function inventaris()
+    {
+        return $this->hasMany(Inventaris::class);
+    }
 }

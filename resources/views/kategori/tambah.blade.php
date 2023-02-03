@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="Tambah Kategori">
     <div class="-mt-10">
         <x-auth-card>
         <x-slot name="logo">
@@ -9,9 +9,6 @@
 
         {{-- Input Manual --}}
         <div class="">
-        {{-- <h1 class="text-center font-bold mb-5 text-2xl">
-            Input Kategori
-        </h1> --}}
         <form method="POST" action="{{ route('kategori.store') }}" class="p-4">
             @csrf
 

@@ -9,7 +9,12 @@ class Bagian extends Model
 {
     use HasFactory;
     protected $table = 'bagian';
-    protected $fillable = [
-        'nama_bagian'
-    ];
+    protected $guarded = ['id'];
+
+    public function inventaris()
+    {
+        return $this->hasMany(Inventaris::class);
+    }
+
+    
 }

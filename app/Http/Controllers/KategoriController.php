@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Inventaris;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -21,8 +23,8 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_kategori' => 'required',
-            'kode_kategori' => 'required'
+            'nama' => 'required',
+            'kode' => 'required'
         ]);
 
         Kategori::create($request->all());
@@ -30,14 +32,32 @@ class KategoriController extends Controller
     }
 
 
-    public function show($id)
+    public function show($slug)
     {
-        //
+        // $datas = Kategori::where('slug', $slug)->first();
+        // return view('kategori.kategories', compact('datas'));
     }
 
+    public function show_kategori($slug)
+    {
+        $datas = Inventaris::whereHas('kategori',function ($query) use ($slug) {
+            return $query->where('slug', $slug);
+        })->get();
+        $kategoris = Kategori::where('slug', $slug)->get();
+
+        return view('kategori.kategories', [
+            'datas' => $datas,
+            'kategoris' => $kategoris
+        ]);
+    }
+
+
+
+
+    
     public function edit($id)
     {
-        //
+        
     }
 
 
@@ -56,7 +76,13 @@ class KategoriController extends Controller
     // custom function untuk menampilkan barang berdasarkan kategori
     public function monitor()
     {
-        $monitors = Kategori::where('kode_kategori', 'MT')->get();
+        $monitors = Inventaris::where('id_kategori', 1)->get();
         return view('kategori.monitor', compact('monitors'));
+    }
+
+    public function notebook()
+    {
+        $notebooks = Inventaris::where('id_kategori', 2)->get();
+        return view('kategori.notebook', compact('notebooks'));
     }
 }
