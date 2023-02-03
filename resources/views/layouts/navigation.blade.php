@@ -38,25 +38,25 @@
                                 <x-dropdown-link class="divide-y text-oranged border-b-2 border-dotted border-oranged" :href="route('inventaris.index')" >
                                     {{ __('Inventaris') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.monitor')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('Monitor') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.cpu')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('CPU') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.notebook')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('Notebook') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.camera')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('Camera') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.ups')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('UPS') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.printer')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('Printer') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('kategori.dvr')">
+                                <x-dropdown-link :href="route('kategori.index')">
                                     {{ __('DVR') }}
                                 </x-dropdown-link>
                             </x-slot>
@@ -91,7 +91,7 @@
 
                     {{-- Team --}}
                     <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.index')">
-                        {{ __('The team') }}
+                        {{ __('meet our team') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                         <x-dropdown-link :href="route('inventaris.tambah')">
                             {{ __('Tambah Barang') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('kategori.tambah')">
+                        <x-dropdown-link :href="route('kategori.index')">
                             {{ __('Tambah Kategori') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('bagian.tambah')">

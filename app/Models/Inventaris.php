@@ -11,7 +11,7 @@ class Inventaris extends Model
 
     protected $fillable = [
         'nama_user',
-        'id_bagian',
+        'bagian_id',
         'th_pembelian',
         'kode',
         'memory',
@@ -20,12 +20,17 @@ class Inventaris extends Model
         'keterangan',
         'posisi',
         'size_monitor',
-        'kategori'
+        'kategori_id'
     ];
 
     public function bagian()
     {
-        return $this->belongsTo(Bagian::class, 'id_bagian', 'id_bagian');
+        return $this->belongsTo(Bagian::class);
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
     }
 
 }

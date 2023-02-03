@@ -14,8 +14,8 @@
             <tbody class="text-2xl font-montreal text-slate-300">
             @foreach ($bagians as $bagian)
                 <tr class="items-center text-center">
-                    <td class="">{{ $bagian->id_bagian }}</td>
-                    <td class="">{{ $bagian->nama_bagian }}</td>
+                    <td class="">{{ $bagian->id }}</td>
+                    <td class="">{{ $bagian->nama }}</td>
                     <td class="">{{ $bagian->updated_at }}</td>
                 </tr>
             @endforeach

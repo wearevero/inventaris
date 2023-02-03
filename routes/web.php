@@ -7,6 +7,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeamController;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
 
 use function Ramsey\Uuid\v1;
@@ -55,27 +56,10 @@ Route::controller(InventarisController::class)->prefix('inventaris')->middleware
     Route::get('/search', 'search')->name('inventaris.search');
 });
 
-// Team page controller
-Route::controller(TeamController::class)->prefix('team')->middleware('auth')->group(function() {
-    Route::get('/', 'index')->name('team.index');
-    Route::get('/tambah', 'create')->name('team.tambah');
-});
-
 // Master kategori route
-Route::controller(KategoriController::class)->prefix('kategori')->middleware('auth')->group(function (){
-    Route::get('/', 'index')->name('kategori.index');
-    Route::get('/tambah', 'create')->name('kategori.tambah');
-    Route::post('/tambah', 'store')->name('kategori.store');
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('/kategori/{kategori:slug}', [KategoriController::class, 'show_kategori']);
 
-    // custom kategori route
-    Route::get('/monitor', 'monitor')->name('kategori.monitor');
-    Route::get('/notebook', 'notebook')->name('kategori.notebook');
-    Route::get('/camera', 'camera')->name('kategori.camera');
-    Route::get('/ups', 'ups')->name('kategori.ups');
-    Route::get('/cpu', 'cpu')->name('kategori.cpu');
-    Route::get('/printer', 'printer')->name('kategori.printer');
-    Route::get('/dvr', 'dvr')->name('kategori.dvr'); 
-});
 
 // Master bagian route
 Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
@@ -84,8 +68,14 @@ Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')
     Route::post('/tambah', 'store')->name('bagian.store');
     Route::delete('/delete', 'destroy')->name('bagian.delete');
     Route::put('/edit', 'update')->name('bagian.update');
-    Route::get('/import', 'import')->name('bagian.import');
+    Route::post('/import', 'import')->name('bagian.import');
     Route::get('/export', 'export')->name('bagian.export');
+});
+
+// Team page controller
+Route::controller(TeamController::class)->prefix('team')->middleware('auth')->group(function() {
+    Route::get('/', 'index')->name('team.index');
+    Route::get('/tambah', 'create')->name('team.tambah');
 });
 
 

@@ -8,6 +8,7 @@ module.exports = {
             animation: {
                 marquee: "marquee 45s linear infinite",
                 marquee2: "marquee2 45s linear infinite",
+                kartu: "all 3s ease-in-out",
             },
             keyframes: {
                 marquee: {

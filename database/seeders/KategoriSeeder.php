@@ -13,44 +13,51 @@ class KategoriSeeder extends Seeder
     {
         DB::table('kategori')->insert([
             [
-                'nama_kategori' => 'Monitor',
-                'kode_kategori' => 'MT',
+                'nama' => 'Monitor',
+                'kode' => 'MT',
+                'slug' => 'monitor',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'Notebook',
-                'kode_kategori' => 'NB',
+                'nama' => 'Notebook',
+                'kode' => 'NB',
+                'slug' => 'notebook',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'CAMERA',
-                'kode_kategori' => 'CM',
+                'nama' => 'CAMERA',
+                'kode' => 'CM',
+                'slug' => 'camera',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'CPU',
-                'kode_kategori' => 'PCU',
+                'nama' => 'CPU',
+                'kode' => 'CPU',
+                'slug' => 'cpu',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'PSU',
-                'kode_kategori' => 'PSU',
+                'nama' => 'PSU',
+                'kode' => 'PSU',
+                'slug' => 'psu',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'PRINTER',
-                'kode_kategori' => 'PR',
+                'nama' => 'PRINTER',
+                'kode' => 'PR',
+                'slug' => 'printer',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama_kategori' => 'OTHERS',
-                'kode_kategori' => 'ETC',
+                'nama' => 'OTHERS',
+                'kode' => 'ETC',
+                'slug' => 'others',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],

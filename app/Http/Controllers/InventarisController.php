@@ -23,15 +23,16 @@ class InventarisController extends Controller
 
     public function create(Request $request)
     {
-        $bagians = Bagian::all();
-        return view('inventaris.tambah', compact('bagians'));
+        $bagians = Bagian::get();
+        $kategoris = Kategori::all();
+        return view('inventaris.tambah', compact('bagians', 'kategoris'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'nama_user' => 'required',
-            'id_bagian' => 'required',
+            'bagian_id' => 'required',
             'th_pembelian' => 'required',
             'kode' => 'required',
             'memory' => 'required',

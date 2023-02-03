@@ -32,9 +32,9 @@
             
             {{-- Kategori --}}
             <div>
-                <x-input-label for="kategori" :value="__('Kategori')" />
-                <x-text-input id="kategori" class="block mt-1 w-full" type="text" name="kategori" value="{{ $data->kategori }}" placeholder="Kategori" autofocus />
-                <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
+                <x-input-label for="kategori_id" :value="__('Kategori')" />
+                <x-text-input id="kategori_id" class="block mt-1 w-full" type="text" name="kategori_id" value="{{ $data->kategori_id }}" placeholder="Kategori" autofocus />
+                <x-input-error :messages="$errors->get('kategori_id')" class="mt-2" />
             </div>
 
             <!-- Kode -->
