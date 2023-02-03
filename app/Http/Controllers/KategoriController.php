@@ -47,7 +47,8 @@ class KategoriController extends Controller
 
         return view('kategori.kategories', [
             'datas' => $datas,
-            'kategoris' => $kategoris
+            'kategoris' => $kategoris,
+            'slug' => $slug
         ]);
     }
 

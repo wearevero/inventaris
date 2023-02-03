@@ -27,7 +27,8 @@ class BagianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_bagian' => 'required'
+            'nama' => 'required',
+            'slug' => 'required'
         ]);
     
         Bagian::create($request->all());
