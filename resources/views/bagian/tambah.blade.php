@@ -27,9 +27,16 @@
 
             {{-- Nama Bagian --}}
             <div>
-                <x-input-label for="nama_bagian" :value="__('Nama Bagian')" />
-                <x-text-input id="nama_bagian" class="block mt-1 w-full" type="text" name="nama_bagian" :value="old('nama_bagian')" placeholder="Veronique HQ (Office)" required autofocus />
-                <x-input-error :messages="$errors->get('nama_bagian')" class="mt-2" />
+                <x-input-label for="nama" :value="__('Nama Bagian')" />
+                <x-text-input id="nama" class="block mt-1 w-full" type="text" name="nama" :value="old('nama')" placeholder="Veronique HQ (Office)" required autofocus />
+                <x-input-error :messages="$errors->get('nama')" class="mt-2" />
+            </div>
+
+            {{-- slug --}}
+            <div>
+                <x-input-label for="slug" :value="__('Slug Bagian')" />
+                <x-text-input id="slug" class="block mt-1 w-full" type="text" name="slug" :value="old('slug')" placeholder="cad-room" required autofocus />
+                <x-input-error :messages="$errors->get('slug')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-end mt-8">

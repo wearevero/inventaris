@@ -32,13 +32,13 @@ class BagianSeeder extends Seeder
             ],
             [
                 'nama' => 'PPIC',
-                'slug' => 'slug',
+                'slug' => 'ppic',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
                 'nama' => 'SEGONG',
-                'slug' => 'slug',
+                'slug' => 'segong',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
