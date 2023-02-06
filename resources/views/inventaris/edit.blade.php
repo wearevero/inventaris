@@ -21,20 +21,30 @@
 
             <!-- Nama Bagian -->
             <div>
-                <x-input-label for="id_bagian" :value="__('Bagian')" />
-                <select name="id_bagian" id="id_bagian" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                    <option value=""> {{ $data->bagian->nama_bagian }} </option>
+                <x-input-label for="bagian" :value="__('Bagian')" />
+                <select name="bagian" id="bagian" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value=""> {{ $data->bagian->nama }} </option>
                     @foreach($bagians as $bagian)
-                    <option value="{{ $bagian->id_bagian }}" {{ old('id_bagian') == $bagian->id_bagian ? 'selected' : null }}>{{ $bagian->nama_bagian }}</option>
+                    <option value="{{ $bagian->id }}" {{ old('id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
                     @endforeach
                 </select>
             </div>
             
             {{-- Kategori --}}
-            <div>
+            {{-- <div>
                 <x-input-label for="kategori_id" :value="__('Kategori')" />
-                <x-text-input id="kategori_id" class="block mt-1 w-full" type="text" name="kategori_id" value="{{ $data->kategori_id }}" placeholder="Kategori" autofocus />
+                <x-text-input id="kategori_id" class="block mt-1 w-full" type="text" name="kategori_id" value="{{ $data->kategori->nama }}" placeholder="Kategori" autofocus />
                 <x-input-error :messages="$errors->get('kategori_id')" class="mt-2" />
+            </div> --}}
+
+            <div>
+                <x-input-label for="kategori" :value="__('Kategori')" />
+                <select name="kategori" id="kategori" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value=""> {{ $data->kategori->nama }} </option>
+                    @foreach($kategoris as $kategori)
+                    <option value="{{ $kategori->id }}" {{ old('id') == $kategori->id ? 'selected' : null }}>{{ $kategori->nama }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <!-- Kode -->
@@ -75,9 +85,13 @@
 
             <!-- POSISI -->
             <div>
-                <x-input-label for="posisi" :value="__('posisi')" />
-                <x-text-input id="posisi" class="block mt-1 w-full" type="text" name="posisi" value="{{ $data->posisi }}" autofocus />
-                <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
+                <x-input-label for="posisi" :value="__('Posisi')" />
+                <select name="posisi" id="posisi" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value=""> {{ $data->bagian->nama }} </option>
+                    @foreach($bagians as $bagian)
+                    <option value="{{ $bagian->id }}" {{ old('id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <!-- SIZE MONITOR -->
@@ -85,6 +99,23 @@
                 <x-input-label for="size_monitor" :value="__('Size Monitor')" />
                 <x-text-input id="size_monitor" class="block mt-1 w-full" type="text" name="size_monitor" value="{{ $data->size_monitor }}" autofocus />
                 <x-input-error :messages="$errors->get('size_monitor')" class="mt-2" />
+            </div>
+
+            <div>
+                <x-input-label for="status" :value="__('Status')" />
+                <select name="status" id="status" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value="">
+                        @if ($data->status == 1)
+                            Aktif
+                        @elseif ($data->status == 0)
+                            Non-aktif
+                        @elseif ($data->status != 0 || 1)
+                            lainnya
+                        @endif
+                    </option>
+                    <option value=1>Aktif</option>
+                    <option value=0>Non-aktif</option>
+                </select>
             </div>
 
             <div class="flex items-center justify-end mt-4">

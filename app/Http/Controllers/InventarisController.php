@@ -37,9 +37,8 @@ class InventarisController extends Controller
             'kode' => 'required',
             'memory' => 'required',
             'cpu' => 'required',
-            'merk' => 'required'
+            'merk' => 'required',
         ]);
-
         Inventaris::create($request->all());
         return redirect()->route('inventaris.index')->with('success', 'Data berhasil ditambah!');
     }
@@ -56,7 +55,8 @@ class InventarisController extends Controller
     {
         $data = Inventaris::findOrFail($id);
         $bagians = Bagian::all();
-        return view('inventaris.edit', compact('data', 'bagians'));
+        $kategoris = Kategori::all();
+        return view('inventaris.edit', compact('data', 'bagians', 'kategoris'));
     }
 
 

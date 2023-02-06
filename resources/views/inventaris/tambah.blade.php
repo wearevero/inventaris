@@ -55,7 +55,6 @@
                         </select>
                     </div>
 
-
                     {{-- Kategori --}}
                     {{-- <div>
                         <x-input-label for="kategori_id" :value="__('Kategori')" />
@@ -101,8 +100,9 @@
                     {{-- Keterangan --}}
                     <div>
                         <x-input-label for="keterangan" :value="__('Keterangan')" />
-                        <x-text-input id="keterangan" class="block mt-1 w-full" type="text" name="keterangan" :value="old('keterangan')" autofocus placeholder="Aktif / Tidak aktif" />
-                        <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
+                        <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1 w-full" name="keterangan" value="{{ old('keterangan') }}" autofocus placeholder="Barang ini blablabla...">
+                        </textarea>
+                            <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
                     </div>
 
                     {{-- Posisi --}}
@@ -116,20 +116,26 @@
                         </select>
                     </div>
 
-
-
-                    {{-- <div>
-                        <x-input-label for="posisi" :value="__('Posisi')" />
-                        <x-text-input id="posisi" class="block mt-1 w-full" type="text" name="posisi" :value="old('posisi')" placeholder="Veronique HQ" autofocus />
-                        <x-input-error :messages="$errors->get('posisi')" class="mt-2" />
-                    </div> --}}
-
                     {{-- Size Monitor --}}
                     <div>
                         <x-input-label for="size_monitor" :value="__('Size Monitor')" />
                         <x-text-input id="size_monitor" class="block mt-1 w-full" type="text" name="size_monitor" :value="old('size_monitor')" placeholder="69 Inc" autofocus />
                         <x-input-error :messages="$errors->get('size_monitor')" class="mt-2" />
                     </div>
+
+                    <div>
+                        <x-input-label for="status" :value="__('Status')" />
+                        <select name="status" id="status" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                            <option value="">— PILIH —</option>
+                            <option value=1>Aktif</option>
+                            <option value=0>Non-aktif</option>
+                        </select>
+                    </div>
+
+
+
+
+
 
                     <div class="flex items-center justify-end mt-4">
                         <x-primary-button class="ml-4 px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">

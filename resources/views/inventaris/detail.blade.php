@@ -14,6 +14,15 @@
                 <li>Kategori: <span class="text-oranged">{{ $data->kategori->nama }}</span></li>
                 <li>Keterangan: <span class="text-oranged">{{ $data->keterangan }}</span></li>
                 <li>Current location: <span class="text-oranged">{{ $data->bagian->nama }}</span></li>
+                <li>Current status: 
+                    <span class="text-oranged">
+                     @if($data->status == 1)
+                        Aktif
+                    @elseif($data->status == 0)
+                        Tidak Aktif
+                    @endif
+                    </span>
+                </li>
                 <li>last updated: <span class="text-oranged">{{ $data->updated_at }} wib</span></li>
             </ul>
         </div>

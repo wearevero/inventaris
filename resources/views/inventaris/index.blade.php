@@ -29,7 +29,7 @@
         <tbody class="">
         @foreach ($datas as $data)
             <tr class="items-center tracking-wider text-gray-300 font-montreal flex-row align-middle text-center">
-                <td class="font-basement">{{ $data->nama_user }}</td>
+                <td class="font-basement uppercase">{{ $data->nama_user }}</td>
                 <td class="">{{ $data->bagian->nama }}</td>
                 <td class="">{{ $data->cpu }}</td>
                 <td class="">{{ $data->kode }}</td>
