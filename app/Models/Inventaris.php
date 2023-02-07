@@ -9,18 +9,23 @@ class Inventaris extends Model
 {
     use HasFactory;
 
+    protected $rules = [
+        'status' => 'boolean'
+    ];
+
     protected $fillable = [
         'nama_user',
         'bagian_id',
-        'th_pembelian',
+        'kategori_id',
         'kode',
+        'th_pembelian',
         'memory',
         'cpu',
         'merk',
-        'keterangan',
         'posisi',
         'size_monitor',
-        'kategori_id'
+        'status_id',
+        'keterangan'
     ];
 
     public function bagian()

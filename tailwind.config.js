@@ -4,6 +4,10 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
     content: ["./resources/views/**/*.blade.php"],
     theme: {
+        pagination: (theme) => ({
+            linkFirst: "mr-6",
+            color: theme("colors.oranged"),
+        }),
         extend: {
             animation: {
                 marquee: "marquee 45s linear infinite",
@@ -34,5 +38,8 @@ module.exports = {
         },
     },
 
-    plugins: [require("@tailwindcss/forms", "tailwindcss-plugins/pagination")],
+    plugins: [
+        require("@tailwindcss/forms"),
+        require("tailwindcss-plugins/pagination"),
+    ],
 };

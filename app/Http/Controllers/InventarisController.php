@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Inventaris;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -9,14 +8,13 @@ use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
 use App\Models\Bagian;
 use App\Models\Kategori;
-use Illuminate\Support\Facades\DB;
 
 class InventarisController extends Controller
 {
 
     public function index()
     {
-        $datas = Inventaris::paginate(10);
+        $datas = Inventaris::orderBy('id', 'desc')->paginate(10);
         $jumlah = Inventaris::count();
         return view('inventaris.index', compact('datas', 'jumlah'));
     }
@@ -33,13 +31,16 @@ class InventarisController extends Controller
         $request->validate([
             'nama_user' => 'required',
             'bagian_id' => 'required',
-            'th_pembelian' => 'required',
+            'kategori_id' => 'required',
             'kode' => 'required',
+            'th_pembelian' => 'required',
             'memory' => 'required',
             'cpu' => 'required',
-            'merk' => 'required'
+            'merk' => 'required',
+            'posisi' => 'required',
+            'size_monitor' => 'required',
+            'status_id' => 'required',
         ]);
-
         Inventaris::create($request->all());
         return redirect()->route('inventaris.index')->with('success', 'Data berhasil ditambah!');
     }
@@ -56,15 +57,15 @@ class InventarisController extends Controller
     {
         $data = Inventaris::findOrFail($id);
         $bagians = Bagian::all();
-        return view('inventaris.edit', compact('data', 'bagians'));
+        $kategoris = Kategori::all();
+        return view('inventaris.edit', compact('data', 'bagians', 'kategoris'));
     }
-
 
     public function update(Request $request, $id)
     {
         $data = Inventaris::findOrFail($id);
         $data->update($request->except(['_token']));
-        return redirect('inventaris');
+        return redirect('inventaris/detail/'.$id);
     }
 
     public function destroy($id)
@@ -85,8 +86,6 @@ class InventarisController extends Controller
         return redirect('/inventaris');
     }
 
-
-    //  fungsi unutk meng-eksport data ke dalam file excel (template)
     public function export()
     {
         return Excel::download(new InventarisExport, 'inventaris.xlsx');

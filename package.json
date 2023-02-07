@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "format": "prettier --w ."
+        "format": "npx prettier --w ."
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('posisi')->nullable();
             $table->string('size_monitor')->nullable();
             $table->foreignId('kategori_id')->nullable();
+            $table->integer('status_id');
             $table->timestamps();
         });
     }

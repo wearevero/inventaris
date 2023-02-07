@@ -1562,14 +1562,9 @@
                             1 < s && we(c),
                             1 < s &&
                                 xe(
-                                    e
-                                        .slice(0, s - 1)
-                                        .concat({
-                                            value:
-                                                " " === e[s - 2].type
-                                                    ? "*"
-                                                    : "",
-                                        })
+                                    e.slice(0, s - 1).concat({
+                                        value: " " === e[s - 2].type ? "*" : "",
+                                    })
                                 ).replace(B, "$1"),
                             t,
                             s < n && Se(e.slice(s, n)),

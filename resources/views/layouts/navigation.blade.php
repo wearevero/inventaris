@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Story') }}
+                        {{ __('Hello') }}
                     </x-nav-link>
 
                     {{-- INVENTARIS MENU --}}
@@ -36,7 +36,7 @@
                             </x-slot>
         
                             <x-slot name="content">
-                                <x-dropdown-link class="divide-y text-oranged border-b-2 border-dotted border-oranged" :href="route('bagian.index')" >
+                                <x-dropdown-link class="divide-y text-oranged" :href="route('bagian.index')" >
                                     {{ __('Bagian') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('kategori.index')">
@@ -58,7 +58,7 @@
             <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="left" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center tracking-wider px-3 py-2 border-2 border-transparent uppercase text-sm leading-4 font-medium rounded-md text-oranged border-oranged dark:text-white bg-transparent dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center tracking-wider px-3 py-2 border-2 border-transparent uppercase text-sm leading-4 font-medium rounded-md text-oranged border-oranged dark:text-white bg-transparent dark:bg-gray-800 hover:text-oranged dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>Tambah</div>
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -133,16 +133,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')">
-        {{ __('Tuit') }}
-    </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                <div class="font-medium text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
             </div>
 
             <div class="mt-3 space-y-1">

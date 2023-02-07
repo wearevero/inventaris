@@ -1,7 +1,7 @@
 <x-app-layout title="Detail {{ $data->nama_user }}">
     <div class="px-20 my-20 mx-auto uppercase justify-center items-center">
-        <h1 class="text-white font-display text-2xl text-center tracking-wider">THE DETAIL OF : <span class="text-oranged">{{ $data->nama_user }}</span> </h1>
-        <div class="text my-10 pl-10 font-basement text-white tracking-wider">
+        <h1 class="text-white font-display text-2xl text-center tracking-wider">THE DETAIL OF : <span class="text-oranged tracking-widest">{{ $data->nama_user }}</span> </h1>
+        <div class="text my-10 pl-10 font-basement text-slate-300 tracking-wider">
             <ul class="text-xl">
                 <li>Nama: <span class="text-oranged">{{ $data->nama_user }}</span></li>
                 <li>Bagian: <span class="text-oranged">{{ $data->bagian->nama }}</span></li>
@@ -14,6 +14,17 @@
                 <li>Kategori: <span class="text-oranged">{{ $data->kategori->nama }}</span></li>
                 <li>Keterangan: <span class="text-oranged">{{ $data->keterangan }}</span></li>
                 <li>Current location: <span class="text-oranged">{{ $data->bagian->nama }}</span></li>
+                <li>Current status:
+                    <span class="text-oranged">
+                        @if($data->status_id == 1)
+                            Used
+                        @elseif($data->status_id == 2)
+                            Available
+                        @elseif($data->status_id == 3)
+                            Broken
+                        @endif
+                    </span>
+                </li>
                 <li>last updated: <span class="text-oranged">{{ $data->updated_at }} wib</span></li>
             </ul>
         </div>

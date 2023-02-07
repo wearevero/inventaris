@@ -1,8 +1,8 @@
 <x-app-layout title="Welcome">
     <div class="flex justify-center min-h-screen dark:bg-gray-900 sm:items-center py-10 sm:pt-0">
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-2">
             <div class="">
-                <h1 class="font-display tracking-wide space-y-5 text-3xl text-oranged" data-aos="fade-down" data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                <h1 class="font-display tracking-wide space-y-5 text-4xl text-oranged" data-aos="fade-down" data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     veronique inventory system :
                 </h1>
                 <br>

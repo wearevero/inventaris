@@ -7,23 +7,23 @@
             <thead class="">
                 <tr class="text-2xl font-basement text-white">
                     <th class="">ID</th>
-                    <th class="">Kategori</th>
+                    <th class="">Nama Kategori</th>
                     <th class="">Kode</th>
-                    <th class="">Updated</th>
+                    <th class="">Last Updated</th>
                     <th class="">Action</th>
                 </tr>
             </thead>
-            <tbody class="text-2xl font-montreal text-slate-300">
+            <tbody class="text-2xl uppercase font-montreal text-slate-300">
             @foreach ($kategoris as $kategori)
                 <tr class="items-center text-center">
                     <td class="">{{ $kategori->id }}</td>
-                    <td class="text-left">{{ $kategori->nama }}</td>
+                    <td class="">{{ $kategori->nama }}</td>
                     <td class="">{{ $kategori->kode }}</td>
-                    <td class="">{{ $kategori->updated_at }}</td>
+                    <td class="">{{ $kategori->updated_at->format('d M Y h:m:s') }}</td>
                     <td class="">
-                        <button type="submit" class="px-4 items-end text-xl text-black uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
+                        <button type="submit" class="w-full items-end text-xl text-black uppercase rounded-lg font-montreal p-2 hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
                             <a href="/kategori/{{ $kategori->slug }}">
-                                See All Data {{ $kategori->nama }}
+                                See All Kategori {{ $kategori->nama }}
                             </a>
                         </button>
                     </td>

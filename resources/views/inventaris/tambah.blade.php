@@ -29,7 +29,7 @@
                     {{-- User --}}
                     <div>
                         <x-input-label for="nama_user" :value="__('User')" />
-                        <x-text-input id="nama_user" class="block mt-1 w-full" type="text" name="nama_user" :value="old('nama_user')" placeholder="Admin Office" required autofocus />
+                        <x-text-input id="nama_user" class="block mt-1 w-full" type="text" name="nama_user" :value="old('nama_user')" placeholder="Krido Pambudi B" required autofocus />
                         <x-input-error :messages="$errors->get('nama_user')" class="mt-2" />
                     </div>
 
@@ -37,7 +37,7 @@
                     <div>
                         <x-input-label for="bagian_id" :value="__('Bagian')" />
                         <select name="bagian_id" id="bagian_id" class="mb-5 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                            <option value="">— PILIH —</option>
+                            <option value="">PILIH BAGIAN</option>
                             @foreach($bagians as $bagian)
                             <option value="{{ $bagian->id }}" {{ old('bagian_id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
                             @endforeach
@@ -48,20 +48,12 @@
                     <div>
                         <x-input-label for="kategori_id" :value="__('Kategori')" />
                         <select name="kategori_id" id="kategori_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                            <option value="">— PILIH —</option>
+                            <option value="">PILIH KATEGORI</option>
                             @foreach($kategoris as $kategori)
                             <option value="{{ $kategori->id }}" {{ old('kategori_id') == $kategori->id ? 'selected' : null }}>{{ $kategori->nama }}</option>
                             @endforeach
                         </select>
                     </div>
-
-
-                    {{-- Kategori --}}
-                    {{-- <div>
-                        <x-input-label for="kategori_id" :value="__('Kategori')" />
-                        <x-text-input id="kategori_id" class="block mt-1 w-full" type="text" name="kategori_id" :value="old('kategori_id')" required autofocus placeholder="MT" />
-                        <x-input-error :messages="$errors->get('kategori_id')" class="mt-2" />
-                    </div> --}}
 
                     {{-- Kode --}}
                     <div>
@@ -73,7 +65,7 @@
                     {{-- Th Pembelian --}}
                     <div>
                         <x-input-label for="th_pembelian" :value="__('Th. Pembelian')" />
-                        <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="9999" type="text" name="th_pembelian" placeholder="{{ date('Y', strtotime(now())) }}" :value="old('th_pembelian')" autofocus />
+                        <x-text-input id="th_pembelian" class="block mt-1 w-full" min="1976" max="2023" type="text" name="th_pembelian" placeholder="{{ date('Y', strtotime(now())) }}" :value="old('th_pembelian')" autofocus />
                         <x-input-error :messages="$errors->get('th_pembelian')" class="mt-2" />
                     </div>
 
@@ -98,37 +90,39 @@
                         <x-input-error :messages="$errors->get('merk')" class="mt-2" />
                     </div>
 
-                    {{-- Keterangan --}}
-                    <div>
-                        <x-input-label for="keterangan" :value="__('Keterangan')" />
-                        <x-text-input id="keterangan" class="block mt-1 w-full" type="text" name="keterangan" :value="old('keterangan')" autofocus placeholder="Aktif / Tidak aktif" />
-                        <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
-                    </div>
-
                     {{-- Posisi --}}
                     <div>
-                        <x-input-label for="posisi" :value="__('Posisi')" />
+                        <x-input-label for="posisi" :value="__('Posisi Item')" />
                         <select name="posisi" id="posisi" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                            <option value="">— PILIH —</option>
+                            <option value="">PILIH POSISI</option>
                             @foreach($bagians as $bagian)
                             <option value="{{ $bagian->id }}" {{ old('bagian_id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
                             @endforeach
                         </select>
                     </div>
 
-
-
-                    {{-- <div>
-                        <x-input-label for="posisi" :value="__('Posisi')" />
-                        <x-text-input id="posisi" class="block mt-1 w-full" type="text" name="posisi" :value="old('posisi')" placeholder="Veronique HQ" autofocus />
-                        <x-input-error :messages="$errors->get('posisi')" class="mt-2" />
-                    </div> --}}
-
                     {{-- Size Monitor --}}
                     <div>
                         <x-input-label for="size_monitor" :value="__('Size Monitor')" />
                         <x-text-input id="size_monitor" class="block mt-1 w-full" type="text" name="size_monitor" :value="old('size_monitor')" placeholder="69 Inc" autofocus />
                         <x-input-error :messages="$errors->get('size_monitor')" class="mt-2" />
+                    </div>
+
+                    <div>
+                        <x-input-label for="status_id" :value="__('Status')" />
+                        <select name="status_id" id="status_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                            <option value="">PILIH STATUS</option>
+                            <option value=1>Used</option>
+                            <option value=2>Available</option>
+                            <option value=3>Broken</option>
+                        </select>
+                    </div>
+ 
+                    {{-- Keterangan --}}
+                    <div>
+                        <x-input-label for="keterangan" :value="__('Keterangan')" />
+                        <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1 w-full" name="keterangan" value="{{ old('keterangan') }}" autofocus placeholder="Barang ini blablabla..."></textarea>
+                        <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center justify-end mt-4">

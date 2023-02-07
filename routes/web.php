@@ -61,6 +61,10 @@ Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.in
 Route::get('/kategori/{kategori:slug}', [KategoriController::class, 'show_kategori']);
 
 
+// Master kategori route
+Route::get('/bagian/{bagian:slug}', [BagianController::class, 'show_bagian']);
+
+
 // Master bagian route
 Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('bagian.index');

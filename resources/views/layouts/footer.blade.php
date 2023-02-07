@@ -12,7 +12,7 @@
     <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-10">
       <div class="">
         <p class="font-montreal mb-3 uppercase text-white text-xl italic" data-aos="fade-right" data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="100">
-          v 1.0.0.1 — canary (pre-launch)
+          v 1.0.0.1 — beta version release & pre-launching
         </p>
         <div>
           <p class="block text-3xl tracking-wide font-display font-bold text-white sm:text-4xl" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
