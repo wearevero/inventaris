@@ -21,21 +21,14 @@
 
             <!-- Nama Bagian -->
             <div>
-                <x-input-label for="bagian" :value="__('Bagian')" />
-                <select name="bagian" id="bagian" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                    <option value=""> {{ $data->bagian->nama }} </option>
+                <x-input-label for="bagian_id" :value="__('Bagian')" />
+                <select name="bagian_id" id="bagian_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                    <option value="{{ $data->bagian->id }}"> {{ $data->bagian->nama }} </option>
                     @foreach($bagians as $bagian)
                     <option value="{{ $bagian->id }}" {{ old('id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
                     @endforeach
                 </select>
             </div>
-            
-            {{-- Kategori --}}
-            {{-- <div>
-                <x-input-label for="kategori_id" :value="__('Kategori')" />
-                <x-text-input id="kategori_id" class="block mt-1 w-full" type="text" name="kategori_id" value="{{ $data->kategori->nama }}" placeholder="Kategori" autofocus />
-                <x-input-error :messages="$errors->get('kategori_id')" class="mt-2" />
-            </div> --}}
 
             <div>
                 <x-input-label for="kategori" :value="__('Kategori')" />
@@ -83,11 +76,19 @@
                 <x-input-error :messages="$errors->get('merk')" class="mt-2" />
             </div>
 
+            <div>
+                <x-input-label for="keterangan" :value="__('Keterangan')" />
+                <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1 w-full items-start focus:outline-oranged text-left" name="keterangan" value="{{ $data->keterangan }}" rows="4" autofocus placeholder="Taruh keterangan tambahan di sini ya gaes ya...">
+                    {{ $data->keterangan }}
+                </textarea>
+                <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
+            </div>
+
             <!-- POSISI -->
             <div>
                 <x-input-label for="posisi" :value="__('Posisi')" />
                 <select name="posisi" id="posisi" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                    <option value=""> {{ $data->bagian->nama }} </option>
+                    <option value="{{ $data->bagian->id }}"> {{ $data->bagian->nama }} </option>
                     @foreach($bagians as $bagian)
                     <option value="{{ $bagian->id }}" {{ old('id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
                     @endforeach
@@ -104,7 +105,7 @@
             <div>
                 <x-input-label for="status" :value="__('Status')" />
                 <select name="status" id="status" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                    <option value="">
+                    <option value="{{ $data->status }}">
                         @if ($data->status == 1)
                             Aktif
                         @elseif ($data->status == 0)
@@ -120,7 +121,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-primary-button class="ml-4 px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
-                    {{ __('Update') }}
+                        {{ __('Update') }}
                 </x-primary-button>
             </div>
         </form>

@@ -1,4 +1,4 @@
-<x-app-layout title="Kategori">
+<x-app-layout title="Bagian">
     <div class="mx-auto my-10 container">
         <h1 class="text-2xl font-display text-center text-oranged">
             List Bagian
@@ -20,7 +20,7 @@
                     <td class="">{{ $bagian->updated_at->format('d M Y h:m:s') }}</td>
                     <td class="">
                         <button type="submit" class="w-full items-end text-xl text-black uppercase rounded-lg font-montreal p-2 hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
-                            <a href="/bagian/{{ $bagian->nama }}">
+                            <a href="/bagian/{{ $bagian->slug }}">
                                 See All Data on {{ $bagian->nama }}
                             </a>
                         </button>

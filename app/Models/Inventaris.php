@@ -16,16 +16,16 @@ class Inventaris extends Model
     protected $fillable = [
         'nama_user',
         'bagian_id',
-        'th_pembelian',
+        'kategori_id',
         'kode',
+        'th_pembelian',
         'memory',
         'cpu',
         'merk',
-        'keterangan',
         'posisi',
         'size_monitor',
-        'kategori_id',
-        'status'
+        'status_id',
+        'keterangan'
     ];
 
     public function bagian()

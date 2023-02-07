@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Inventaris;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
@@ -32,10 +31,9 @@ class KategoriController extends Controller
     }
 
 
-    public function show($slug)
+    public function show($id)
     {
-        // $datas = Kategori::where('slug', $slug)->first();
-        // return view('kategori.kategories', compact('datas'));
+
     }
 
     public function show_kategori($slug)
@@ -45,16 +43,12 @@ class KategoriController extends Controller
         })->get();
         $kategoris = Kategori::where('slug', $slug)->get();
 
-        return view('kategori.kategories', [
+        return view('kategori.slug', [
             'datas' => $datas,
             'kategoris' => $kategoris,
             'slug' => $slug
         ]);
     }
-
-
-
-
     
     public function edit($id)
     {

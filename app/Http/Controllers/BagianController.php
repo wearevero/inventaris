@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Exports\BagianExport;
 use App\Imports\BagianImport;
 use App\Models\Bagian;
-use Database\Seeders\BagianSeeder;
+use App\Models\Inventaris;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -22,7 +21,6 @@ class BagianController extends Controller
     {
         return view('bagian.tambah');
     }
-
 
     public function store(Request $request)
     {
@@ -69,5 +67,19 @@ class BagianController extends Controller
     {
         Excel::import(new BagianImport,request()->file('file'));
         return back();
+    }
+
+    public function show_bagian($slug)
+    {
+        $datas = Inventaris::whereHas('bagian',function ($query) use ($slug) {
+            return $query->where('slug', $slug);
+        })->get();
+        $bagians = Bagian::where('slug', $slug)->get();
+
+        return view('bagian.slug', [
+            'datas' => $datas,
+            'bagians' => $bagians,
+            'slug' => $slug
+        ]);
     }
 }

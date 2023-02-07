@@ -11,11 +11,11 @@ class InventarisExport implements FromCollection, WithHeadings
 
     public function collection()
     {
-        return Inventaris::select('id', 'nama_user', 'bagian_id', 'th_pembelian', 'kode', 'memory', 'cpu', 'merk', 'keterangan', 'posisi', 'size_monitor', 'kategori_id')->get();
+        return Inventaris::select('nama_user', 'bagian_id', 'kategori_id','kode', 'th_pembelian', 'memory', 'cpu', 'merk', 'posisi', 'size_monitor', 'status_id', 'keterangan')->get();
     }
 
     public function headings(): array
     {
-        return ["ID", "Nama User", "Bagian ID", "Tahun Pembelian", "Kode", "Memory", "CPU", "Merk", "Keterangan", "Posisi", "Size Monitor", "Kategori ID"];
+        return ["Nama User", "Bagian ID", "Kategori ID", "Kode", "Th. Pembelian", "Memory", "CPU", "Merk", "Posisi", "Size Monitor", "Status ID", "Keterangan"];
     }
 }

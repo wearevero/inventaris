@@ -13,80 +13,14 @@ class BagianSeeder extends Seeder
     {
         DB::table('bagian')->insert([
             [
+                'nama' => 'OFFICE',
+                'slug' => 'office',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
                 'nama' => 'Admin',
                 'slug' => 'admin',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'SEGONG REPAIR',
-                'slug' => 'segong-repair',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'JUJO',
-                'slug' => 'jujo',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'WAX',
-                'slug' => 'wax',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'CASTING',
-                'slug' => 'casting',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'CUTTING',
-                'slug' => 'cutting',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'CUTTING 2',
-                'slug' => 'cutting-2',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'FILLING TEM',
-                'slug' => 'filling-tem',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'STRIPING',
-                'slug' => 'striping',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'SETTING BD 1',
-                'slug' => 'setting-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'POLISHING 2',
-                'slug' => 'polishing-2',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'RANGKAI 1',
-                'slug' => 'rangkai-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'FILLING 1',
-                'slug' => 'filling-1',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
@@ -97,152 +31,86 @@ class BagianSeeder extends Seeder
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'PENDING',
-                'slug' => 'pending',
+                'nama' => 'QC BD 1',
+                'slug' => 'qc-bd-1',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'PERBAIKAN',
-                'slug' => 'perbaikan',
+                'nama' => 'QC BD 2',
+                'slug' => 'qc-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'FILLING 2',
-                'slug' => 'polishing-2',
+                'nama' => 'SEGONG BD 1',
+                'slug' => 'segong-bd-1',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'PACKING',
-                'slug' => 'packing',
+                'nama' => 'GUDANG',
+                'slug' => 'gudang',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'RUSAK',
-                'slug' => 'rusak',
+                'nama' => 'STONE',
+                'slug' => 'stone',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'MELTING',
-                'slug' => 'melting',
+                'nama' => 'SEGONG BD 2',
+                'slug' => 'segong-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'SHAPE',
-                'slug' => 'shape',
+                'nama' => 'PPIC BD 2',
+                'slug' => 'ppic-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'SECURITY',
-                'slug' => 'security',
+                'nama' => 'POLISHING BD 2',
+                'slug' => 'polishing-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'POLISHING 1',
-                'slug' => 'polishing-1',
+                'nama' => 'QC BD 2',
+                'slug' => 'qc-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'RE-CASTING',
-                'slug' => 'recasting',
+                'nama' => 'CULAP BD 2',
+                'slug' => 'culap-bd-2',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'STRIPING BD 1',
-                'slug' => 'striping-bd-1',
+                'nama' => 'DIAMOND',
+                'slug' => 'diamond',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'ILCA',
-                'slug' => 'ilca',
+                'nama' => 'YONMA',
+                'slug' => 'yonma',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'ILCA BD 1',
-                'slug' => 'ilca-bd-1',
+                'nama' => 'WAX',
+                'slug' => 'wax',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'RANGKAI BD 1',
-                'slug' => 'rangkai-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'FILLING 1 BD 1',
-                'slug' => 'filling-1-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'FILLING TEM BD 1',
-                'slug' => 'filling-tem-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'FILLING 2 BD 1',
-                'slug' => 'filling-2-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'POLISHING 1 BD 1',
-                'slug' => 'polishing-1-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'POLISHING 2 BD 1',
-                'slug' => 'polishing-2-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'PACKING BD 1',
-                'slug' => 'packing-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'RE-CASTING BD 1',
-                'slug' => 'recasting-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'PENDING BD 1',
-                'slug' => 'pending-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'PERBAIKAN BD 1',
-                'slug' => 'perbaikan-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'SEGONG REPAIR BD 1',
-                'slug' => 'segong-repair-bd-1',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ],
-            [
-                'nama' => 'DOGUM BD 1',
-                'slug' => 'dogum-bd-1',
+                'nama' => 'MOULDING',
+                'slug' => 'moulding',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
@@ -253,47 +121,41 @@ class BagianSeeder extends Seeder
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'FINAL QC',
-                'slug' => 'final-qc',
+                'nama' => 'MASTER SAMPLE',
+                'slug' => 'master-sample',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'SETTING CVD',
-                'slug' => 'setting-cvd',
+                'nama' => 'DOGUM',
+                'slug' => 'dogum',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'POLISHING CVD',
-                'slug' => 'polishing-cvd',
+                'nama' => 'JUJO',
+                'slug' => 'jujo',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'SETTING CVD BD 1',
-                'slug' => 'setting-cvd-bd-1',
+                'nama' => 'POLISHING BD 1',
+                'slug' => 'polishing-bd-1',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'POLISHING CVD BD 1',
-                'slug' => 'polishing-cvd-bd-1',
+                'nama' => 'PPC BD 3',
+                'slug' => 'ppc-bd-3',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
             [
-                'nama' => 'TAMBAH PART',
-                'slug' => 'tambah-part',
+                'nama' => 'MAINTENANCE',
+                'slug' => 'maintenance',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
-            [
-                'nama' => 'REPAIR PART',
-                'slug' => 'repair-part',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ]
         ]);
     }
 }

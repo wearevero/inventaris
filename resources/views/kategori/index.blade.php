@@ -22,7 +22,7 @@
                     <td class="">{{ $kategori->updated_at->format('d M Y h:m:s') }}</td>
                     <td class="">
                         <button type="submit" class="w-full items-end text-xl text-black uppercase rounded-lg font-montreal p-2 hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
-                            <a href="/kategori/{{ $kategori->nama }}">
+                            <a href="/kategori/{{ $kategori->slug }}">
                                 See All Kategori {{ $kategori->nama }}
                             </a>
                         </button>
