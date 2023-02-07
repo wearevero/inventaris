@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "format": "npx prettier --w ."
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -12,7 +13,9 @@
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
         "postcss": "^8.4.6",
+        "prettier-plugin-tailwindcss": "^0.2.2",
         "tailwindcss": "^3.1.0",
+        "tailwindcss-plugins": "^0.3.0",
         "vite": "^3.0.0"
     }
 }

@@ -1,42 +1,46 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Inventaris;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
-use Illuminate\Support\Facades\DB;
+use App\Models\Bagian;
+use App\Models\Kategori;
 
 class InventarisController extends Controller
 {
 
     public function index()
     {
-        $datas = Inventaris::select('id', 'nama_user', 'nama_bagian', 'th_pembelian', 'ram', 'cpu', 'kode', 'merk')->get();
-        return view('inventaris.index', compact('datas'));
+        $datas = Inventaris::orderBy('id', 'desc')->paginate(10);
+        $jumlah = Inventaris::count();
+        return view('inventaris.index', compact('datas', 'jumlah'));
     }
 
     public function create(Request $request)
     {
-        $waktu = now();
-        return view('inventaris.tambah', compact('waktu'));
+        $bagians = Bagian::get();
+        $kategoris = Kategori::all();
+        return view('inventaris.tambah', compact('bagians', 'kategoris'));
     }
-
 
     public function store(Request $request)
     {
         $request->validate([
             'nama_user' => 'required',
-            'nama_bagian' => 'required',
-            'th_pembelian' => 'required',
+            'bagian_id' => 'required',
+            'kategori_id' => 'required',
             'kode' => 'required',
-            'ram' => 'required',
+            'th_pembelian' => 'required',
+            'memory' => 'required',
             'cpu' => 'required',
-            'merk' => 'required'
+            'merk' => 'required',
+            'posisi' => 'required',
+            'size_monitor' => 'required',
+            'status_id' => 'required',
         ]);
-
         Inventaris::create($request->all());
         return redirect()->route('inventaris.index')->with('success', 'Data berhasil ditambah!');
     }
@@ -52,15 +56,16 @@ class InventarisController extends Controller
     public function edit($id)
     {
         $data = Inventaris::findOrFail($id);
-        return view('inventaris.edit', compact('data'));
+        $bagians = Bagian::all();
+        $kategoris = Kategori::all();
+        return view('inventaris.edit', compact('data', 'bagians', 'kategoris'));
     }
-
 
     public function update(Request $request, $id)
     {
         $data = Inventaris::findOrFail($id);
         $data->update($request->except(['_token']));
-        return redirect('inventaris');
+        return redirect('inventaris/detail/'.$id);
     }
 
     public function destroy($id)
@@ -81,17 +86,15 @@ class InventarisController extends Controller
         return redirect('/inventaris');
     }
 
-
-    //  fungsi unutk meng-eksport data ke dalam file excel (template)
     public function export()
     {
         return Excel::download(new InventarisExport, 'inventaris.xlsx');
     }
 
-    public function cari(Request $request)
+    public function search(Request $request)
     {
-        $cari = $request->cari;
-        $datas = DB::table('inventaris')->where('nama_user', 'like', "%".$cari."%")->paginate();
-        return view('inventaris.index', ['datas' => $datas]);
+        $keyword = $request->search;
+        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->paginate(100);
+        return view('inventaris.index', compact('datas'));
     }
 }

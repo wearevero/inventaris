@@ -11,13 +11,17 @@ return new class extends Migration
         Schema::create('inventaris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_user');
-            $table->string('nama_bagian');
+            $table->foreignId('bagian_id');
             $table->year('th_pembelian')->nullable();
-            $table->string('ram')->nullable();
+            $table->string('memory')->nullable();
             $table->string('cpu')->nullable();
-            $table->string('kode')->nullable("-");
-            $table->string('merk');
-            $table->string('keterangan')->nullable("-");
+            $table->string('kode')->nullable();
+            $table->string('merk')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('posisi')->nullable();
+            $table->string('size_monitor')->nullable();
+            $table->foreignId('kategori_id')->nullable();
+            $table->integer('status_id');
             $table->timestamps();
         });
     }
