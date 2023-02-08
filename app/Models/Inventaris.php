@@ -38,4 +38,9 @@ class Inventaris extends Model
         return $this->belongsTo(Kategori::class);
     }
 
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
 }

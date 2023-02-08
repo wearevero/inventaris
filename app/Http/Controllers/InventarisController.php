@@ -8,6 +8,7 @@ use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
 use App\Models\Bagian;
 use App\Models\Kategori;
+use App\Models\Status;
 
 class InventarisController extends Controller
 {
@@ -23,7 +24,8 @@ class InventarisController extends Controller
     {
         $bagians = Bagian::get();
         $kategoris = Kategori::all();
-        return view('inventaris.tambah', compact('bagians', 'kategoris'));
+        $status = Status::all();
+        return view('inventaris.tambah', compact('bagians', 'kategoris', 'status'));
     }
 
     public function store(Request $request)
@@ -58,7 +60,8 @@ class InventarisController extends Controller
         $data = Inventaris::findOrFail($id);
         $bagians = Bagian::all();
         $kategoris = Kategori::all();
-        return view('inventaris.edit', compact('data', 'bagians', 'kategoris'));
+        $status = Status::all();
+        return view('inventaris.edit', compact('data', 'bagians', 'kategoris', 'status'));
     }
 
     public function update(Request $request, $id)

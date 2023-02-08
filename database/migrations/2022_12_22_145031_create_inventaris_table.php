@@ -10,18 +10,18 @@ return new class extends Migration
     {
         Schema::create('inventaris', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_user');
+            $table->string('nama_user', 100);
             $table->foreignId('bagian_id');
-            $table->year('th_pembelian')->nullable();
-            $table->string('memory')->nullable();
-            $table->string('cpu')->nullable();
-            $table->string('kode')->nullable();
-            $table->string('merk')->nullable();
-            $table->string('keterangan')->nullable();
-            $table->string('posisi')->nullable();
-            $table->string('size_monitor')->nullable();
-            $table->foreignId('kategori_id')->nullable();
-            $table->integer('status_id');
+            $table->integer('th_pembelian', 4)->default( date('Y', strtotime(now())) );
+            $table->string('memory', 15)->default(0);
+            $table->string('cpu', 100)->default('-');
+            $table->string('kode', 10)->default('-');
+            $table->string('merk', 100)->default('-');
+            $table->string('keterangan', 250)->default('-');
+            $table->string('posisi');
+            $table->string('size_monitor', 10)->default('-');
+            $table->foreignId('kategori_id');
+            $table->foreignId('status_id');
             $table->timestamps();
         });
     }

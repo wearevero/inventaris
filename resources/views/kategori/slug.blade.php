@@ -1,4 +1,4 @@
-<x-app-layout title="Index">
+<x-app-layout title="Kategori {{ $datas->kategori->nama }}">
     <div class="px-20 my-10">
         <div class="flex justify-between text-center">
             <div class="flex justify-between items-center text-center">
