@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-oranged text-oranged" />
+                <x-application-logo class="w-20 h-20 fill-vero text-vero" />
             </a>
         </x-slot>
 
@@ -30,17 +30,17 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-oranged shadow-sm focus:ring-oranged dark:focus:ring-oranged dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ml-2 text-sm text-white dark:text-gray-400">{{ __('Ingat aku') }}</span>
+                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-black dark:border-gray-700 text-vero shadow-sm focus:ring-vero dark:focus:ring-vero dark:focus:ring-offset-gray-800" name="remember">
+                    <span class="ml-2 text-sm text-black">{{ __('Ingat aku') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-white font-montreal text-xl hover:text-oranged dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-oranged dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+                    <a class="underline text-white font-montreal text-xl hover:text-vero rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
                         {{ __('Wanna join?') }}
                     </a>
            
-                <x-primary-button class="ml-3 px-4 py-2 uppercase rounded-lg font-montreal hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged active:">
+                <x-primary-button class="ml-3 px-4 py-2 uppercase rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero active:">
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>
