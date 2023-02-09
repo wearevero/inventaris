@@ -1,16 +1,12 @@
 <nav x-data="{ open: false }" class="bg-black/30  text-white backdrop-blur-md dark:bg-gray-800/30 border-b-2 border-white sticky z-10 top-0 dark:border-white">
-    <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                          <x-application-logo class="block animate animate-bounce h-9 w-auto fill-oranged hover:text-gray-200 text-gray-800 dark:text-rose-500" />
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
                 <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Hello') }}
@@ -21,7 +17,7 @@
                         {{ __('Inventaris') }}
                     </x-nav-link>
 
-                    {{-- MASTER --}}
+                    {{-- MASTER DROPDOWN --}}
                     <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
@@ -46,7 +42,7 @@
                         </x-dropdown>
                     </div>
 
-                    {{-- Team --}}
+                    {{-- TEAM SECTION --}}
                     <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.index')">
                         {{ __('meet our team') }}
                     </x-nav-link>

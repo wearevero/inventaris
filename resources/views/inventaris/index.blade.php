@@ -12,10 +12,6 @@
             </form>
         </div>
 
-        @isset($kategori)
-            Kategori : {{ $kategori->id_kategori }}
-        @endisset
-
     <table class="border-separate text-white text-center items-center border-spacing-5 w-full align-middle border-white dark:text-white mx-auto rounded-lg table-auto my-10 border-2 border-solid">
         <thead class="">
             <tr class="font-display tracking-widest" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="bottom-bottom">
@@ -30,19 +26,23 @@
         @foreach ($datas as $data)
             <tr class="items-center tracking-wider text-gray-300 font-montreal flex-row align-middle text-center">
                 <td class="font-basement uppercase">{{ $data->nama_user }}</td>
-                <td class="">{{ $data->bagian->nama }}</td>
-                <td class="">{{ $data->kode }}</td>
-                <td class="">
+                <td>{{ $data->bagian->nama }}</td>
+                <td>{{ $data->kode }}</td>
+                <td>
                     <span>
-                    @if($data->status_id == 1)
-                        <span class="py-1 px-2 rounded-lg bg-green-300 text-black">
-                            Used
-                        </span>
-                    @elseif($data->status_id == 2)
-                        <span class="py-1 px-2 rounded-lg bg-blue-300 text-black">Available</span>
-                    @elseif($data->status_id == 3)
-                        <span class="py-1 px-2 rounded-lg bg-red-300 text-black">Broken</span>
-                    @endif
+                        @if($data->status->id == 1)
+                            <span class="py-1 px-2 rounded-lg bg-green-300 text-black">
+                                Used
+                            </span>
+                        @elseif($data->status->id == 2)
+                            <span class="py-1 px-2 rounded-lg bg-blue-300 text-black">
+                                Available
+                            </span>
+                        @elseif($data->status->id == 3)
+                            <span class="py-1 px-2 rounded-lg bg-red-300 text-black">
+                                Broken
+                            </span>
+                        @endif
                     </span>
                 </td>
                 <td class="flex text-black space-x-2 align-middle font-space items-center">
@@ -53,7 +53,7 @@
                     </button>
                     <button type="submit" class="uppercase rounded-lg font-space hover:bg-green-300 hover:text-white text-white border-4 border-green-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-green-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-green-300">
                         <a href="{{ route('inventaris.edit', $data->id) }}">
-                            Update  
+                            Update
                         </a>
                     </button>
                     <form action="{{ route('inventaris.destroy', $data->id) }}" method="post">

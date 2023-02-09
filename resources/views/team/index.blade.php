@@ -93,7 +93,7 @@
                     I'm a strategic thinker driven by strong instincts with the ability to turn complex problems into elegant, intuitive solutions.
                     <br>
                     I'm the one who send the invoices with a special interest to music, movie, and sadly Mobile Legends. 
-                    <br>
+                    <br><br>
                     Mission accomplished? Hell yeah, I nailed it!
                 </p>
               </div>
@@ -126,35 +126,9 @@
               <p class="mt-4 px-5 leading-relaxed text-white text-2xl -tracking-lg font-montreal">
                   <br>
                   <span class="text-white italic font-basement pb-5 text-4xl">— Hardware Expertise </span>
-                  <br><br>
-                  I'm a strategic thinker driven by strong instincts with the ability to turn complex problems into elegant, intuitive solutions.
-                  <br>
-                  I'm the one who send the invoices with a special interest to music, movie, and sadly Mobile Legends. 
-                  <br>
-                  Mission accomplished? Hell yeah, I nailed it!
               </p>
             </div>
           </details>
-          </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <ul>
-            @foreach ($teams as $t)
-                    <li>Username: {{ $t->username }}</li>   
-            @endforeach
-        </ul>
+        </div>
     </div>
 </x-app-layout>

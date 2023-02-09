@@ -4,7 +4,9 @@
     "description": "An system for managing Veronique's inventaris stuff.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "inventaris",
+        "laravel-inventaris"
     ],
     "license": "MIT",
     "require": {

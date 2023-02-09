@@ -1,7 +1,5 @@
 <x-app-layout title="Edit {{ $data->nama_user }}">
-    <div class="mb-10">
-        {{-- space --}}
-    </div>
+    <div class="mb-10"></div>
     <x-auth-card class="pb-20">
         <x-slot name="logo">
             <a href="/">
@@ -68,7 +66,6 @@
                 <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
             </div>
 
-
             <!-- Merk -->
             <div>
                 <x-input-label for="merk" :value="__('Merk')" />
@@ -76,18 +73,10 @@
                 <x-input-error :messages="$errors->get('merk')" class="mt-2" />
             </div>
 
-            <div>
-                <x-input-label for="keterangan" :value="__('Keterangan')" />
-                <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1 w-full items-start focus:outline-oranged text-left" name="keterangan" value="{{ $data->keterangan }}" rows="4" autofocus placeholder="Taruh keterangan tambahan di sini ya gaes ya...">
-                    {{ $data->keterangan }}
-                </textarea>
-                <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
-            </div>
-
             <!-- POSISI -->
             <div>
                 <x-input-label for="posisi" :value="__('Posisi')" />
-                <select name="posisi" id="posisi" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
+                <select name="posisi" id="posisi" class="mb-3 mt-2 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
                     <option value="{{ $data->bagian->id }}"> {{ $data->bagian->nama }} </option>
                     @foreach($bagians as $bagian)
                     <option value="{{ $bagian->id }}" {{ old('id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
@@ -117,6 +106,14 @@
                     <option value=1>Aktif</option>
                     <option value=0>Non-aktif</option>
                 </select>
+            </div>
+
+            <div>
+                <x-input-label for="keterangan" :value="__('Keterangan')" />
+                <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1s w-full items-start text-left" name="keterangan" value="{{ $data->keterangan }}" rows="4" autofocus placeholder="Taruh keterangan tambahan di sini ya gaes ya...">
+                    {{ $data->keterangan }}
+                </textarea>
+                <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
