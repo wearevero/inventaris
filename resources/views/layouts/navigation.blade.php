@@ -21,7 +21,7 @@
                     <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
-                                <button class="inline-flex items-center tracking-wider px-3 py-2 border-2 border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
+                                <button class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
                                     <div>MASTER</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -32,7 +32,7 @@
                             </x-slot>
                             
                             <x-slot name="content">
-                                <x-dropdown-link class="divide-y text-vero" :href="route('bagian.index')" >
+                                <x-dropdown-link class="divide-y text-black" :href="route('bagian.index')" >
                                     {{ __('Bagian') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('kategori.index')">

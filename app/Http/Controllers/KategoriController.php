@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Inventaris;
 use App\Models\Kategori;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -10,8 +11,9 @@ class KategoriController extends Controller
 
     public function index()
     {
-        $kategoris = Kategori::get();
-        return view('kategori.index', compact('kategoris'));
+        $kategoris = Kategori::all();
+        $status = Status::all();
+        return view('kategori.index', compact('kategoris', 'status'));
     }
 
     public function create()

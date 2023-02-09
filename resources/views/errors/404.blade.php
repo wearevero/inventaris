@@ -37,7 +37,7 @@
       >
         404 — Unavailable
       </h1>
-      <p class="mt-4 font-montreal text-lg tracking-widest text-gray-700">Why show a generic 404 when We can make it sound mysterious? <br> It seems you've found something that used to exist, or you spelled something wrong. <br> We guessing you spelled something wrong. Can you double check that URL?</p>
+      <p class="mt-4 font-montreal text-lg tracking-wide text-gray-700">Why show a generic 404 when We can make it sound mysterious? <br> It seems you've found something that used to exist, or you spelled something wrong. <br> We guessing you spelled something wrong. Can you double check that URL?</p>
     </div>
   </div>
   

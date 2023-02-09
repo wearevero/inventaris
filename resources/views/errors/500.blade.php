@@ -35,7 +35,7 @@
           <h1 class="mt-6 text-2xl font-display font-bold tracking-tight text- sm:text-4xl">
             500 — Server Tired
           </h1>
-          <p class="mt-4 font-montreal text-lg tracking-widest text-gray-700">Our lovely server was down currently.
+          <p class="mt-4 font-montreal text-lg tracking-wide text-gray-700">Our lovely server was down currently.
             <br>
             Its a good time to freshen up and get some fresh air outside.
           </p>
