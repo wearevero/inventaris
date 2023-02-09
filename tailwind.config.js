@@ -26,6 +26,9 @@ module.exports = {
             },
             colors: {
                 oranged: "#FF4500",
+                vero: "#00e0d4",
+                ivory: "#FFFFF0",
+                soft: "#E8E8E8",
             },
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],

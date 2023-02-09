@@ -1,4 +1,4 @@
-<footer aria-label="Site Footer" class="bg-black border-t-2 border-white border-solid lg:grid lg:grid-cols-5">
+<footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-dotted lg:grid lg:grid-cols-5">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
       <img
         data-aos="zoom-in-up"
@@ -11,18 +11,18 @@
   
     <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-10">
       <div class="">
-        <p class="font-montreal mb-3 uppercase text-white text-xl italic" data-aos="fade-right" data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="100">
-          v 1.0.0.1 — beta version release & pre-launching
+        <p class="font-montreal mb-3 uppercase text-black text-xl" data-aos="fade-right" data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="100">
+          v1.0.0.1 — <span class="italic"> beta version release & pre-launching </span  >
         </p>
         <div>
-          <p class="block text-3xl tracking-wide font-display font-bold text-white sm:text-4xl" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-            Veronique hq Engineering Team —  <span class="text-white">we make cool shit that performs ༻ </span>
+          <p class="block text-3xl tracking-wide font-display font-bold text-black sm:text-4xl" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+            Veronique hq Engineering Team —  <span class="text-black">we make cool shit that performs ༻ </span>
           </p>
-          <ul class="mt-8 font-montreal tracking-wide font-semibold space-y-1 text-lg text-white">
+          <ul class="mt-8 font-montreal tracking-wide font-semibold space-y-1 text-lg text-black">
             <li data-aos="fade-top" data-aos-delay="230">{{ date('M / d / Y', strtotime(now())) }} ⨉ Veronique Oro Corp. All rights reserved.</li>
           </ul>
   
-          <ul class="flex text-oranged gap-6 mt-8">
+          <ul class="flex text-vero gap-6 mt-8">
             <li>
               <a
                 href="https://github.com/wearevero"
