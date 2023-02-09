@@ -13,19 +13,8 @@ class Inventaris extends Model
         'status' => 'boolean'
     ];
 
-    protected $fillable = [
-        'nama_user',
-        'bagian_id',
-        'kategori_id',
-        'kode',
-        'th_pembelian',
-        'memory',
-        'cpu',
-        'merk',
-        'posisi',
-        'size_monitor',
-        'status_id',
-        'keterangan'
+    protected $guarded = [
+        'id'
     ];
 
     public function bagian()

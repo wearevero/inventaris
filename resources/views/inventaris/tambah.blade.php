@@ -111,10 +111,10 @@
                     <div>
                         <x-input-label for="status_id" :value="__('Status')" />
                         <select name="status_id" id="status_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-oranged text-white active:outline-none focus:outline-oranged">
-                            <option value="">PILIH STATUS</option>
-                            <option value=1>Used</option>
-                            <option value=2>Available</option>
-                            <option value=3>Broken</option>
+                            <option value="">PILIH POSISI</option>
+                            @foreach($status as $st)
+                                <option value="{{ $st->id }}" {{ old('status_id') == $st->id ? 'selected' : null }}>{{ $st->nama_status }}</option>
+                            @endforeach
                         </select>
                     </div>
  

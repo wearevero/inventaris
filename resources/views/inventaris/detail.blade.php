@@ -12,7 +12,13 @@
                 <li>Merk: <span class="text-oranged">{{ $data->merk }}</span></li>
                 <li>Size Monitor: <span class="text-oranged">{{ $data->size_monitor }}</span></li>
                 <li>Kategori: <span class="text-oranged">{{ $data->kategori->nama }}</span></li>
-                <li>Keterangan: <span class="text-oranged">{{ $data->keterangan }}</span></li>
+                <li>Keterangan: 
+                    @if($data->keterangan == null)
+                        <span class="text-oranged">Tidak Ada Keterangan</span>
+                    @elseif($data->keterangan != null )
+                        <span class="text-oranged">{{ $data->keterangan }}</span>
+                    @endif
+                </li>
                 <li>Current location: <span class="text-oranged">{{ $data->bagian->nama }}</span></li>
                 <li>Current status:
                     <span class="text-oranged">
