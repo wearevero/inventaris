@@ -1,9 +1,5 @@
-<x-guest-layout>
-    <!--
-    Graphic from https://www.opendoodles.com/
--->
-
-<div class="grid h-screen px-4 bg-white place-content-center">
+<x-guest-layout title="404">
+<div class="grid h-screen px-4 bg-ivory place-content-center">
     <div class="text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +33,11 @@
       </svg>
   
       <h1
-        class="mt-6 text-2xl font-display font-bold tracking-tight text-gray-900 sm:text-4xl"
+        class="mt-6 text-2xl font-display font-bold tracking-tight text-black sm:text-4xl"
       >
         404 — Unavailable
       </h1>
-      <p class="mt-4 font-space text-gray-500">Why show a generic 404 when We can make it sound mysterious? <br> It seems you've found something that used to exist, or you spelled something wrong. <br> We guessing you spelled something wrong. Can you double check that URL?</p>
+      <p class="mt-4 font-montreal text-lg tracking-widest text-gray-700">Why show a generic 404 when We can make it sound mysterious? <br> It seems you've found something that used to exist, or you spelled something wrong. <br> We guessing you spelled something wrong. Can you double check that URL?</p>
     </div>
   </div>
   

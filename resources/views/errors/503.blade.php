@@ -1,9 +1,5 @@
-<x-guest-layout>
-    <!--
-    Graphic from https://www.opendoodles.com/
--->
-
-<div class="grid h-screen px-4 bg-white place-content-center">
+<x-guest-layout title="503">
+<div class="grid h-screen px-4 bg-ivory place-content-center">
     <div class="text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,12 +32,10 @@
         </g>
       </svg>
   
-      <h1
-        class="mt-6 text-2xl font-display font-bold tracking-tight text-gray-900 sm:text-4xl"
-      >
-        503 — Server Down
+      <h1 class="mt-6 text-2xl font-display font-bold tracking-tight text- sm:text-4xl">
+        503 — Service Unavailable
       </h1>
-      <p class="mt-4 font-space text-gray-500">Our lovely server was down currently.
+      <p class="mt-4 font-montreal text-lg tracking-widest text-gray-700">Our lovely server was down currently.
         <br>
         Its a good time to freshen up and get some fresh air outside.
       </p>

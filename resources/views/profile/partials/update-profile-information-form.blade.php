@@ -1,7 +1,7 @@
-<section>
+<section class="font-montreal tracking-wide">
     <header>
-        <h2 class="text-lg font-medium text-black">Profile Information</h2>
-        <p class="mt-1 text-sm text-black">Update your account's profile information and email address.</p>
+        <h2 class="text-2xl font-medium text-black">Profile Information</h2>
+        <p class="mt-1 text-lg text-gray-700">Update your account's profile information and email address.</p>
     </header>
 
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
@@ -43,8 +43,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
-
+            <x-primary-button class="inline-flex items-center px-4 py-2 bg-vero border border-transparent rounded-md font-semibold text-md font-montreal text-ivory uppercase tracking-wide hover:bg-vero/30 active:bg-vero focus:outline-none focus:ring-2 focus:ring-vero focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">{{ __('Update Profile') }}</x-primary-button>
             @if (session('status') === 'profile-updated')
                 <p
                     x-data="{ show: true }"

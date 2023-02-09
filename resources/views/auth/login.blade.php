@@ -30,13 +30,13 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-black dark:border-gray-700 text-vero shadow-sm focus:ring-vero dark:focus:ring-vero dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ml-2 text-sm text-black">{{ __('Ingat aku') }}</span>
+                    <input id="remember_me" type="checkbox" class="rounded border-black text-vero shadow-sm focus:ring-vero dark:focus:ring-vero dark:focus:ring-offset-gray-800" name="remember">
+                    <span class="ml-2 text-lg text-gray-700 font-montreal">{{ __('Please, remember me baby!') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-white font-montreal text-xl hover:text-vero rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+                    <a class="underline text-gray-700 font-montreal text-xl hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
                         {{ __('Wanna join?') }}
                     </a>
            

@@ -7,21 +7,21 @@
                 </a>
             </x-slot>
             <div class="z-50">
-                <h1 class="text-center text-white font-basement font-bold text-2xl my-5">
+                <h1 class="text-center text-black font-basement font-bold text-2xl my-5">
                     Import Data
                 </h1>
                 <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="file" class="p-1 text-center items-center rounded-md bg-transparent border border-slate-300 border-dashed" required />
+                    <input type="file" name="file" class="p-1 items-center rounded-md bg-transparent border border-black border-dashed" required />
                     <button type="submit" class="px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">Upload</button>
                 </form>
             </div>
 
-            <hr class="dark:background-white my-10 border-b border-dotted border-vero"/>
+            <hr class="dark:background-white my-10 border-b border-solid border-vero"/>
 
             {{-- Input Manual --}}
             <div class="">
-                <h1 class="text-center font-basement font-bold mb-5 text-white text-2xl">
+                <h1 class="text-center font-basement font-bold mb-5 text-black text-2xl">
                     Input Data
                 </h1>
                 <form method="POST" action="{{ route('inventaris.tambah') }}">
@@ -36,7 +36,7 @@
                     {{-- Bagian --}}
                     <div>
                         <x-input-label for="bagian_id" :value="__('Bagian')" />
-                        <select name="bagian_id" id="bagian_id" class="mb-5 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-white active:outline-none focus:outline-vero">
+                        <select name="bagian_id" id="bagian_id" class="mb-5 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
                             <option value="">PILIH BAGIAN</option>
                             @foreach($bagians as $bagian)
                             <option value="{{ $bagian->id }}" {{ old('bagian_id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
@@ -47,7 +47,7 @@
 
                     <div>
                         <x-input-label for="kategori_id" :value="__('Kategori')" />
-                        <select name="kategori_id" id="kategori_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-white active:outline-none focus:outline-vero">
+                        <select name="kategori_id" id="kategori_id" class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
                             <option value="">PILIH KATEGORI</option>
                             @foreach($kategoris as $kategori)
                             <option value="{{ $kategori->id }}" {{ old('kategori_id') == $kategori->id ? 'selected' : null }}>{{ $kategori->nama }}</option>
@@ -93,7 +93,7 @@
                     {{-- Posisi --}}
                     <div>
                         <x-input-label for="posisi" :value="__('Posisi Item')" />
-                        <select name="posisi" id="posisi" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-white active:outline-none focus:outline-vero">
+                        <select name="posisi" id="posisi" class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
                             <option value="">PILIH POSISI</option>
                             @foreach($bagians as $bagian)
                             <option value="{{ $bagian->id }}" {{ old('bagian_id') == $bagian->id ? 'selected' : null }}>{{ $bagian->nama }}</option>
@@ -110,7 +110,7 @@
 
                     <div>
                         <x-input-label for="status_id" :value="__('Status')" />
-                        <select name="status_id" id="status_id" class="mb-3 mt-1 bg-black border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-white active:outline-none focus:outline-vero">
+                        <select name="status_id" id="status_id" class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
                             <option value="">PILIH STATUS</option>
                             @foreach($status as $st)
                                 <option value="{{ $st->id }}" {{ old('status_id') == $st->id ? 'selected' : null }}>{{ $st->nama_status }}</option>
@@ -121,7 +121,7 @@
                     {{-- Keterangan --}}
                     <div>
                         <x-input-label for="keterangan" :value="__('Keterangan')" />
-                        <textarea id="keterangan" class="bg-black rounded-md text-white font-montreal text-lg mt-1 w-full" name="keterangan" value="{{ old('keterangan') }}" autofocus placeholder="Barang ini blablabla..."></textarea>
+                        <textarea id="keterangan" class="rounded-md text-black font-montreal text-lg mt-1 w-full" name="keterangan" value="{{ old('keterangan') }}" autofocus placeholder="Barang ini blablabla..."></textarea>
                         <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
                     </div>
 
