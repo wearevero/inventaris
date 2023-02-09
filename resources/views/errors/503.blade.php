@@ -32,10 +32,12 @@
         </g>
       </svg>
   
-      <h1 class="mt-6 text-2xl font-display font-bold tracking-tight text- sm:text-4xl">
-        503 — Service Unavailable
-      </h1>
-      <p class="mt-4 font-montreal text-lg tracking-widest text-gray-700">Our lovely server was down currently.
+      <h1
+      class="mt-6 text-2xl font-display font-bold tracking-tight text-black sm:text-4xl"
+    >
+      503 — Maintenance Mode
+    </h1>
+      <p class="mt-4 font-montreal text-lg tracking-wide text-gray-700">Our lovely server was down currently.
         <br>
         Its a good time to freshen up and get some fresh air outside.
       </p>
