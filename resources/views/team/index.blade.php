@@ -128,8 +128,6 @@
                   <span class="text-black italic font-display pb-5 text-3xl">— Hardware Expertise </span>
                     <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
                       <br>
-                      <span class="text-black italic font-display pb-5 text-3xl">— The Excel Killer</span>
-                      <br><br>
                       I'm a strategic thinker driven by strong instincts with the ability to turn complex problems into elegant, intuitive solutions.
                       <br>
                       I'm the one who send the invoices with a special interest to music, movie, and sadly Mobile Legends. 
