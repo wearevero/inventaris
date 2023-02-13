@@ -36,6 +36,7 @@ module.exports = {
                 basement: "BasementGrotesque-Black, sans serif",
                 montreal: "Neue-Montreal-Regular-400, sans-serif",
                 space: "SpaceMono-Regular, serif",
+                silkBold: "Silk-Bold, serif",
             },
             backgroundColor: "#000000",
         },

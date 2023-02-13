@@ -36,6 +36,13 @@
     font-weight: 900;
     font-style: normal;
 }
+@font-face {
+    font-family: "Silk-Bold";
+    src: url("/public/fonts/Silk/Silk-Serif-Black.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+}
 
 ::root {
     background-color: #f9f6ee !important;

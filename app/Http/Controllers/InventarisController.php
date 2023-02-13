@@ -9,15 +9,15 @@ use App\Imports\InventarisImport;
 use App\Models\Bagian;
 use App\Models\Kategori;
 use App\Models\Status;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class InventarisController extends Controller
 {
-
     public function index()
     {
-        $datas = Inventaris::orderBy('id', 'desc')->paginate(10);
+        $datas = Inventaris::orderBy("id", "desc")->paginate(10);
         $jumlah = Inventaris::count();
-        return view('inventaris.index', compact('datas', 'jumlah'));
+        return view("inventaris.index", compact("datas", "jumlah"));
     }
 
     public function create(Request $request)
@@ -25,33 +25,37 @@ class InventarisController extends Controller
         $bagians = Bagian::get();
         $kategoris = Kategori::all();
         $status = Status::all();
-        return view('inventaris.tambah', compact('bagians', 'kategoris', 'status'));
+        return view(
+            "inventaris.tambah",
+            compact("bagians", "kategoris", "status")
+        );
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama_user' => 'required',
-            'bagian_id' => 'required',
-            'kategori_id' => 'required',
-            'kode' => 'required',
-            'th_pembelian' => 'required',
-            'memory' => 'required',
-            'cpu' => 'required',
-            'merk' => 'required',
-            'posisi' => 'required',
-            'size_monitor' => 'required',
-            'status_id' => 'required',
+            "nama_user" => "required",
+            "bagian_id" => "required",
+            "kategori_id" => "required",
+            "kode" => "required",
+            "th_pembelian" => "required",
+            "memory" => "required",
+            "cpu" => "required",
+            "merk" => "required",
+            "posisi" => "required",
+            "size_monitor" => "required",
+            "status_id" => "required",
         ]);
         Inventaris::create($request->all());
-        return redirect()->route('inventaris.index')->with('success', 'Data berhasil ditambah!');
-    }
 
+        Alert::success("Success Title", "Success Message");
+        return redirect()->route("inventaris.index");
+    }
 
     public function show($id)
     {
-        return view('inventaris.detail', [
-            'data' => Inventaris::findOrFail($id)
+        return view("inventaris.detail", [
+            "data" => Inventaris::findOrFail($id),
         ]);
     }
 
@@ -61,43 +65,49 @@ class InventarisController extends Controller
         $bagians = Bagian::all();
         $kategoris = Kategori::all();
         $status = Status::all();
-        return view('inventaris.edit', compact('data', 'bagians', 'kategoris', 'status'));
+
+        return view(
+            "inventaris.edit",
+            compact("data", "bagians", "kategoris", "status")
+        )->with("Success", "Data telah diubah");
     }
 
     public function update(Request $request, $id)
     {
         $data = Inventaris::findOrFail($id);
-        $data->update($request->except(['_token']));
-        return redirect('inventaris/detail/'.$id);
+        $data->update($request->except(["_token"]));
+        return redirect("inventaris/detail/" . $id);
     }
 
     public function destroy($id)
     {
         $data = Inventaris::find($id);
         $data->delete();
-        return redirect('/inventaris');
+        return redirect("/inventaris");
     }
 
     public function importData()
     {
-        return view('inventaris.import');
+        return view("inventaris.import");
     }
 
     public function import()
     {
-        Excel::import(new InventarisImport, request()->file('file'));
-        return redirect('/inventaris');
+        Excel::import(new InventarisImport(), request()->file("file"));
+        return redirect("/inventaris");
     }
 
     public function export()
     {
-        return Excel::download(new InventarisExport, 'inventaris.xlsx');
+        return Excel::download(new InventarisExport(), "inventaris.xlsx");
     }
 
     public function search(Request $request)
     {
         $keyword = $request->search;
-        $datas = Inventaris::where('nama_user', 'like', '%' . $keyword . '%')->orWhere('kode', 'like', '%' . $keyword . '%')->paginate(100);
-        return view('inventaris.index', compact('datas'));
+        $datas = Inventaris::where("nama_user", "like", "%" . $keyword . "%")
+            ->orWhere("kode", "like", "%" . $keyword . "%")
+            ->paginate(100);
+        return view("inventaris.index", compact("datas"));
     }
 }
