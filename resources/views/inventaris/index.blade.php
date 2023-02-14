@@ -17,6 +17,19 @@
             </form>
         </div>
 
+        {{-- Filter checkbox --}}
+        <div class="px-5 mt-10">
+            <h3 class="text-2xl uppercase font-basement">testing filter Bagian</h3>
+            @foreach ($bagians as $bagian)
+                <input name="bagian" type="checkbox" value="{{ $bagian->id }}"
+                    @if (in_array($bagian->id, explode(',', request()->input('filter.brand')))) checked @endif />
+                {{ $bagian->nama }}
+                <br>
+            @endforeach
+            <button type="button" id="filter" class="bg-yellow-300 font-montreal rounded-lg p-3">Filter</button>
+        </div>
+        {{-- End filter checkbox --}}
+
         <table
             class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-vero mx-auto rounded-md table-auto my-10 border-2 border-solid">
             <thead class="">

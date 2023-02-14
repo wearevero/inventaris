@@ -22,7 +22,6 @@ use Laravel\Octane\Listeners\StopWorkerIfNecessary;
 use Laravel\Octane\Octane;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Octane Server
@@ -36,7 +35,7 @@ return [
     |
     */
 
-    'server' => env('OCTANE_SERVER', 'roadrunner'),
+    "server" => env("OCTANE_SERVER", "roadrunner"),
 
     /*
     |--------------------------------------------------------------------------
@@ -49,7 +48,7 @@ return [
     |
     */
 
-    'https' => env('OCTANE_HTTPS', false),
+    "https" => env("OCTANE_HTTPS", true),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +61,7 @@ return [
     |
     */
 
-    'listeners' => [
+    "listeners" => [
         WorkerStarting::class => [
             EnsureUploadedFilesAreValid::class,
             EnsureUploadedFilesCanBeMoved::class,
@@ -127,11 +126,9 @@ return [
     |
     */
 
-    'warm' => [
-        ...Octane::defaultServicesToWarm(),
-    ],
+    "warm" => [...Octane::defaultServicesToWarm()],
 
-    'flush' => [
+    "flush" => [
         //
     ],
 
@@ -146,9 +143,9 @@ return [
     |
     */
 
-    'cache' => [
-        'rows' => 1000,
-        'bytes' => 10000,
+    "cache" => [
+        "rows" => 1000,
+        "bytes" => 10000,
     ],
 
     /*
@@ -162,10 +159,10 @@ return [
     |
     */
 
-    'tables' => [
-        'example:1000' => [
-            'name' => 'string:1000',
-            'votes' => 'int',
+    "tables" => [
+        "example:1000" => [
+            "name" => "string:1000",
+            "votes" => "int",
         ],
     ],
 
@@ -180,16 +177,16 @@ return [
     |
     */
 
-    'watch' => [
-        'app',
-        'bootstrap',
-        'config',
-        'database',
-        'public/**/*.php',
-        'resources/**/*.php',
-        'routes',
-        'composer.lock',
-        '.env',
+    "watch" => [
+        "app",
+        "bootstrap",
+        "config",
+        "database",
+        "public/**/*.php",
+        "resources/**/*.php",
+        "routes",
+        "composer.lock",
+        ".env",
     ],
 
     /*
@@ -203,7 +200,7 @@ return [
     |
     */
 
-    'garbage' => 50,
+    "garbage" => 50,
 
     /*
     |--------------------------------------------------------------------------
@@ -216,6 +213,5 @@ return [
     |
     */
 
-    'max_execution_time' => 30,
-
+    "max_execution_time" => 30,
 ];

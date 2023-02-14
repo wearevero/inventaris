@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ url('/favicon.png') }}" type="image/x-icon">
     <title>{{ $title == config('app.name') ? $title : config('app.name') . ' — ' . $title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -29,8 +31,9 @@
         </main>
         @include('layouts.footer')
     </div>
-
     {{-- script section --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="{{ $cdn ?? asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({

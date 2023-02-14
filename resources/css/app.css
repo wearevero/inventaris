@@ -45,5 +45,10 @@
 }
 
 ::root {
-    background-color: #f9f6ee !important;
+    background-image: linear-gradient(
+        to top,
+        #fdcbf1 0%,
+        #fdcbf1 1%,
+        #e6dee9 100%
+    ) !important;
 }

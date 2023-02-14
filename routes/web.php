@@ -7,8 +7,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TeamController;
-use App\Models\Status;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 // Master kategori route
 Route::get("/kategori", [KategoriController::class])->name("kategori.index");
@@ -109,5 +109,8 @@ Route::controller(TeamController::class)
         Route::get("/", "index")->name("team.index");
         Route::get("/tambah", "create")->name("team.tambah");
     });
+
+// check the health of the system
+Route::get("health", HealthCheckResultsController::class);
 
 require __DIR__ . "/auth.php";

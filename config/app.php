@@ -62,12 +62,14 @@ return [
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        App\Providers\HealthServiceProvider::class,
     ],
 
     "aliases" => Facade::defaultAliases()
         ->merge([
             "Excel" => Maatwebsite\Excel\Facades\Excel::class,
             "Alert" => RealRashid\SweetAlert\Facades\Alert::class,
+            "Health" => App\Providers\HealthServiceProvider::class,
         ])
         ->toArray(),
 ];

@@ -9,15 +9,22 @@ use App\Imports\InventarisImport;
 use App\Models\Bagian;
 use App\Models\Kategori;
 use App\Models\Status;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class InventarisController extends Controller
 {
     public function index()
     {
-        $datas = Inventaris::orderBy("id", "desc")->paginate(10);
-        $jumlah = Inventaris::count();
-        return view("inventaris.index", compact("datas", "jumlah"));
+        $datas = Inventaris::select(
+            "id",
+            "nama_user",
+            "bagian_id",
+            "kode",
+            "status_id"
+        )
+            ->orderBy("id", "desc")
+            ->paginate(5);
+        $bagians = Bagian::get();
+        return view("inventaris.index", compact("datas", "bagians"));
     }
 
     public function create(Request $request)
@@ -47,8 +54,6 @@ class InventarisController extends Controller
             "status_id" => "required",
         ]);
         Inventaris::create($request->all());
-
-        Alert::success("Success Title", "Success Message");
         return redirect()->route("inventaris.index");
     }
 

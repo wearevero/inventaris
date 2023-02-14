@@ -132,5 +132,12 @@
                 </x-primary-button>
             </div>
         </form>
+        @if (alert()->ready())
+            <script>
+                swal({
+                    title: "{!! alert()->message() !!}"
+                });
+            </script>
+        @endif
     </x-auth-card>
 </x-app-layout>
