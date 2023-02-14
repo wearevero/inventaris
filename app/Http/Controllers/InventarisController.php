@@ -14,6 +14,8 @@ class InventarisController extends Controller
 {
     public function index()
     {
+        $bgns = Bagian::get();
+        $ktgr = Kategori::get();
         $datas = Inventaris::select(
             "id",
             "nama_user",
@@ -23,8 +25,7 @@ class InventarisController extends Controller
         )
             ->orderBy("id", "desc")
             ->paginate(5);
-        $bagians = Bagian::get();
-        return view("inventaris.index", compact("datas", "bagians"));
+        return view("inventaris.index", compact("datas", "bgns", "ktgr"));
     }
 
     public function create(Request $request)

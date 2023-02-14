@@ -111,6 +111,5 @@ Route::controller(TeamController::class)
     });
 
 // check the health of the system
-Route::get("health", HealthCheckResultsController::class);
 
 require __DIR__ . "/auth.php";

@@ -16,6 +16,7 @@
         "laravel/octane": "^1.4",
         "laravel/sanctum": "^3.0",
         "laravel/scout": "^9.8",
+        "laravel/telescope": "^4.13",
         "laravel/tinker": "^2.7",
         "maatwebsite/excel": "^3.1",
         "psr/simple-cache": "^1.0",
@@ -62,7 +63,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/telescope"
+            ]
         }
     },
     "config": {

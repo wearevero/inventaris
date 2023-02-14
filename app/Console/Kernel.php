@@ -11,6 +11,7 @@ class Kernel extends ConsoleKernel
         $schedule
             ->command(\Spatie\Health\Commands\RunHealthChecksCommand::class)
             ->everyMinute();
+        $schedule->command("telescope:prune")->daily();
     }
 
     protected function commands()

@@ -19,14 +19,49 @@
 
         {{-- Filter checkbox --}}
         <div class="px-5 mt-10">
-            <h3 class="text-2xl uppercase font-basement">testing filter Bagian</h3>
-            @foreach ($bagians as $bagian)
-                <input name="bagian" type="checkbox" value="{{ $bagian->id }}"
-                    @if (in_array($bagian->id, explode(',', request()->input('filter.brand')))) checked @endif />
-                {{ $bagian->nama }}
-                <br>
-            @endforeach
-            <button type="button" id="filter" class="bg-yellow-300 font-montreal rounded-lg p-3">Filter</button>
+            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Bagian</h3>
+            <fieldset class="flex flex-wrap gap-3">
+                @foreach ($bgns as $bagian)
+                    <div>
+                        <input type="checkbox" name="bagian" id="{{ $bagian->id }}"
+                            class="peer hidden [&:checked_+_label_svg]:block" />
+                        <label for="{{ $bagian->id }}"
+                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white">
+                            <svg class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p class="text-sm font-medium">{{ $bagian->nama }}</p>
+                        </label>
+                    </div>
+                @endforeach
+            </fieldset>
+
+            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Ksategori</h3>
+            <fieldset class="flex flex-wrap gap-3">
+                @foreach ($ktgr as $kt)
+                    <div>
+                        <input type="checkbox" name="kategori" id="{{ $kt->id }}"
+                            class="peer hidden [&:checked_+_label_svg]:block" />
+                        <label for="{{ $kt->id }}"
+                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white">
+                            <svg class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p class="text-sm font-medium">{{ $kt->nama }}</p>
+                        </label>
+                    </div>
+                @endforeach
+            </fieldset>
+
+            <button value="cari"
+                class="uppercase rounded-lg mt-2 font-montreal mx-3 text-sm tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
+                type="submit">Cari</button>
         </div>
         {{-- End filter checkbox --}}
 

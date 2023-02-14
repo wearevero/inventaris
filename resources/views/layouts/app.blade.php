@@ -40,6 +40,11 @@
             "once": true
         });
     </script>
+    {{-- <script>
+        function getIds(checkboxName) {
+            let checkBoxes = document.getElementsByName(checkboxNames);
+        }
+    </script> --}}
 </body>
 
 </html>

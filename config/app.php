@@ -5,17 +5,11 @@ use RealRashid\SweetAlert\SweetAlertServiceProvider;
 
 return [
     "name" => env("APP_NAME", "Inventaris"),
-
     "env" => env("APP_ENV", "production"),
-
     "debug" => (bool) env("APP_DEBUG", false),
-
     "url" => env("APP_URL", "http://localhost"),
-
     "asset_url" => env("ASSET_URL"),
-
     "timezone" => env("APP_TIMEZONE", "Asia/Jakarta"),
-
     "locale" => "id",
 
     "fallback_locale" => "en",
@@ -60,6 +54,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         App\Providers\HealthServiceProvider::class,
