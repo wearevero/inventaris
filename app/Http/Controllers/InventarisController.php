@@ -98,13 +98,13 @@ class InventarisController extends Controller
 
     public function import()
     {
-        Excel::import(new InventarisImport(), request()->file("file"));
+        Excel::import(new InventarisImport, request()->file("file"));
         return redirect("/inventaris");
     }
 
     public function export()
     {
-        return Excel::download(new InventarisExport(), "inventaris.xlsx");
+        return Excel::download(new InventarisExport, "inventaris.xlsx");
     }
 
     public function search(Request $request)

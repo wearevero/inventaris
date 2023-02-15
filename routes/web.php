@@ -65,7 +65,6 @@ Route::controller(InventarisController::class)
         Route::delete("/destroy/{id}", "destroy")->name("inventaris.destroy");
         Route::get("/edit/{id}", "edit")->name("inventaris.edit");
         Route::put("/edit/{id}", "update")->name("inventaris.update");
-        Route::get("/import", "importData")->name("inventaris.importData");
         Route::post("/import", "import")->name("inventaris.import");
         Route::get("/export", "export")->name("inventaris.export");
         Route::get("/cari", "cari")->name("inventaris.cari");

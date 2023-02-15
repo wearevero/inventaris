@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\DatabaseTableSizeCheck;
@@ -12,7 +11,6 @@ use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\PingCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Facades\Health;
-use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
 class AppServiceProvider extends ServiceProvider
 {

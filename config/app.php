@@ -5,24 +5,18 @@ use RealRashid\SweetAlert\SweetAlertServiceProvider;
 
 return [
     "name" => env("APP_NAME", "Inventaris"),
-    "env" => env("APP_ENV", "production"),
+    "env" => env("APP_ENV", "local"),
     "debug" => (bool) env("APP_DEBUG", true),
     "url" => env("APP_URL", "http://localhost"),
     "asset_url" => env("ASSET_URL"),
     "timezone" => env("APP_TIMEZONE", "Asia/Jakarta"),
     "locale" => "id",
-
     "fallback_locale" => "en",
-
     "faker_locale" => "en_US",
-
     "key" => env("APP_KEY"),
-
     "cipher" => "AES-256-CBC",
-
     "maintenance" => [
         "driver" => "file",
-        // 'store'  => 'redis',
     ],
 
     "providers" => [
@@ -48,7 +42,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,

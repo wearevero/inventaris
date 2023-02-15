@@ -10,8 +10,8 @@
                 <h1 class="text-center text-black font-basement font-bold text-2xl my-5">
                     Import Data
                 </h1>
-                <form method="POST" class="flex space-x-5" action="{{ route('inventaris.import') }}"
-                    enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data" class="flex space-x-5"
+                    action="{{ route('inventaris.import') }}">
                     @csrf
                     <input type="file" name="file"
                         class="p-1 items-center rounded-md bg-transparent border border-black border-dashed" required />
