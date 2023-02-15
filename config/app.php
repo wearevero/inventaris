@@ -6,7 +6,7 @@ use RealRashid\SweetAlert\SweetAlertServiceProvider;
 return [
     "name" => env("APP_NAME", "Inventaris"),
     "env" => env("APP_ENV", "production"),
-    "debug" => (bool) env("APP_DEBUG", false),
+    "debug" => (bool) env("APP_DEBUG", true),
     "url" => env("APP_URL", "http://localhost"),
     "asset_url" => env("ASSET_URL"),
     "timezone" => env("APP_TIMEZONE", "Asia/Jakarta"),

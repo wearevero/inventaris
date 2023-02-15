@@ -1,18 +1,44 @@
 <?php
 
 namespace App\Providers;
+
 use Illuminate\Support\ServiceProvider;
+use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
+use Spatie\Health\Checks\Checks\CacheCheck;
+use Spatie\Health\Checks\Checks\DatabaseCheck;
+use Spatie\Health\Checks\Checks\DatabaseTableSizeCheck;
+use Spatie\Health\Checks\Checks\DebugModeCheck;
+use Spatie\Health\Checks\Checks\OptimizedAppCheck;
+use Spatie\Health\Checks\Checks\PingCheck;
+use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
+use Spatie\Health\Facades\Health;
+use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        if ($this->app->environment("local")) {
-            $this->app->register(
-                \Laravel\Telescope\TelescopeServiceProvider::class
-            );
-            $this->app->register(TelescopeServiceProvider::class);
-        }
+        Health::checks([
+            UsedDiskSpaceCheck::new(),
+            DatabaseCheck::new(),
+            // PingCheck::new()
+            //     ->url("127.0.0.1:8000")
+            //     ->timeout(2)
+            //     ->name("development preview"),
+            PingCheck::new()
+                ->url("10.10.10.184:8000")
+                ->timeout(2)
+                ->name("Production preview"),
+            OptimizedAppCheck::new()
+                ->checkConfig()
+                ->checkRoutes(),
+            DebugModeCheck::new(),
+            CacheCheck::new(),
+            DatabaseTableSizeCheck::new()->table(
+                "inventaris",
+                maxSizeInMb: 2_000
+            ),
+        ]);
     }
 
     public function boot()

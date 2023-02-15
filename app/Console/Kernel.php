@@ -8,6 +8,7 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command("test:crone")->everyMinute();
         $schedule
             ->command(\Spatie\Health\Commands\RunHealthChecksCommand::class)
             ->everyMinute();

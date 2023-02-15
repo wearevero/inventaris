@@ -19,41 +19,21 @@
 
         {{-- Filter checkbox --}}
         <div class="px-5 mt-10">
-            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Bagian</h3>
+            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Status</h3>
             <fieldset class="flex flex-wrap gap-3">
-                @foreach ($bgns as $bagian)
+                @foreach ($status as $st)
                     <div>
-                        <input type="checkbox" name="bagian" id="{{ $bagian->id }}"
+                        <input type="checkbox" name="bagian" id="{{ $st->id }}"
                             class="peer hidden [&:checked_+_label_svg]:block" />
-                        <label for="{{ $bagian->id }}"
-                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white">
+                        <label for="{{ $st->id }}"
+                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-vero peer-checked:bg-vero peer-checked:text-white">
                             <svg class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <p class="text-sm font-medium">{{ $bagian->nama }}</p>
-                        </label>
-                    </div>
-                @endforeach
-            </fieldset>
-
-            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Ksategori</h3>
-            <fieldset class="flex flex-wrap gap-3">
-                @foreach ($ktgr as $kt)
-                    <div>
-                        <input type="checkbox" name="kategori" id="{{ $kt->id }}"
-                            class="peer hidden [&:checked_+_label_svg]:block" />
-                        <label for="{{ $kt->id }}"
-                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white">
-                            <svg class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <p class="text-sm font-medium">{{ $kt->nama }}</p>
+                            <p class="text-sm font-medium">{{ $st->nama_status }}</p>
                         </label>
                     </div>
                 @endforeach

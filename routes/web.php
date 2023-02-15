@@ -10,8 +10,20 @@ use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
-// Master kategori route
+// The health path
+Route::get("health?fresh", HealthCheckResultsController::class, "__invoke");
+
+// Master Kategori path
 Route::get("/kategori", [KategoriController::class])->name("kategori.index");
+Route::get("/bagian/{bagian:slug}", [BagianController::class, "show_bagian"]);
+
+// Master Bagian path
+Route::controller(BagianController::class)
+    ->prefix("bagian")
+    ->middleware("auth")
+    ->group(function () {
+        Route::get("/", "index")->name("bagian.index");
+    });
 
 Route::get("/", function () {
     return view("auth.login");
@@ -28,7 +40,7 @@ Route::resource("chirps", ChirpController::class)
     ->only(["index", "store", "edit", "update", "destroy"])
     ->middleware(["auth", "verified"]);
 
-// Authentication Route
+// Profile path
 Route::middleware("auth")->group(function () {
     Route::get("/profile", [ProfileController::class, "edit"])->name(
         "profile.edit"
@@ -41,15 +53,7 @@ Route::middleware("auth")->group(function () {
     );
 });
 
-// Bagian Route
-Route::controller(BagianController::class)
-    ->prefix("bagian")
-    ->middleware("auth")
-    ->group(function () {
-        Route::get("/", "index")->name("bagian.index");
-    });
-
-// Inventaris Route
+// Inventaris path
 Route::controller(InventarisController::class)
     ->prefix("inventaris")
     ->middleware("auth")
@@ -76,9 +80,6 @@ Route::get("/kategori/{kategori:slug}", [
     KategoriController::class,
     "show_kategori",
 ]);
-
-// Master kategori route
-Route::get("/bagian/{bagian:slug}", [BagianController::class, "show_bagian"]);
 
 // Master bagian route
 Route::controller(BagianController::class)
@@ -109,7 +110,5 @@ Route::controller(TeamController::class)
         Route::get("/", "index")->name("team.index");
         Route::get("/tambah", "create")->name("team.tambah");
     });
-
-// check the health of the system
 
 require __DIR__ . "/auth.php";
