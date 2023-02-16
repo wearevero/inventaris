@@ -1,6 +1,6 @@
 <x-app-layout title="Meet Our Team">
     <div class="my-20 px-5 mx-auto">
-        <img src={{ asset('/basement.jpeg') }} class="h-70 w-100 mb-10 object-cover text-center rounded-lg mx-auto" />
+        <img src={{ asset('/basement.jpeg') }} class="h-70 grayscale w-100 mb-10 object-cover text-center rounded-lg mx-auto" />
         <h1 class="text-6xl font-display text-vero tracking-wide">
             we believe, every piece of jewerly tells a radiant story.
         </h1>

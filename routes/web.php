@@ -13,25 +13,8 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 // The health path
 Route::get("health?fresh", HealthCheckResultsController::class, "__invoke");
 
-// Master Kategori path
-Route::get("/kategori", [KategoriController::class])->name("kategori.index");
-Route::get("/bagian/{bagian:slug}", [BagianController::class, "show_bagian"]);
-
-// Master Bagian path
-Route::controller(BagianController::class)
-    ->prefix("bagian")
-    ->middleware("auth")
-    ->group(function () {
-        Route::get("/", "index")->name("bagian.index");
-    });
-
-Route::get("/", function () {
-    return view("auth.login");
-});
-
-Route::get("/dashboard", function () {
-    return view("dashboard");
-})
+Route::view("/", 'auth.login');
+Route::view("/dashboard", 'dashboard')
     ->middleware(["auth", "verified"])
     ->name("dashboard");
 
@@ -59,8 +42,8 @@ Route::controller(InventarisController::class)
     ->middleware("auth")
     ->group(function () {
         Route::get("/", "index")->name("inventaris.index");
-        Route::get("/tambah", "create")->name("inventaris.tambah");
-        Route::post("/tambah", "store")->name("inventaris.store");
+        Route::get("/create", "create")->name("inventaris.create");
+        Route::post("/create", "store")->name("inventaris.store");
         Route::get("/detail/{id}", "show")->name("inventaris.show");
         Route::delete("/destroy/{id}", "destroy")->name("inventaris.destroy");
         Route::get("/edit/{id}", "edit")->name("inventaris.edit");
@@ -71,14 +54,32 @@ Route::controller(InventarisController::class)
         Route::get("/search", "search")->name("inventaris.search");
     });
 
-// Master kategori route
-Route::get("/kategori", [KategoriController::class, "index"])->name(
-    "kategori.index"
-);
-Route::get("/kategori/{kategori:slug}", [
-    KategoriController::class,
-    "show_kategori",
-]);
+// Bagian route
+Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group( function() {
+    Route::get('/', 'index')->name('bagian.index');
+    Route::get('/create', 'create')->name('bagian.create');
+    Route::post('/create', 'store')->name('bagian.store');
+    Route::get('/bagian/{bagian:slug}', 'show_bagian')->name('bagian.slug');
+});
+
+// Kategori route
+Route::controller(KategoriController::class)->prefix('kategori')->middleware('auth')->group( function() {
+    Route::get('/', 'index')->name('kategori.index');
+    Route::get('/create', 'create')->name('kategori.crate');
+    Route::post('/create', 'store')->name('kategori.store');
+    Route::get("/kategori/{kategori:slug}", [
+        KategoriController::class,
+        "show_kategori",
+    ])->name('kategori.slug');
+});
+
+// Status route
+Route::controller(StatusController::class)->prefix('status')->middleware('auth')->group(function () {
+    Route::get('/', 'index')->name('status.index');
+    Route::get('/create', 'create')->name('status.create');
+    Route::get('/create', 'store')->name('status.store');
+    Route::get('/{status:slug}', 'show_status')->name('status.slug');
+});
 
 // Master bagian route
 Route::controller(BagianController::class)
@@ -92,13 +93,6 @@ Route::controller(BagianController::class)
         Route::put("/edit", "update")->name("bagian.update");
         Route::post("/import", "import")->name("bagian.import");
         Route::get("/export", "export")->name("bagian.export");
-    });
-
-Route::controller(StatusController::class)
-    ->prefix("status")
-    ->middleware("auth")
-    ->group(function () {
-        Route::get("/", "index")->name("status.index");
     });
 
 // Team page controller

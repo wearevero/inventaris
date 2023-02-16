@@ -1,7 +1,7 @@
 <footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-dotted lg:grid lg:grid-cols-5">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
         <img data-aos="zoom-in-up" data-aos-delay="150" src="{{ asset('/basement.jpeg') }}" alt=""
-            class="absolute inset-0 object-cover w-full h-full" />
+            class="absolute grayscale inset-0 object-cover w-full h-full" />
     </div>
 
     <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-10">

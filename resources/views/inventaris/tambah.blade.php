@@ -1,9 +1,9 @@
-<x-app-layout title="Tambah Data" class="mt-20">
+<x-app-layout title="Tambah Barang" class="mt-20">
     <x-auth-card class="pb-10">
         <div class="">
             <x-slot name="logo">
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current mt-10 text-white" />
+                    <x-application-logo class="w-20 h-20 fill-current mt-10 text-vero" />
                 </a>
             </x-slot>
             <div class="z-50">
@@ -27,7 +27,7 @@
                 <h1 class="text-center font-basement font-bold mb-5 text-black text-2xl">
                     Input Data
                 </h1>
-                <form method="POST" action="{{ route('inventaris.tambah') }}">
+                <form method="POST" action="{{ route('inventaris.store') }}">
                     @csrf
                     {{-- User --}}
                     <div>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="Tambah Bagian">
     <div class="-mt-20">
         <x-auth-card>
             <x-slot name="logo">
@@ -18,11 +18,11 @@
                         class="p-1 text-center items-center rounded-md bg-transparent border border-slate-300 border-dashed"
                         required />
                     <button type="submit"
-                        class="px-4 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[6px_6px_0_0] shadow-oranged text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">Upload</button>
+                        class="px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">Upload</button>
                 </form>
             </div>
 
-            <hr class="dark:background-white mt-10 mb-5 border-b border-dotted border-oranged" />
+            <hr class="dark:background-white mt-10 mb-5 border-b border-dotted border-vero" />
 
             {{-- Input Manual --}}
             <div class="">
@@ -40,14 +40,14 @@
                     {{-- slug --}}
                     <div>
                         <x-input-label for="slug" :value="__('Slug Bagian')" />
-                        <x-text-input id="slug" class="block mt-1 w-full" type="text" name="slug"
-                            :value="old('slug')" placeholder="cad-room" required autofocus />
+                        <x-text-input id="slug" class="block mt-1 w-full lowercase" type="text" name="slug"
+                            :value="old('slug')" placeholder="veronique-hq" required autofocus />
                         <x-input-error :messages="$errors->get('slug')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center justify-end mt-8">
                         <x-primary-button
-                            class="ml-4 px-2 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
+                            class="ml-4 px-2 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
                             {{ __('Tambah Bagian') }}
                         </x-primary-button>
                     </div>

@@ -3,7 +3,7 @@
         <x-auth-card>
             <x-slot name="logo">
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current mt-10 text-white" />
+                    <x-application-logo class="w-20 h-20 fill-current mt-10 text-vero" />
                 </a>
             </x-slot>
 
@@ -30,7 +30,7 @@
 
                     <div class="flex items-center justify-end mt-8">
                         <x-primary-button
-                            class="ml-4 px-2 uppercase rounded-lg font-space hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged">
+                            class="ml-4 px-2 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
                             {{ __('Tambah Kategori') }}
                         </x-primary-button>
                     </div>
