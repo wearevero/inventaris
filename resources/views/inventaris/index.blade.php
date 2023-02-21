@@ -1,80 +1,70 @@
 <x-app-layout title="All Data">
     <div class="px-20 my-10">
-        <h1 class="text-center text-3xl font-basement uppercase">All Data</h1>
         <div class="flex justify-between text-center">
             <button
-                class="px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
+                class="px-1 uppercase rounded-lg font-space hover:bg-rose-300 hover:text-white border-4 border-rose-300 bg-white font-bold shadow-[4px_4px_0_0] shadow-rose-300 text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
                 <a href="{{ route('inventaris.export') }}">
                     Export
                 </a>
             </button>
-            <form method="GET" action="{{ route('inventaris.search') }}">
+
+            {{--  --}}
+            <form action="/inventaris" method="GET">
+                @csrf
+                <input name="nama_user" type="text" placeholder="John Doe" value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}" class="p-3 border-yellow-300 text-black focus:border-yellow-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
+    
+                {{-- Nama --}}
+                <select name="bagian_id" class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                    <option value="">BAGIAN</option>
+                    @foreach ($bagians as $dt)
+                        <option value="{{ $dt->id }}"
+                            {{ old('bagian_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
+                        </option>
+                    @endforeach
+                </select>
+    
+                {{-- Status --}}
+                <select name="status_id" class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                    <option value="">STATUS</option>
+                    @foreach ($status as $dt)
+                        <option value="{{ $dt->id }}" class=""
+                            {{ old('status_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama_status }}
+                        </option>
+                    @endforeach
+                </select>
+    
+                {{-- Kategori --}}
+                <select name="kategori_id" class="mb-3 mt-1 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300 bg-yellow-300">
+                    <option>KATEGORI</option>
+                        @foreach ($kategoris as $dt)
+                            <option value="{{ $dt->id }}"
+                                {{ old('kategori_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
+                            </option>
+                        @endforeach
+                </select>
+    
+                <button value="search"
+                    class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-rose-300 hover:text-white border-4 border-rose-300 p-3 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300"
+                    type="submit">
+                    Search
+                </button>
+            </form>
+            {{--  --}}
+
+            {{-- <form method="GET" action="{{ route('inventaris.search') }}">
                 <input type="text" name="search" id="search" value="{{ old('search') }}"
                     class="p-4 border-vero text-black focus:border-vero tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-transparent uppercase"
                     placeholder="Cari data di sini...">
                 <button value="search"
                     class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
                     type="submit">Search</button>
-            </form>
+            </form> --}}
         </div>
 
-        {{-- Testing filter search --}}
-        <form action="/inventaris" method="GET">
-            @csrf
-            <input name="nama_user" type="text" placeholder="John Doe" value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}" class="p-4 border-vero text-black focus:border-vero tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-transparent uppercase" />
-
-            {{-- Nama --}}
-            <select name="bagian_id" class="border-vero p-4 rounded-lg text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
-                <option value="">PILIH BAGIAN</option>
-                @foreach ($datas as $dt)
-                    <option value="{{ $dt->bagian->id }}"
-                        {{ old('bagian_id') == $dt->bagian->id ? 'selected' : null }}>{{ $dt->bagian->nama }}
-                    </option>
-                @endforeach
-            </select>
-
-            {{-- Status --}}
-            <select name="status_id">
-                <option value="">PILIH STATUS</option>
-                @foreach ($datas as $dt)
-                    <option value="{{ $dt->status->id }}"
-                        {{ old('status_id') == $dt->status->id ? 'selected' : null }}>{{ $dt->status->nama_status }}
-                    </option>
-                @endforeach
-            </select>
-
-            {{-- Kategori --}}
-            <select name="kategori_id">
-                <option value="{{ old('kategori_id') }}">PILIH KATEGORI</option>
-                    @foreach ($kategoris as $dt)
-                        <option value="{{ $dt->id }}"
-                            {{ old($dt->id) == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
-                        </option>
-                    @endforeach
-            </select>
-
-            <button value="search"
-                class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
-                type="submit">
-                Search
-            </button>
-        </form>
-        {{--  --}}
-
-        @foreach($users as $u)
-        {{ $u->status->nama_status }}
-            <ul>
-                <li>{{ $u->nama_user }}</li>
-            </ul>
-            @empty ($u)
-                kosong
-            @endempty
-        @endforeach
-        <br>
-        jumlah data {{ $users->count() }}
-
-
-
+        <div class="mt-5">
+            <p class="font-montreal text-2xl">Total All Data : {{ $count }}</p>
+        </div>
+        
         <table
             class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-vero mx-auto rounded-md table-auto my-10 border-2 border-solid">
             <thead class="">
@@ -88,7 +78,7 @@
                 </tr>
             </thead>
             <tbody class="">
-                @foreach ($datas as $data)
+                @foreach ($users as $data)
                     <tr
                         class="items-center tracking-wider text-lg text-gray-800 font-montreal flex-row align-middle text-center">
                         <td class="font-basement uppercase">{{ $data->nama_user }}</td>
@@ -138,7 +128,7 @@
             </tbody>
         </table>
         <div class="text-center font-montreal tracking-wider mx-auto items-center">
-            {{ $datas->links() }}
+            {{ $users->links() }}
         </div>
     </div>
 </x-app-layout>

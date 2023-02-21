@@ -17,7 +17,7 @@ class InventarisController extends Controller
         $status = Status::select('id', 'nama_status')->get();
         $bagians = Bagian::select('id', 'nama')->get();
         $kategoris = Kategori::select('id', 'nama')->get();
-        $datas = Inventaris::select('*')->orderBy('id', 'desc')->paginate(5);
+        // $datas = Inventaris::select('*')->orderBy('id', 'desc')->paginate(5);
         $users = Inventaris::query();
         $count = $users->count();
         $users->when($request->nama_user, function($query) use ($request) {
@@ -29,13 +29,12 @@ class InventarisController extends Controller
         $users->when($request->kategori_id, function($query) use ($request) {
             return $query->where('kategori_id', 'like', '%' . $request->kategori_id . '%');
         });
-
         // filter by bagian 
         $users->when($request->bagian_id, function($query) use ($request) {
             return $query->where('bagian_id', 'like', '%' . $request->bagian_id . '%');
         });
 
-        return view("inventaris.index", compact("datas", "status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(5)]);
+        return view("inventaris.index", compact("status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(7)]);
     }
 
     public function create(Request $request)
