@@ -12,6 +12,7 @@
                     <th class="px-5">Status</th>
                     <th class="px-5">Updated</th>
                     <th class="">Action</th>
+                    <th class="">filter by kategori</th>
                 </tr>
             </thead>
             <tbody class="text-2xl uppercase font-montreal text-gray-700">

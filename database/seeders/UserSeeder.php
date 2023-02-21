@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Admin Inventaris System',
+                'name' => 'Admin',
                 'email' => 'admin@inventaris.com',
                 'password' => bcrypt('admin123'),
                 'remember_token' => null,
@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Guest',
-                'email' => 'guest@inv.com',
+                'email' => 'guest@inventaris.com',
                 'password' => bcrypt('guest123'),
                 'remember_token' => null,
                 'created_at' => Carbon::now()->format('Y-m-d h:i:s'),

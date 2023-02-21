@@ -14,4 +14,9 @@ class Status extends Model
     {
         return $this->hasMany(Inventaris::class);
     }
+
+    public function kategori()
+    {
+        return $this->hasMany(Kategori::class);
+    }
 }

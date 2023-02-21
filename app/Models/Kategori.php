@@ -15,4 +15,9 @@ class Kategori extends Model
     {
         return $this->hasMany(Inventaris::class);
     }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 }

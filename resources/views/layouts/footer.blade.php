@@ -1,4 +1,4 @@
-<footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-dotted lg:grid lg:grid-cols-5">
+<footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-solid lg:grid lg:grid-cols-5">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
         <img data-aos="zoom-in-up" data-aos-delay="150" src="{{ asset('/basement.jpeg') }}" alt=""
             class="absolute grayscale inset-0 object-cover w-full h-full" />
@@ -15,12 +15,12 @@
             <div>
                 <p class="block text-3xl tracking-wide font-display font-bold text-black sm:text-4xl"
                     data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-                    Veronique hq — <span class="text-black">we believe, every piece of jewerly tells a radiant
+                    Veronique hq — <span class="text-black">every piece of jewerly tells a radiant
                         story ༻ </span>
                 </p>
                 <ul class="mt-8 font-montreal tracking-wide font-semibold space-y-1 text-lg text-black">
                     <li data-aos="fade-top" data-aos-delay="230">Copyright &copy; {{ date('Y', strtotime(now())) }}
-                        Veronique Oro Corp. All rights reserved — IT Core Member</li>
+                        Veronique Oro Corp. All rights reserved.</li>
                 </ul>
 
                 <ul class="flex text-vero gap-6 mt-8">
