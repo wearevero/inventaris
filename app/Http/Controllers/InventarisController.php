@@ -12,26 +12,37 @@ use App\Models\Status;
 
 class InventarisController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $status = Status::get();
-        $datas = Inventaris::select(
-            "id",
-            "nama_user",
-            "bagian_id",
-            "kode",
-            "status_id"
-        )
-            ->orderBy("id", "desc")
-            ->paginate(5);
-        return view("inventaris.index", compact("datas", "status"));
+        $status = Status::select('id', 'nama_status')->get();
+        $bagians = Bagian::select('id', 'nama')->get();
+        $kategoris = Kategori::select('id', 'nama')->get();
+        $datas = Inventaris::select('*')->orderBy('id', 'desc')->paginate(5);
+        $users = Inventaris::query();
+        $count = $users->count();
+        $users->when($request->nama_user, function($query) use ($request) {
+            return $query->where('nama_user', 'like', '%' . $request->nama_user . '%');
+        });
+        $users->when($request->status_id, function($query) use ($request) {
+            return $query->where('status_id', 'like', '%' . $request->status_id . '%');
+        });
+        $users->when($request->kategori_id, function($query) use ($request) {
+            return $query->where('kategori_id', 'like', '%' . $request->kategori_id . '%');
+        });
+
+        // filter by bagian 
+        $users->when($request->bagian_id, function($query) use ($request) {
+            return $query->where('bagian_id', 'like', '%' . $request->bagian_id . '%');
+        });
+
+        return view("inventaris.index", compact("datas", "status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(5)]);
     }
 
     public function create(Request $request)
     {
-        $bagians = Bagian::get();
-        $kategoris = Kategori::all();
-        $status = Status::all();
+        $bagians = Bagian::select('id', 'nama')->get();
+        $kategoris = Kategori::select('id', 'nama')->get();
+        $status = Status::select('id', 'nama_status')->get();
         return view(
             "inventaris.tambah",
             compact("bagians", "kategoris", "status")
@@ -67,14 +78,13 @@ class InventarisController extends Controller
     public function edit($id)
     {
         $data = Inventaris::findOrFail($id);
-        $bagians = Bagian::all();
-        $kategoris = Kategori::all();
-        $status = Status::all();
+        $bagians = Bagian::select('id', 'nama', 'slug')->get();
+        $kategoris = Kategori::select('id', 'nama', 'slug')->get();
+        $status = Status::select('id', 'nama_status')->get();
 
         return view(
             "inventaris.edit",
-            compact("data", "bagians", "kategoris", "status")
-        )->with("Success", "Data telah diubah");
+            compact("data", "bagians", "kategoris", "status"));
     }
 
     public function update(Request $request, $id)
@@ -108,11 +118,21 @@ class InventarisController extends Controller
     }
 
     public function search(Request $request)
-    {
+    {   
         $keyword = $request->search;
         $datas = Inventaris::where("nama_user", "like", "%" . $keyword . "%")
             ->orWhere("kode", "like", "%" . $keyword . "%")
             ->paginate(100);
         return view("inventaris.index", compact("datas"));
+    }
+
+    public function filter(Request $request)
+    {
+        $datas = Inventaris::query();
+        $datas->when($request->nama_user, function($query) use ($request) {
+            return $query->where('nama_user', 'like', '%' . $request->nama_user . '%');
+        });
+
+        return view('inventaris.index', compact('datas'));
     }
 }

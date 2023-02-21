@@ -1,5 +1,6 @@
 <x-app-layout title="All Data">
     <div class="px-20 my-10">
+        <h1 class="text-center text-3xl font-basement uppercase">All Data</h1>
         <div class="flex justify-between text-center">
             <button
                 class="px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
@@ -17,33 +18,62 @@
             </form>
         </div>
 
-        {{-- Filter checkbox --}}
-        <div class="px-5 mt-10">
-            <h3 class="text-2xl mb-5 uppercase font-basement">testing filter Status</h3>
-            <fieldset class="flex flex-wrap gap-3">
-                @foreach ($status as $st)
-                    <div>
-                        <input type="checkbox" name="bagian" id="{{ $st->id }}"
-                            class="peer hidden [&:checked_+_label_svg]:block" />
-                        <label for="{{ $st->id }}"
-                            class="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-200 peer-checked:border-vero peer-checked:bg-vero peer-checked:text-white">
-                            <svg class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <p class="text-sm font-medium">{{ $st->nama_status }}</p>
-                        </label>
-                    </div>
-                @endforeach
-            </fieldset>
+        {{-- Testing filter search --}}
+        <form action="/inventaris" method="GET">
+            @csrf
+            <input name="nama_user" type="text" placeholder="John Doe" value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}" class="p-4 border-vero text-black focus:border-vero tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-transparent uppercase" />
 
-            <button value="cari"
-                class="uppercase rounded-lg mt-2 font-montreal mx-3 text-sm tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
-                type="submit">Cari</button>
-        </div>
-        {{-- End filter checkbox --}}
+            {{-- Nama --}}
+            <select name="bagian_id" class="border-vero p-4 rounded-lg text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
+                <option value="">PILIH BAGIAN</option>
+                @foreach ($datas as $dt)
+                    <option value="{{ $dt->bagian->id }}"
+                        {{ old('bagian_id') == $dt->bagian->id ? 'selected' : null }}>{{ $dt->bagian->nama }}
+                    </option>
+                @endforeach
+            </select>
+
+            {{-- Status --}}
+            <select name="status_id">
+                <option value="">PILIH STATUS</option>
+                @foreach ($datas as $dt)
+                    <option value="{{ $dt->status->id }}"
+                        {{ old('status_id') == $dt->status->id ? 'selected' : null }}>{{ $dt->status->nama_status }}
+                    </option>
+                @endforeach
+            </select>
+
+            {{-- Kategori --}}
+            <select name="kategori_id">
+                <option value="{{ old('kategori_id') }}">PILIH KATEGORI</option>
+                    @foreach ($kategoris as $dt)
+                        <option value="{{ $dt->id }}"
+                            {{ old($dt->id) == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
+                        </option>
+                    @endforeach
+            </select>
+
+            <button value="search"
+                class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
+                type="submit">
+                Search
+            </button>
+        </form>
+        {{--  --}}
+
+        @foreach($users as $u)
+        {{ $u->status->nama_status }}
+            <ul>
+                <li>{{ $u->nama_user }}</li>
+            </ul>
+            @empty ($u)
+                kosong
+            @endempty
+        @endforeach
+        <br>
+        jumlah data {{ $users->count() }}
+
+
 
         <table
             class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-vero mx-auto rounded-md table-auto my-10 border-2 border-solid">

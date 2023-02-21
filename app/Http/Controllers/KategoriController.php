@@ -16,7 +16,7 @@ class KategoriController extends Controller
         return view('kategori.index', compact('kategoris', 'status'));
     }
 
-    public function create()
+    public function create()    
     {
         return view('kategori.tambah');
     }
@@ -40,7 +40,7 @@ class KategoriController extends Controller
 
     public function show_kategori($slug)
     {
-        $datas = Inventaris::whereHas('kategori',function ($query) use ($slug) {
+        $datas = Inventaris::whereHas('kategori', function ($query) use ($slug) {
             return $query->where('slug', $slug);
         })->get();
         $kategoris = Kategori::where('slug', $slug)->get();
@@ -49,6 +49,20 @@ class KategoriController extends Controller
             'datas' => $datas,
             'kategoris' => $kategoris,
             'slug' => $slug
+        ]);
+    }
+
+    public function show_kategori_status($status)
+    {
+        $datas = Inventaris::whereHas('kategori', function ($query) use ($status) {
+            return $query->where('status', $status);
+        })->get();
+        $kategoris = Kategori::where('slug', $status)->get();
+
+        return view('kategori.slug', [
+            'datas' => $datas,
+            'kategoris' => $kategoris,
+            'slug' => $status
         ]);
     }
     
