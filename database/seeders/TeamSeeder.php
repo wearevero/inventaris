@@ -9,11 +9,11 @@ class TeamSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('team')->insert([
+        DB::table("team")->insert([
             [
-                'name' => 'Krido Pambudi',
-                'username' => '@yuxxeun',
-                'bio' => 'We Make Cool Shit That Performs.'
+                "name" => "Krido Pambudi",
+                "username" => "@yuxxeun",
+                "bio" => "We Make Cool Shit That Performs.",
             ],
         ]);
     }

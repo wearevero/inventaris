@@ -8,23 +8,41 @@
                 </a>
             </button>
 
-            {{--  --}}
+            {{-- testing fancy flag --}}
+            <button class="backdrop-blur-sm bg-blue-500/30 p-2 rounded-full">
+                <p class="text-montreal text-blue-700">
+                    Saample
+                </p>
+            </button>
+
+            <a href="#" class="relative px-6 py-3 font-bold text-black group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+                <span class="relative">Button Text</span>
+            </a>
+            {{-- end testing --}}
+
+            {{-- Search function --}}
             <form action="/inventaris" method="GET">
                 @csrf
-                <input name="nama_user" type="text" placeholder="John Doe" value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}" class="p-3 border-yellow-300 text-black focus:border-yellow-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
-    
+                <input name="nama_user" type="text" placeholder="John Doe"
+                    value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}"
+                    class="p-3 border-yellow-300 text-black focus:border-yellow-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
+
                 {{-- Nama --}}
-                <select name="bagian_id" class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                <select name="bagian_id"
+                    class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
                     <option value="">BAGIAN</option>
                     @foreach ($bagians as $dt)
-                        <option value="{{ $dt->id }}"
-                            {{ old('bagian_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
+                        <option value="{{ $dt->id }}" {{ old('bagian_id') == $dt->id ? 'selected' : null }}>
+                            {{ $dt->nama }}
                         </option>
                     @endforeach
                 </select>
-    
+
                 {{-- Status --}}
-                <select name="status_id" class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                <select name="status_id"
+                    class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
                     <option value="">STATUS</option>
                     @foreach ($status as $dt)
                         <option value="{{ $dt->id }}" class=""
@@ -32,39 +50,37 @@
                         </option>
                     @endforeach
                 </select>
-    
+
                 {{-- Kategori --}}
-                <select name="kategori_id" class="mb-3 mt-1 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300 bg-yellow-300">
-                    <option>KATEGORI</option>
-                        @foreach ($kategoris as $dt)
-                            <option value="{{ $dt->id }}"
-                                {{ old('kategori_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama }}
-                            </option>
-                        @endforeach
+                <select name="kategori_id"
+                    class="mb-3 mt-1 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300 bg-yellow-300">
+                    <option value="">KATEGORI</option>
+                    @foreach ($kategoris as $dt)
+                        <option value="{{ $dt->id }}" {{ old('kategori_id') == $dt->id ? 'selected' : null }}>
+                            {{ $dt->nama }}
+                        </option>
+                    @endforeach
                 </select>
-    
+
                 <button value="search"
                     class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-rose-300 hover:text-white border-4 border-rose-300 p-3 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300"
                     type="submit">
                     Search
                 </button>
             </form>
-            {{--  --}}
-
-            {{-- <form method="GET" action="{{ route('inventaris.search') }}">
-                <input type="text" name="search" id="search" value="{{ old('search') }}"
-                    class="p-4 border-vero text-black focus:border-vero tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-transparent uppercase"
-                    placeholder="Cari data di sini...">
-                <button value="search"
-                    class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-vero hover:text-white border-4 border-vero px-2 py-2 font-bold shadow-[6px_6px_0_0] shadow-vero transition hover:shadow-none focus:outline-none focus:ring active:bg-vero"
-                    type="submit">Search</button>
-            </form> --}}
+            {{-- End search function --}}
         </div>
 
-        <div class="mt-5">
-            <p class="font-montreal text-2xl">Total All Data : {{ $count }}</p>
+        <div class="my-10">
+            <p class="font-montreal text-lg text-gray-500 italic tracking-wide">
+                Total Data in at this page — {{ $users->count() }}
+                <br>
+                Total Data in Database — {{ $count }}
+                <br>
+                Rendering pages in — {{ number_format(microtime(true) - LARAVEL_START, 2) }} seconds.
+            </p>
         </div>
-        
+
         <table
             class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-vero mx-auto rounded-md table-auto my-10 border-2 border-solid">
             <thead class="">

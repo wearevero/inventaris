@@ -8,6 +8,6 @@ class DashboardController extends Controller
     public function index()
     {
         $data = User::get();
-        return view('dashboard', compact('data'));
+        return view("dashboard", compact("data"));
     }
 }

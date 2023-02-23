@@ -32,7 +32,7 @@
         </div>
         <button
             class="uppercase w-1/2 px-2 mx-auto rounded-lg font-montreal hover:bg-rose-300 hover:text-white border-4 border-rose-300 bg-white font-bold shadow-[6px_6px_0_0] shadow-rose-300 text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
-            <a href="{{ route('inventaris.export') }}">
+            <a href="{{ route('inventaris.index') }}">
                 Bring me back to home
             </a>
         </button>

@@ -67,12 +67,12 @@
                 <x-input-error :messages="$errors->get('memory')" class="mt-2" />
             </div>
 
-            <!-- CPU -->
+            <!-- SPEC -->
             <div>
-                <x-input-label for="cpu" :value="__('CPU')" />
-                <x-text-input id="cpu" class="block mt-1 w-full" type="text" name="cpu"
-                    value="{{ $data->cpu }}" autofocus placeholder="{{ $data->cpu }}" />
-                <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
+                <x-input-label for="spec" :value="__('SPEC')" />
+                <x-text-input id="spec" class="block mt-1 w-full" type="text" name="spec"
+                    value="{{ $data->spec }}" autofocus placeholder="{{ $data->spec }}" />
+                <x-input-error :messages="$errors->get('spec')" class="mt-2" />
             </div>
 
             <!-- Merk -->

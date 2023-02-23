@@ -50,7 +50,7 @@
                         </x-dropdown>
                     </div>
 
-{{-- TAMBAH DROPDOWN --}}
+                    {{-- TAMBAH DROPDOWN --}}
                     <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
@@ -72,16 +72,15 @@
                                 <x-dropdown-link href="{{ route('inventaris.create') }}">
                                     {{ __('Tambah Barang') }}
                                 </x-dropdown-link>
-					  <x-dropdown-link href="{{ route('kategori.create') }}">
+                                <x-dropdown-link href="{{ route('kategori.create') }}">
                                     {{ __('Tambah Kategori') }}
                                 </x-dropdown-link>
-					  <x-dropdown-link href="{{ route('bagian.create') }}">
+                                <x-dropdown-link href="{{ route('bagian.create') }}">
                                     {{ __('Tambah bagian') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
                     </div>
-
 
                     {{-- OTHER DROPDOWN --}}
                     <div class="hidden font-basement space-x-3 sm:flex sm:items-center sm:ml-6">
@@ -102,10 +101,11 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link href="/docs">
+                                <x-dropdown-link href="/docs" target="_blank`">
                                     {{ __('documentation') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link class="divide-y text-black" href="{{ route('health') }}" target="_blank">
+                                <x-dropdown-link class="divide-y text-black" href="{{ route('health') }}"
+                                    target="_blank">
                                     {{ __('Check health ?') }}
                                 </x-dropdown-link>
                             </x-slot>

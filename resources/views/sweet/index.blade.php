@@ -5,7 +5,7 @@
         <button type="submit" class="bg-red-500">Search</button>
     </form>
     <div class="my-20 text-black">
-        @foreach($data as $d)
+        @foreach ($data as $d)
             {{ $d->id }}
         @endforeach
     </div>

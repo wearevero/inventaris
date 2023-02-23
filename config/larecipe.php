@@ -14,7 +14,7 @@ return [
     ],
 
     "settings" => [
-        "auth" => false,
+        "auth" => true,
         "guard" => null,
         "ga_id" => "",
         "middleware" => ["web"],

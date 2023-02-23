@@ -8,25 +8,25 @@ class StatusSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('status')->insert([
+        DB::table("status")->insert([
             [
-                'nama_status' => 'Used',
-                'slug' => 'used',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
+                "nama_status" => "Used",
+                "slug" => "used",
+                "created_at" => date("Y-m-d h:i:s"),
+                "updated_at" => date("Y-m-d h:i:s"),
             ],
             [
-                'nama_status' => 'Available',
-                'slug' => 'available',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
+                "nama_status" => "Available",
+                "slug" => "available",
+                "created_at" => date("Y-m-d h:i:s"),
+                "updated_at" => date("Y-m-d h:i:s"),
             ],
             [
-                'nama_status' => 'Broken',
-                'slug' => 'broken',
-                'created_at' => date('Y-m-d h:i:s'),
-                'updated_at' => date('Y-m-d h:i:s')
-            ]
+                "nama_status" => "Broken",
+                "slug" => "broken",
+                "created_at" => date("Y-m-d h:i:s"),
+                "updated_at" => date("Y-m-d h:i:s"),
+            ],
         ]);
     }
 }

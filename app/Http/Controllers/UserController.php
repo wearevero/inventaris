@@ -13,17 +13,17 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-        return view('user.index', compact('users'));
+        return view("user.index", compact("users"));
     }
 
     public function export()
     {
-        return Excel::download(new UsersExport, 'data-users.xlsx');
+        return Excel::download(new UsersExport(), "data-users.xlsx");
     }
 
-    public function import() 
+    public function import()
     {
-        Excel::import(new UsersImport,request()->file('file'));
+        Excel::import(new UsersImport(), request()->file("file"));
         return back();
     }
 }

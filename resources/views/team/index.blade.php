@@ -1,6 +1,7 @@
 <x-app-layout title="Meet Our Team">
     <div class="my-20 px-5 mx-auto">
-        <img src={{ asset('/basement.jpeg') }} class="h-70 grayscale w-100 mb-10 object-cover text-center rounded-lg mx-auto" />
+        <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/basement.jpeg"
+            class="h-70 grayscale w-100 mb-10 object-cover text-center rounded-lg mx-auto" />
         <h1 class="text-6xl font-display text-vero tracking-wide">
             we believe, every piece of jewerly tells a radiant story.
         </h1>
@@ -41,7 +42,7 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src={{ asset('/img/krido.jpg') }} class="h-100 grayscale my-8 w-80 object-cover" />
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/krido.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
                     <p class="mt-4 px-5 leading-relaxed text-gray-700 text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Mastermind</span>
@@ -68,14 +69,15 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src={{ asset('/img/aji.jpg') }} class="h-100 grayscale my-8 w-80 object-cover" />
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/aji.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
                     <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Head of Development</span>
                         <br><br>
                         Curious, focused human.
                         <br>
-                        You can say I’m an interdisciplinary person, but I define myself as a jack of all trades If I’m not working probably I’m playing with my son. 
+                        You can say I’m an interdisciplinary person, but I define myself as a jack of all trades If I’m
+                        not working probably I’m playing with my son.
                         <br><br>
                         Always a family-man player.
                     </p>
@@ -93,11 +95,11 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src={{ asset('/img/jirayut.jpg') }} class="h-100 grayscale my-8 w-80 object-cover" />
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/jirayut.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
                     <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— The Excel Killer</span>
-				<br><br>
+                        <br><br>
                         I'm a strategic thinker driven by strong instincts with the ability to turn complex problems
                         into elegant, intuitive solutions.
                         <br>
@@ -105,7 +107,7 @@
                         Legends.
                         <br><br>
                         Mission accomplished? Hell yeah, I nailed it!
-                        
+
                     </p>
                 </div>
             </details>
@@ -121,20 +123,22 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src={{ asset('/img/iqbal.jpg') }} class="h-100 grayscale my-8 w-80 object-cover" />
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/iqbal.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
                     <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Your SRE Guy</span>
                         <br><br>
-Your computer cannot connected to your printer? I'm a your go-to guy.
-<br><br>
-I could write a long story about all the years I’ve been behind a desk designing the next best thing ever. But you don’t care about that, you care about my professionalism, and how I can manage to get your ideas from the realm of imagination to our reality.
-<br><br>
-Always a team-player.
+                        Your computer cannot connected to your printer? I'm a your go-to guy.
+                        <br><br>
+                        I could write a long story about all the years I’ve been behind a desk designing the next best
+                        thing ever. But you don’t care about that, you care about my professionalism, and how I can
+                        manage to get your ideas from the realm of imagination to our reality.
+                        <br><br>
+                        Always a team-player.
                     </p>
                 </div>
             </details>
-            
+
         </div>
     </div>
 </x-app-layout>

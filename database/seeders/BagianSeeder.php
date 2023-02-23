@@ -18,8 +18,8 @@ class BagianSeeder extends Seeder
                 "updated_at" => date("Y-m-d h:i:s"),
             ],
             [
-                "nama" => "ADMIN",
-                "slug" => "admin",
+                "nama" => "SECURITY",
+                "slug" => "security",
                 "created_at" => date("Y-m-d h:i:s"),
                 "updated_at" => date("Y-m-d h:i:s"),
             ],

@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-use RealRashid\SweetAlert\SweetAlertServiceProvider;
 
 return [
     "name" => env("APP_NAME", "Inventaris"),
-    "env" => env("APP_ENV", "local"),
+    "env" => env("APP_ENV", "production"),
     "debug" => (bool) env("APP_DEBUG", true),
     "url" => env("APP_URL", "http://localhost"),
     "asset_url" => env("ASSET_URL"),

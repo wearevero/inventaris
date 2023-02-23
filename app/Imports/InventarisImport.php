@@ -13,7 +13,7 @@ class InventarisImport implements ToModel
             "bagian_id" => $row[2],
             "th_pembelian" => $row[3],
             "memory" => $row[4],
-            "cpu" => $row[5],
+            "spec" => $row[5],
             "kode" => $row[6],
             "merk" => $row[7],
             "keterangan" => $row[8],

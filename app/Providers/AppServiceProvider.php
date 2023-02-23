@@ -18,10 +18,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Health::checks([
             DatabaseCheck::new(),
-            PingCheck::new()
-                ->url("127.0.0.1:8000")
-                ->timeout(2)
-                ->name("development preview"),
+            // PingCheck::new()
+            //     ->url("127.0.0.1:8000")
+            //     ->timeout(2)
+            //     ->name("development preview"),
             // PingCheck::new()
             //     ->url("10.10.10.184:8000")
             //     ->timeout(2)
@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
                 "inventaris",
                 maxSizeInMb: 2_000
             ),
-            UsedDiskSpaceCheck::new(),  
+            UsedDiskSpaceCheck::new(),
         ]);
     }
 

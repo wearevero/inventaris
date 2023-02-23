@@ -91,10 +91,10 @@
 
                     {{-- CPU --}}
                     <div>
-                        <x-input-label for="cpu" :value="__('CPU')" />
-                        <x-text-input id="cpu" class="block mt-1 w-full" type="text" name="cpu"
-                            :value="old('cpu')" placeholder="CPU" required autofocus />
-                        <x-input-error :messages="$errors->get('cpu')" class="mt-2" />
+                        <x-input-label for="spec" :value="__('Spec')" />
+                        <x-text-input id="spec" class="block mt-1 w-full" type="text" name="spec"
+                            :value="old('spec')" placeholder="Intel Core i9 9900 KF" required autofocus />
+                        <x-input-error :messages="$errors->get('spec')" class="mt-2" />
                     </div>
 
                     {{-- Merk --}}

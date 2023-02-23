@@ -11,7 +11,7 @@
         <table
             class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-white dark:text-white mx-auto rounded-lg table-auto my-10 border-2 border-solid">
             <thead class="">
-                <tr class="font-display tracking-widest" data-aos="fade-up" data-aos-delay="500"
+                <tr class="font-display items-center tracking-widest" data-aos="fade-up" data-aos-delay="500"
                     data-aos-anchor-placement="bottom-bottom">
                     <th class="py-5 px-5">User</th>
                     <th class="py-5 px-5">Bagian</th>
@@ -67,6 +67,6 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table> 
+        </table>
     </div>
 </x-app-layout>

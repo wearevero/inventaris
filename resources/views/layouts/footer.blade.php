@@ -1,6 +1,6 @@
 <footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-solid lg:grid lg:grid-cols-5">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
-        <img data-aos="zoom-in-up" data-aos-delay="150" src="{{ asset('/basement.jpeg') }}" alt=""
+        <img data-aos="zoom-in-up" data-aos-delay="150" src="https://raw.githubusercontent.com/wearevero/.github/main/team/basement.jpeg" alt="basement banner"
             class="absolute grayscale inset-0 object-cover w-full h-full" />
     </div>
 

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Search Engine
@@ -15,7 +14,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    "driver" => env("SCOUT_DRIVER", "algolia"),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +27,7 @@ return [
     |
     */
 
-    'prefix' => env('SCOUT_PREFIX', ''),
+    "prefix" => env("SCOUT_PREFIX", ""),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +40,7 @@ return [
     |
     */
 
-    'queue' => env('SCOUT_QUEUE', true),
+    "queue" => env("SCOUT_QUEUE", true),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +53,7 @@ return [
     |
     */
 
-    'after_commit' => false,
+    "after_commit" => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -67,9 +66,9 @@ return [
     |
     */
 
-    'chunk' => [
-        'searchable' => 500,
-        'unsearchable' => 500,
+    "chunk" => [
+        "searchable" => 500,
+        "unsearchable" => 500,
     ],
 
     /*
@@ -83,7 +82,7 @@ return [
     |
     */
 
-    'soft_delete' => false,
+    "soft_delete" => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +97,7 @@ return [
     |
     */
 
-    'identify' => env('SCOUT_IDENTIFY', false),
+    "identify" => env("SCOUT_IDENTIFY", false),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,9 +110,9 @@ return [
     |
     */
 
-    'algolia' => [
-        'id' => env('ALGOLIA_APP_ID', ''),
-        'secret' => env('ALGOLIA_SECRET', ''),
+    "algolia" => [
+        "id" => env("ALGOLIA_APP_ID", ""),
+        "secret" => env("ALGOLIA_SECRET", ""),
     ],
 
     /*
@@ -129,14 +128,13 @@ return [
     |
     */
 
-    'meilisearch' => [
-        'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
-        'key' => env('MEILISEARCH_KEY', null),
-        'index-settings' => [
+    "meilisearch" => [
+        "host" => env("MEILISEARCH_HOST", "http://localhost:7700"),
+        "key" => env("MEILISEARCH_KEY", null),
+        "index-settings" => [
             // 'users' => [
             //     'filterableAttributes'=> ['id', 'name', 'email'],
             // ],
         ],
     ],
-
 ];
