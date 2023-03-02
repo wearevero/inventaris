@@ -32,7 +32,7 @@
         <h1 class="mt-40 text-center font-display tracking-wide text-5xl text-black">meet our team</h1>
         <div class="space-y-4 mt-20">
             <details class="group [&_summary::-webkit-details-marker]:hidden" open>
-                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer bg-white">
+                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer">
                     <h2 class="font-medium font-montreal text-4xl text-black">
                         Krido Pambudi B
                     </h2>
@@ -42,7 +42,8 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/krido.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/krido.jpg"
+                        class="h-100 grayscale my-8 w-80 object-cover" />
                     <p class="mt-4 px-5 leading-relaxed text-gray-700 text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Mastermind</span>
@@ -59,7 +60,7 @@
             </details>
 
             <details class="group kartu [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer bg-white">
+                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer">
                     <h2 class="font-medium font-montreal text-4xl text-black">
                         Ibrahim Perwira Aji
                     </h2>
@@ -69,8 +70,9 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/aji.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
-                    <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/aji.jpg"
+                        class="h-100 grayscale my-8 w-80 object-cover" />
+                    <p class="mt-1 px-5 leading-relaxed text-gray-700 text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Head of Development</span>
                         <br><br>
@@ -85,7 +87,7 @@
             </details>
 
             <details class="group kartu [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer bg-white">
+                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer">
                     <h2 class="font-medium font-montreal text-4xl text-black">
                         Dzikry Syahrul H
                     </h2>
@@ -95,8 +97,9 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/jirayut.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
-                    <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/jirayut.jpg"
+                        class="h-100 grayscale my-8 w-80 object-cover" />
+                    <p class="mt-1 px-5 leading-relaxed text-gray-700 text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— The Excel Killer</span>
                         <br><br>
@@ -113,7 +116,7 @@
             </details>
 
             <details class="group kartu [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer bg-white">
+                <summary class="flex items-center border-t border-black justify-between p-4 cursor-pointer">
                     <h2 class="font-medium font-montreal text-4xl text-black">
                         Iqbal Setiya N
                     </h2>
@@ -123,8 +126,9 @@
                     </svg>
                 </summary>
                 <div class="flex px-4 items-stretch">
-                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/iqbal.jpg" class="h-100 grayscale my-8 w-80 object-cover" />
-                    <p class="mt-1 px-5 leading-relaxed text-black text-2xl -tracking-lg font-montreal">
+                    <img src="https://raw.githubusercontent.com/wearevero/.github/main/team/iqbal.jpg"
+                        class="h-100 grayscale my-8 w-80 object-cover" />
+                    <p class="mt-1 px-5 leading-relaxed text-gray-700 text-2xl -tracking-lg font-montreal">
                         <br>
                         <span class="text-black italic font-display pb-5 text-3xl">— Your SRE Guy</span>
                         <br><br>

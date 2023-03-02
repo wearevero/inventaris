@@ -101,12 +101,9 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link href="/docs" target="_blank`">
-                                    {{ __('documentation') }}
-                                </x-dropdown-link>
                                 <x-dropdown-link class="divide-y text-black" href="{{ route('health') }}"
                                     target="_blank">
-                                    {{ __('Check health ?') }}
+                                    {{ __('The health ?') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>

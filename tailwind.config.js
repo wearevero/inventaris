@@ -29,7 +29,7 @@ module.exports = {
                 vero: "#00e0d4",
                 ivory: "#F9F6EE",
                 soft: "#E8E8E8",
-                jeruk: '#FF5733'
+                jeruk: "#FF5733",
             },
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],

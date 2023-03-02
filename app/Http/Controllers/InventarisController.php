@@ -17,7 +17,12 @@ class InventarisController extends Controller
         $status = Status::select("id", "nama_status")->get();
         $bagians = Bagian::select("id", "nama")->get();
         $kategoris = Kategori::select("id", "nama")->get();
-        $datas = Inventaris::select('nama_user', 'bagian_id', 'status_id', 'kode')
+        $datas = Inventaris::select(
+            "nama_user",
+            "bagian_id",
+            "status_id",
+            "kode"
+        )
             ->orderBy("id", "desc")
             ->paginate(7);
         $users = Inventaris::query();

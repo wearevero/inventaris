@@ -3525,14 +3525,12 @@
                                     c > 1 && we(p),
                                     c > 1 &&
                                         be(
-                                            e
-                                                .slice(0, c - 1)
-                                                .concat({
-                                                    value:
-                                                        " " === e[c - 2].type
-                                                            ? "*"
-                                                            : "",
-                                                })
+                                            e.slice(0, c - 1).concat({
+                                                value:
+                                                    " " === e[c - 2].type
+                                                        ? "*"
+                                                        : "",
+                                            })
                                         ).replace(z, "$1"),
                                     n,
                                     c < o && Ce(e.slice(c, o)),
@@ -25381,13 +25379,10 @@
                                         "%DROPDOWN_MENU%",
                                         e.cssClasses.dropdownMenu
                                     );
-                                (a = i
-                                    .element(c)
-                                    .css(e.css.dropdown)
-                                    .attr({
-                                        role: "listbox",
-                                        id: e.listboxId,
-                                    })),
+                                (a = i.element(c).css(e.css.dropdown).attr({
+                                    role: "listbox",
+                                    id: e.listboxId,
+                                })),
                                     e.templates &&
                                         e.templates.dropdownMenu &&
                                         a.html(

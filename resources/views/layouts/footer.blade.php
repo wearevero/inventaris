@@ -1,6 +1,7 @@
 <footer aria-label="Site Footer" class="bg-ivory border-t-2 border-black border-solid lg:grid lg:grid-cols-5">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
-        <img data-aos="zoom-in-up" data-aos-delay="150" src="https://raw.githubusercontent.com/wearevero/.github/main/team/basement.jpeg" alt="basement banner"
+        <img data-aos="zoom-in-up" data-aos-delay="150"
+            src="https://raw.githubusercontent.com/wearevero/.github/main/team/basement.jpeg" alt="basement banner"
             class="absolute grayscale inset-0 object-cover w-full h-full" />
     </div>
 
@@ -19,8 +20,9 @@
                         story ༻ </span>
                 </p>
                 <ul class="mt-8 font-montreal tracking-wide font-semibold space-y-1 text-lg text-black">
-                    <li data-aos="fade-top" data-aos-delay="230">💖 Never Ordinary &copy; {{ date('Y', strtotime(now())) }}
-                         Veronique Research Dept. All rights reserved.</li>
+                    <li data-aos="fade-top" data-aos-delay="230">💖 Never Ordinary &copy;
+                        {{ date('Y', strtotime(now())) }}
+                        Veronique Research Dept. All rights reserved.</li>
                 </ul>
 
                 <ul class="flex text-vero gap-6 mt-8">

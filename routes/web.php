@@ -11,11 +11,9 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 // The health path
-Route::get(
-    "health",
-    HealthCheckResultsController::class,
-    "__invoke"
-)->name("health");
+Route::get("health", HealthCheckResultsController::class, "__invoke")->name(
+    "health"
+);
 
 // Auth path
 Route::view("/", "auth.login");
