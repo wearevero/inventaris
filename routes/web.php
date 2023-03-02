@@ -12,7 +12,7 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 // The health path
 Route::get(
-    "health?fresh",
+    "health",
     HealthCheckResultsController::class,
     "__invoke"
 )->name("health");

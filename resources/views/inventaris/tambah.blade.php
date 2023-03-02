@@ -37,6 +37,20 @@
                         <x-input-error :messages="$errors->get('nama_user')" class="mt-2" />
                     </div>
 
+                    {{-- Kategori --}}
+                    <div>
+                        <x-input-label for="kategori_id" :value="__('Kategori')" />
+                        <select name="kategori_id" id="kategori_id"
+                            class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
+                            <option value="">PILIH KATEGORI</option>
+                            @foreach ($kategoris as $kategori)
+                                <option value="{{ $kategori->id }}"
+                                    {{ old('kategori_id') == $kategori->id ? 'selected' : null }}>{{ $kategori->nama }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     {{-- Bagian --}}
                     <div>
                         <x-input-label for="bagian_id" :value="__('Bagian')" />
@@ -51,23 +65,10 @@
                         </select>
                     </div>
 
-                    <div>
-                        <x-input-label for="kategori_id" :value="__('Kategori')" />
-                        <select name="kategori_id" id="kategori_id"
-                            class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
-                            <option value="">PILIH KATEGORI</option>
-                            @foreach ($kategoris as $kategori)
-                                <option value="{{ $kategori->id }}"
-                                    {{ old('kategori_id') == $kategori->id ? 'selected' : null }}>{{ $kategori->nama }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-
                     {{-- Kode --}}
                     <div>
                         <x-input-label for="kode" :value="__('Kode')" />
-                        <x-text-input id="kode" class="block mt-1 w-full" type="text" name="kode"
+                        <x-text-input id="kode" class="block uppercase mt-1 w-full" type="text" name="kode"
                             :value="old('kode')" required autofocus placeholder="VR-0001" />
                         <x-input-error :messages="$errors->get('kode')" class="mt-2" />
                     </div>

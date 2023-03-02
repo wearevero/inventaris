@@ -8,7 +8,7 @@
                 <li>Bagian : <span class="text-black ml-1">{{ $data->bagian->nama }}</span></li>
                 <li>Kode : <span class="text-black ml-1">{{ $data->kode }}</span></li>
                 <li>Th. Pembelian : <span class="text-black ml-1">{{ $data->th_pembelian }}</span></li>
-                <li>CPU : <span class="text-black ml-1">{{ $data->cpu }}</span></li>
+                <li>CPU : <span class="text-black ml-1">{{ $data->spec }}</span></li>
                 <li>Memory : <span class="text-black ml-1">{{ $data->memory }}</span></li>
                 <li>Merk : <span class="text-black ml-1">{{ $data->merk }}</span></li>
                 <li>Size Monitor : <span class="text-black ml-1">{{ $data->size_monitor }}</span></li>

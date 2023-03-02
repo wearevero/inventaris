@@ -15,12 +15,12 @@
             <div>
                 <p class="block text-3xl tracking-wide font-display font-bold text-black sm:text-4xl"
                     data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-                    Veronique hq — <span class="text-black">every piece of jewerly tells a radiant
+                    Veronique research dept. — <span class="text-black">every piece of jewerly tells a radiant
                         story ༻ </span>
                 </p>
                 <ul class="mt-8 font-montreal tracking-wide font-semibold space-y-1 text-lg text-black">
-                    <li data-aos="fade-top" data-aos-delay="230">Copyright &copy; {{ date('Y', strtotime(now())) }}
-                        Veronique Oro Corp. All rights reserved.</li>
+                    <li data-aos="fade-top" data-aos-delay="230">💖 Never Ordinary &copy; {{ date('Y', strtotime(now())) }}
+                         Veronique Research Dept. All rights reserved.</li>
                 </ul>
 
                 <ul class="flex text-vero gap-6 mt-8">

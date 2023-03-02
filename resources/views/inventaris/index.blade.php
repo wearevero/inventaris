@@ -8,18 +8,11 @@
                 </a>
             </button>
 
-            {{-- testing fancy flag --}}
-            <button class="backdrop-blur-sm bg-blue-500/30 p-2 rounded-full">
-                <p class="text-montreal text-blue-700">
-                    Saample
-                </p>
-            </button>
-
-            <a href="#" class="relative px-6 py-3 font-bold text-black group">
+            {{-- <a href="#" class="relative px-6 py-3 font-bold text-black group">
                 <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                 <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
                 <span class="relative">Button Text</span>
-            </a>
+            </a> --}}
             {{-- end testing --}}
 
             {{-- Search function --}}
@@ -27,33 +20,33 @@
                 @csrf
                 <input name="nama_user" type="text" placeholder="John Doe"
                     value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}"
-                    class="p-3 border-yellow-300 text-black focus:border-yellow-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
+                    class="p-3 border-rose-300 border-2 text-black focus:border-rose-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
 
-                {{-- Nama --}}
+                {{-- Bagian --}}
                 <select name="bagian_id"
-                    class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                    class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
                     <option value="">BAGIAN</option>
                     @foreach ($bagians as $dt)
-                        <option value="{{ $dt->id }}" {{ old('bagian_id') == $dt->id ? 'selected' : null }}>
+                        <option value="{{ $dt->id }}" {{ old('id') == $dt->id ? 'selected' : null }}>
                             {{ $dt->nama }}
                         </option>
                     @endforeach
                 </select>
 
                 {{-- Status --}}
-                <select name="status_id"
-                    class="mb-3 mt-1 bg-yellow-300 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300">
+                {{-- <select name="status_id"
+                    class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
                     <option value="">STATUS</option>
                     @foreach ($status as $dt)
                         <option value="{{ $dt->id }}" class=""
                             {{ old('status_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama_status }}
                         </option>
                     @endforeach
-                </select>
+                </select> --}}
 
                 {{-- Kategori --}}
                 <select name="kategori_id"
-                    class="mb-3 mt-1 text-white border-yellow-300 rounded-md text-lg outline-none focus:ring-yellow-300 active:outline-none focus:outline-yellow-300 bg-yellow-300">
+                    class="mb-3 mt-1 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300 bg-rose-300">
                     <option value="">KATEGORI</option>
                     @foreach ($kategoris as $dt)
                         <option value="{{ $dt->id }}" {{ old('kategori_id') == $dt->id ? 'selected' : null }}>
