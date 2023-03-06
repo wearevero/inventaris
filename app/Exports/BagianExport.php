@@ -10,11 +10,11 @@ class BagianExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        return Bagian::select("id", "nama", "slug")->get();
+        return Bagian::select('id', 'nama', 'slug')->get();
     }
 
     public function headings(): array
     {
-        return ["ID", "Nama Bagian", "Slug"];
+        return ['ID', 'Nama Bagian', 'Slug'];
     }
 }

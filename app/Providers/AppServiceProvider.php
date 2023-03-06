@@ -3,13 +3,13 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\DatabaseTableSizeCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\PingCheck;
+use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Facades\Health;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,17 +19,17 @@ class AppServiceProvider extends ServiceProvider
         Health::checks([
             DatabaseCheck::new(),
             PingCheck::new()
-                ->url("127.0.0.1")
+                ->url('127.0.0.1')
                 ->timeout(2)
-                ->name("development preview"),
+                ->name('development preview'),
             PingCheck::new()
-                ->url("10.10.11.3")
+                ->url('10.10.11.3')
                 ->timeout(2)
-                ->name("Production preview"),
+                ->name('Production preview'),
             OptimizedAppCheck::new()
                 ->checkConfig()
                 ->checkRoutes(),
-            DebugModeCheck::new()->expectedToBe(true),
+            DebugModeCheck::new()->expectedToBe(false),
             CacheCheck::new(),
             // DatabaseTableSizeCheck::new()->table(
             //     "inventaris",

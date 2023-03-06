@@ -2,30 +2,23 @@
     <div class="px-20 my-10">
         <div class="flex justify-between text-center">
             <button
-                class="px-1 uppercase rounded-lg font-space hover:bg-rose-300 hover:text-white border-4 border-rose-300 bg-white font-bold shadow-[4px_4px_0_0] shadow-rose-300 text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
+                class="px-2 rounded-lg font-montreal hover:bg-rose-300 hover:text-white border-4 border-rose-300 bg-white font-bold shadow-[3px_3px_0_0] shadow-rose-300 text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
                 <a href="{{ route('inventaris.export') }}">
                     Export
                 </a>
             </button>
 
-            {{-- <a href="#" class="relative px-6 py-3 font-bold text-black group">
-                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
-                <span class="relative">Button Text</span>
-            </a> --}}
-            {{-- end testing --}}
-
             {{-- Search function --}}
-            <form action="/inventaris" method="GET">
+            <form action="/inventaris" method="GET" class="font-montreal">
                 @csrf
-                <input name="nama_user" type="text" placeholder="John Doe"
+                <input name="nama_user" type="text" placeholder="Vero"
                     value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}"
                     class="p-3 border-rose-300 border-2 text-black focus:border-rose-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
 
                 {{-- Bagian --}}
                 <select name="bagian_id"
                     class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
-                    <option value="">BAGIAN</option>
+                    <option value="">Section</option>
                     @foreach ($bagians as $dt)
                         <option value="{{ $dt->id }}" {{ old('id') == $dt->id ? 'selected' : null }}>
                             {{ $dt->nama }}
@@ -34,20 +27,20 @@
                 </select>
 
                 {{-- Status --}}
-                {{-- <select name="status_id"
+                <select name="status_id"
                     class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
-                    <option value="">STATUS</option>
+                    <option value="">Status</option>
                     @foreach ($status as $dt)
                         <option value="{{ $dt->id }}" class=""
                             {{ old('status_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama_status }}
                         </option>
                     @endforeach
-                </select> --}}
+                </select>
 
                 {{-- Kategori --}}
                 <select name="kategori_id"
                     class="mb-3 mt-1 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300 bg-rose-300">
-                    <option value="">KATEGORI</option>
+                    <option value="">Category</option>
                     @foreach ($kategoris as $dt)
                         <option value="{{ $dt->id }}" {{ old('kategori_id') == $dt->id ? 'selected' : null }}>
                             {{ $dt->nama }}
@@ -56,7 +49,7 @@
                 </select>
 
                 <button value="search"
-                    class="uppercase rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-rose-300 hover:text-white border-4 border-rose-300 p-3 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300"
+                    class="rounded-lg font-montreal mx-3 text-xl tracking-wider text-black bg-white hover:bg-rose-300 hover:text-white border-4 border-rose-300 p-3 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300"
                     type="submit">
                     Search
                 </button>
@@ -66,11 +59,9 @@
 
         <div class="my-10">
             <p class="font-montreal text-lg text-gray-500 italic tracking-wide">
-                Total Data in at this page — {{ $users->count() }}
+                Data in on this page — {{ $users->count() }}
                 <br>
-                Total Data in Database — {{ $count }}
-                <br>
-                Rendering pages in — {{ number_format(microtime(true) - LARAVEL_START, 2) }} seconds.
+                Rendering pages — {{ number_format(microtime(true) - LARAVEL_START, 1) }} seconds.
             </p>
         </div>
 
@@ -79,17 +70,19 @@
             <thead class="">
                 <tr class="font-display tracking-widest text-xl" data-aos="fade-up" data-aos-delay="500"
                     data-aos-anchor-placement="bottom-bottom">
+                    <th class="py-5 px-5">No</th>
                     <th class="py-5 px-5">User</th>
-                    <th class="py-5 px-5">Bagian</th>
-                    <th class="py-5 px-5">Kode</th>
-                    <th class="py-5 px-5">status</th>
-                    <th class="py-5 px-5">action</th>
+                    <th class="py-5 px-5">Section</th>
+                    <th class="py-5 px-5">Code</th>
+                    <th class="py-5 px-5">Status</th>
+                    <th class="py-5 px-5">Action</th>
                 </tr>
             </thead>
             <tbody class="">
                 @foreach ($users as $data)
                     <tr
-                        class="items-center tracking-wider text-lg text-gray-800 font-montreal flex-row align-middle text-center">
+                        class="items-center uppercase tracking-wider text-lg text-gray-800 font-montreal flex-row align-middle text-center">
+                        <td>{{ $data->id }}.</td>
                         <td class="font-basement uppercase">{{ $data->nama_user }}</td>
                         <td>{{ $data->bagian->nama }}</td>
                         <td>{{ $data->kode }}</td>
@@ -110,15 +103,15 @@
                                 @endif
                             </span>
                         </td>
-                        <td class="flex text-black space-x-2 align-middle font-space items-center">
+                        <td class="flex text-black space-x-2 align-middle font-montreal items-center">
                             <button type="submit"
-                                class="uppercase rounded-lg font-space hover:bg-blue-300 text-black hover:text-white border-4 border-blue-300 bg-transparent px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-blue-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-blue-300">
+                                class="rounded-lg hover:bg-blue-300 text-black hover:text-white border-4 border-blue-300 bg-transparent px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-blue-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-blue-300">
                                 <a href="{{ route('inventaris.show', $data->id) }}">
                                     Detail
                                 </a>
                             </button>
                             <button type="submit"
-                                class="uppercase rounded-lg font-space hover:bg-green-300 hover:text-white text-black border-4 border-green-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-green-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-green-300">
+                                class="rounded-lg hover:bg-green-300 hover:text-white text-black border-4 border-green-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-green-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-green-300">
                                 <a href="{{ route('inventaris.edit', $data->id) }}">
                                     Update
                                 </a>
@@ -127,7 +120,7 @@
                                 @method('delete')
                                 @csrf
                                 <button type="submit"
-                                    class="uppercase rounded-lg font-space hover:bg-rose-300 hover:text-white border-4 border-rose-300 text-black px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
+                                    class="rounded-lg hover:bg-rose-300 hover:text-white border-4 border-rose-300 text-black px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
                                     Delete
                                 </button>
                             </form>

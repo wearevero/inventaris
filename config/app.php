@@ -3,22 +3,22 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
-    "name" => env("APP_NAME", "Inventaris"),
-    "env" => env("APP_ENV", "production"),
-    "debug" => (bool) env("APP_DEBUG", true),
-    "url" => env("APP_URL", "http://localhost"),
-    "asset_url" => env("ASSET_URL"),
-    "timezone" => env("APP_TIMEZONE", "Asia/Jakarta"),
-    "locale" => "id",
-    "fallback_locale" => "en",
-    "faker_locale" => "en_US",
-    "key" => env("APP_KEY"),
-    "cipher" => "AES-256-CBC",
-    "maintenance" => [
-        "driver" => "file",
+    'name' => env('APP_NAME', 'Inventaris'),
+    'env' => env('APP_ENV', 'production'),
+    'debug' => (bool) env('APP_DEBUG', true),
+    'url' => env('APP_URL', 'http://localhost'),
+    'asset_url' => env('ASSET_URL'),
+    'timezone' => env('APP_TIMEZONE', 'Asia/Jakarta'),
+    'locale' => 'en',
+    'fallback_locale' => 'en',
+    'faker_locale' => 'en_US',
+    'key' => env('APP_KEY'),
+    'cipher' => 'AES-256-CBC',
+    'maintenance' => [
+        'driver' => 'file',
     ],
 
-    "providers" => [
+    'providers' => [
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -48,15 +48,13 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         App\Providers\HealthServiceProvider::class,
     ],
 
-    "aliases" => Facade::defaultAliases()
+    'aliases' => Facade::defaultAliases()
         ->merge([
-            "Excel" => Maatwebsite\Excel\Facades\Excel::class,
-            "Alert" => RealRashid\SweetAlert\Facades\Alert::class,
-            "Health" => App\Providers\HealthServiceProvider::class,
+            'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+            'Health' => App\Providers\HealthServiceProvider::class,
         ])
         ->toArray(),
 ];

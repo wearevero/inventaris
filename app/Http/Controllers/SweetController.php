@@ -13,13 +13,13 @@ class SweetController extends Controller
         $data = Inventaris::query();
         $data->when($request->nama_user, function ($query) use ($request) {
             return $query->where(
-                "nama_user",
-                "like",
-                "%" . $request->nama_user . "%"
+                'nama_user',
+                'like',
+                '%'.$request->nama_user.'%'
             );
         });
 
-        return view("sweet.index", compact("data"));
+        return view('sweet.index', compact('data'));
     }
 
     public function create()
@@ -30,7 +30,6 @@ class SweetController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +62,6 @@ class SweetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

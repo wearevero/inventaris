@@ -44,11 +44,11 @@
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-gray-700 font-montreal text-xl hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800"
                     href="{{ route('login') }}">
-                    {{ __('Give me login page!') }}
+                    {{ __('Sign in') }}
                 </a>
 
                 <x-primary-button
-                    class="ml-3 px-4 py-2 uppercase rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero active:">
+                    class="ml-3 px-4 py-2 rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero active:">
                     {{ __('Register') }}
                 </x-primary-button>
             </div>

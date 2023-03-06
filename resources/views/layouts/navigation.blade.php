@@ -24,7 +24,7 @@
                             <x-slot name="trigger">
                                 <button
                                     class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
-                                    <div>MASTER</div>
+                                    <div>Show Data</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20">
@@ -38,13 +38,13 @@
 
                             <x-slot name="content">
                                 <x-dropdown-link class="divide-y text-black" :href="route('bagian.index')">
-                                    {{ __('Bagian') }}
+                                    {{ __('By Section') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('kategori.index')">
-                                    {{ __('Kategori') }}
+                                    {{ __('By Category') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('status.index')">
-                                    {{ __('Status') }}
+                                    {{ __('By Status') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
@@ -56,7 +56,7 @@
                             <x-slot name="trigger">
                                 <button
                                     class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
-                                    <div>TAMBAH</div>
+                                    <div>New</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20">
@@ -70,13 +70,13 @@
 
                             <x-slot name="content">
                                 <x-dropdown-link href="{{ route('inventaris.create') }}">
-                                    {{ __('Tambah Barang') }}
+                                    {{ __('New Stuff') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link href="{{ route('kategori.create') }}">
-                                    {{ __('Tambah Kategori') }}
+                                    {{ __('New Category') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link href="{{ route('bagian.create') }}">
-                                    {{ __('Tambah bagian') }}
+                                    {{ __('New Section') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>

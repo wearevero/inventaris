@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory;
-    protected $table = "kategori";
-    protected $guarded = ["id"];
+
+    protected $table = 'kategori';
+
+    protected $guarded = ['id'];
 
     public function inventaris()
     {
