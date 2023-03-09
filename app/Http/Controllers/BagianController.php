@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Exports\BagianExport;
 use App\Imports\BagianImport;
 use App\Models\Bagian;
@@ -10,10 +11,10 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class BagianController extends Controller
 {
-
     public function index()
     {
         $bagians = Bagian::get();
+
         return view('bagian.index', compact('bagians'));
     }
 
@@ -26,23 +27,27 @@ class BagianController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'slug' => 'required'
+            'slug' => 'required',
         ]);
-    
+
         Bagian::create($request->all());
-        return redirect()->route('bagian.index')->with('success', 'Berhasil menambahkan bagian!');
+
+        return redirect()
+            ->route('bagian.index')
+            ->with('success', 'Berhasil menambahkan bagian!');
     }
 
     public function show($id)
     {
         return view('inventaris.detail', [
-            'data' => Bagian::findOrFail($id)
+            'data' => Bagian::findOrFail($id),
         ]);
     }
 
     public function edit($id)
     {
         $data = Bagian::findOrFail($id);
+
         return view('inventaris.edit', compact('data'));
     }
 
@@ -50,6 +55,7 @@ class BagianController extends Controller
     {
         $data = Bagian::findOrFail($id);
         $data->update($request->except(['_token']));
+
         return redirect('bagian');
     }
 
@@ -63,15 +69,16 @@ class BagianController extends Controller
         return Excel::download(new BagianExport, 'master-bagian.xlsx');
     }
 
-    public function import() 
+    public function import()
     {
-        Excel::import(new BagianImport,request()->file('file'));
+        Excel::import(new BagianImport, request()->file('file'));
+
         return back();
     }
 
     public function show_bagian($slug)
     {
-        $datas = Inventaris::whereHas('bagian',function ($query) use ($slug) {
+        $datas = Inventaris::whereHas('bagian', function ($query) use ($slug) {
             return $query->where('slug', $slug);
         })->get();
         $bagians = Bagian::where('slug', $slug)->get();
@@ -79,7 +86,7 @@ class BagianController extends Controller
         return view('bagian.slug', [
             'datas' => $datas,
             'bagians' => $bagians,
-            'slug' => $slug
+            'slug' => $slug,
         ]);
     }
 }

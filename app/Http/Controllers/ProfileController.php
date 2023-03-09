@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,10 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')->with(
+            'status',
+            'profile-updated'
+        );
     }
 
     public function destroy(Request $request)
@@ -38,6 +42,7 @@ class ProfileController extends Controller
         $user->delete();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return Redirect::to('/');
     }
 }

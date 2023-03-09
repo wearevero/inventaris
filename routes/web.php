@@ -1,86 +1,101 @@
 <?php
 
 use App\Http\Controllers\BagianController;
-use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TeamController;
-use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
-use function Ramsey\Uuid\v1;
+// The health path
+Route::get('health', HealthCheckResultsController::class, '__invoke')->name(
+    'health'
+);
 
-// Master kategori route
-Route::get('/kategori', [KategoriController::class])->name('kategori.index');
+// Auth path
+Route::view('/', 'auth.login');
+Route::view('/dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Inventaris path
+Route::controller(InventarisController::class)
+    ->prefix('inventaris')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/', 'index')->name('inventaris.index');
+        Route::get('/create', 'create')->name('inventaris.create');
+        Route::post('/create', 'store')->name('inventaris.store');
+        Route::get('/detail/{id}', 'show')->name('inventaris.show');
+        Route::delete('/destroy/{id}', 'destroy')->name('inventaris.destroy');
+        Route::get('/edit/{id}', 'edit')->name('inventaris.edit');
+        Route::put('/edit/{id}', 'update')->name('inventaris.update');
+        Route::post('/import', 'import')->name('inventaris.import');
+        Route::get('/export', 'export')->name('inventaris.export');
+        Route::get('/cari', 'cari')->name('inventaris.cari');
+        Route::get('/search', 'search')->name('inventaris.search');
+    });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Bagian route
+Route::controller(BagianController::class)
+    ->prefix('bagian')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/', 'index')->name('bagian.index');
+        Route::get('/create', 'create')->name('bagian.create');
+        Route::post('/create', 'store')->name('bagian.store');
+        Route::get('/{bagian:slug}', 'show_bagian')->name('bagian.slug');
+        Route::delete('/delete', 'destroy')->name('bagian.delete');
+        Route::put('/edit', 'update')->name('bagian.update');
+        Route::post('/import', 'import')->name('bagian.import');
+        Route::get('/export', 'export')->name('bagian.export');
+    });
 
-// Chirp Route
-Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
+// Kategori route
+Route::controller(KategoriController::class)
+    ->prefix('kategori')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/', 'index')->name('kategori.index');
+        Route::get('/create', 'create')->name('kategori.create');
+        Route::post('/create', 'store')->name('kategori.store');
+        Route::get('/{kategori:slug}', 'show_kategori')->name('kategori.slug');
+        Route::get(
+            '/{kategori:slug}/{status:slug}',
+            'show_kategori_status'
+        )->name('kategori.status.slug');
+    });
 
-// Authentication Route
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-// Bagian Route
-Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
-    Route::get('/', 'index')->name('bagian.index');
-});                                       
-
-// Inventaris Route
-Route::controller(InventarisController::class)->prefix('inventaris')->middleware('auth')->group(function () {
-    Route::get('/', 'index')->name('inventaris.index');
-    Route::get('/tambah', 'create')->name('inventaris.tambah');
-    Route::post('/tambah', 'store')->name('inventaris.store');
-    Route::get('/detail/{id}', 'show')->name('inventaris.show');
-    Route::delete('/destroy/{id}', 'destroy')->name('inventaris.destroy');
-    Route::get('/edit/{id}', 'edit')->name('inventaris.edit');
-    Route::put('/edit/{id}', 'update')->name('inventaris.update');
-    Route::get('/import', 'importData')->name('inventaris.importData');
-    Route::post('/import', 'import')->name('inventaris.import');
-    Route::get('/export', 'export')->name('inventaris.export');
-    Route::get('/cari', 'cari')->name('inventaris.cari');
-    Route::get('/search', 'search')->name('inventaris.search');
-});
-
-// Master kategori route
-Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
-Route::get('/kategori/{kategori:slug}', [KategoriController::class, 'show_kategori']);
-
-
-// Master kategori route
-Route::get('/bagian/{bagian:slug}', [BagianController::class, 'show_bagian']);
-
-
-// Master bagian route
-Route::controller(BagianController::class)->prefix('bagian')->middleware('auth')->group(function () {
-    Route::get('/', 'index')->name('bagian.index');
-    Route::get('/tambah', 'create')->name('bagian.tambah');
-    Route::post('/tambah', 'store')->name('bagian.store');
-    Route::delete('/delete', 'destroy')->name('bagian.delete');
-    Route::put('/edit', 'update')->name('bagian.update');
-    Route::post('/import', 'import')->name('bagian.import');
-    Route::get('/export', 'export')->name('bagian.export');
-});
+// Status route
+Route::controller(StatusController::class)
+    ->prefix('status')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/', 'index')->name('status.index');
+        Route::get('/create', 'create')->name('status.create');
+        Route::get('/create', 'store')->name('status.store');
+        Route::get('/{status:slug}', 'show_status')->name('status.slug');
+    });
 
 // Team page controller
-Route::controller(TeamController::class)->prefix('team')->middleware('auth')->group(function() {
-    Route::get('/', 'index')->name('team.index');
-    Route::get('/tambah', 'create')->name('team.tambah');
-});
+Route::controller(TeamController::class)
+    ->prefix('team')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/', 'index')->name('team.index');
+        Route::get('/tambah', 'create')->name('team.tambah');
+    });
 
+// Profile path
+Route::controller(ProfileController::class)
+    ->prefix('profile')
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/profile', 'edit')->name('profile.edit');
+        Route::patch('/profile', 'update')->name('profile.update');
+        Route::delete('/profile', 'destroy')->name('profile.destroy');
+    });
 
 require __DIR__.'/auth.php';

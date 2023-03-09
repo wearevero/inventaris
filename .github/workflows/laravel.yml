@@ -2,9 +2,9 @@ name: Laravel
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["sweet"]
   pull_request:
-    branches: ["dev"]
+    branches: ["sweet"]
 
 jobs:
   laravel-tests:
@@ -19,6 +19,8 @@ jobs:
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Seed All Seeder
+        run: php artiasan db:seed
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions

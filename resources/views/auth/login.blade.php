@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-oranged text-oranged" />
+                <x-application-logo class="w-20 h-20 fill-vero text-vero" />
             </a>
         </x-slot>
 
@@ -13,35 +13,38 @@
             <!-- Email Address -->
             <div>
                 <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                    required autofocus />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-input-label for="password" :value="__('Password')" />
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="current-password" />
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
 
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-oranged shadow-sm focus:ring-oranged dark:focus:ring-oranged dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ml-2 text-sm text-white dark:text-gray-400">{{ __('Ingat aku') }}</span>
+                    <input id="remember_me" type="checkbox"
+                        class="rounded border-black text-vero shadow-sm focus:ring-vero dark:focus:ring-vero dark:focus:ring-offset-gray-800"
+                        name="remember">
+                    <span class="ml-2 text-lg text-gray-700 font-montreal">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-white font-montreal text-xl hover:text-oranged dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-oranged dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
-                        {{ __('Wanna join?') }}
-                    </a>
-           
-                <x-primary-button class="ml-3 px-4 py-2 uppercase rounded-lg font-montreal hover:bg-oranged hover:text-white border-4 border-oranged bg-white font-bold shadow-[4px_4px_0_0] shadow-oranged text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-oranged active:">
-                    {{ __('Log in') }}
+                <a class="underline text-gray-700 font-montreal text-xl hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800"
+                    href="{{ route('register') }}">
+                    {{ __('Sign up') }}
+                </a>
+
+                <x-primary-button
+                    class="ml-3 px-4 py-2 rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero active:">
+                    {{ __('Sign in') }}
                 </x-primary-button>
             </div>
         </form>

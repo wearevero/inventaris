@@ -15,6 +15,6 @@ class BagianExport implements FromCollection, WithHeadings
 
     public function headings(): array
     {
-        return ['ID', "Nama Bagian", "Slug"];
+        return ['ID', 'Nama Bagian', 'Slug'];
     }
 }

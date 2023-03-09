@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Bagian extends Model
 {
     use HasFactory;
+
     protected $table = 'bagian';
     protected $guarded = ['id'];
-
     public function inventaris()
     {
         return $this->hasMany(Inventaris::class);
     }
-
-    
 }
