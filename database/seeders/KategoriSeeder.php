@@ -53,6 +53,27 @@ class KategoriSeeder extends Seeder
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
+                'nama' => 'MODEM',
+                'kode' => 'MD',
+                'slug' => 'modem',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s'),
+            ],
+            [
+                'nama' => 'DVR',
+                'kode' => 'DVR',
+                'slug' => 'dvr',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s'),
+            ],
+            [
+                'nama' => 'TRIPOD',
+                'kode' => 'TPD',
+                'slug' => 'tripod',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s'),
+            ],
+            [
                 'nama' => 'OTHERS',
                 'kode' => 'ETC',
                 'slug' => 'others',

@@ -88,7 +88,6 @@ class InventarisController extends Controller
             'status_id' => 'required',
         ]);
         Inventaris::create($request->all());
-
         return redirect()->route('inventaris.index');
     }
 

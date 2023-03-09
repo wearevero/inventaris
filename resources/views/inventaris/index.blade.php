@@ -1,5 +1,5 @@
 <x-app-layout title="All Data">
-    <div class="px-20 my-10">
+    <div class="px-10 my-10">
         <div class="flex justify-between text-center">
             <button
                 class="px-2 rounded-lg font-montreal hover:bg-rose-300 hover:text-white border-4 border-rose-300 bg-white font-bold shadow-[3px_3px_0_0] shadow-rose-300 text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
@@ -15,24 +15,13 @@
                     value="{{ isset($_GET['nama_user']) ? $_GET['nama_user'] : '' }}"
                     class="p-3 border-rose-300 border-2 text-black focus:border-rose-300 tracking-wide focus:ring-0 font-montreal text-center rounded-lg bg-ivory uppercase" />
 
-                {{-- Bagian --}}
-                <select name="bagian_id"
-                    class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
-                    <option value="">Section</option>
-                    @foreach ($bagians as $dt)
-                        <option value="{{ $dt->id }}" {{ old('id') == $dt->id ? 'selected' : null }}>
-                            {{ $dt->nama }}
-                        </option>
-                    @endforeach
-                </select>
-
                 {{-- Status --}}
                 <select name="status_id"
                     class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
                     <option value="">Status</option>
                     @foreach ($status as $dt)
-                        <option value="{{ $dt->id }}" class=""
-                            {{ old('status_id') == $dt->id ? 'selected' : null }}>{{ $dt->nama_status }}
+                        <option value="{{ $dt->id }}"{{ old('status_id') == $dt->id ? 'selected' : null }}>
+                            {{ $dt->nama_status }}
                         </option>
                     @endforeach
                 </select>
@@ -43,6 +32,17 @@
                     <option value="">Category</option>
                     @foreach ($kategoris as $dt)
                         <option value="{{ $dt->id }}" {{ old('kategori_id') == $dt->id ? 'selected' : null }}>
+                            {{ $dt->nama }}
+                        </option>
+                    @endforeach
+                </select>
+
+                {{-- Bagian --}}
+                <select name="bagian_id"
+                    class="mb-3 mt-1 bg-rose-300 text-white border-rose-300 rounded-md text-lg outline-none focus:ring-rose-300 active:outline-none focus:outline-rose-300">
+                    <option value="">Section</option>
+                    @foreach ($bagians as $dt)
+                        <option value="{{ $dt->id }}" {{ old('bagian_id') == $dt->id ? 'selected' : null }}>
                             {{ $dt->nama }}
                         </option>
                     @endforeach
@@ -66,7 +66,7 @@
         </div>
 
         <table
-            class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle border-vero mx-auto rounded-md table-auto my-10 border-2 border-solid">
+            class="border-separate justify-center w-full align-middle text-black text-center items-center border-spacing-5 border-vero rounded-md my-10 border-2 border-solid">
             <thead class="">
                 <tr class="font-display tracking-widest text-xl" data-aos="fade-up" data-aos-delay="500"
                     data-aos-anchor-placement="bottom-bottom">
@@ -89,7 +89,7 @@
                         <td>
                             <span>
                                 @if ($data->status->id == 1)
-                                    <span class="py-1 px-2 rounded-lg bg-green-300 text-black">
+                                    <span class="py-1 px-2 rounded-lg bg-green-300/30 border-green-500 text-green-900">
                                         {{ $data->status->nama_status }}
                                     </span>
                                 @elseif($data->status->id == 2)

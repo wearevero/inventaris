@@ -151,8 +151,8 @@
 
                     <div class="flex items-center justify-end mt-4">
                         <x-primary-button
-                            class="ml-4 px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
-                            {{ __('Tambah Item') }}
+                            class="ml-4 px-4 uppercase rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
+                            {{ __('Tambah') }}
                         </x-primary-button>
                     </div>
                 </form>
