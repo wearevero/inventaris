@@ -14,7 +14,7 @@ return new class extends Migration
             $table->foreignId('bagian_id')->nullable();
             $table->integer('th_pembelian')->nullable();
             $table->string('memory')->default('-');
-            $table->string('cpu')->default('-');
+            $table->string('spec')->default('-');
             $table->string('kode')->default('-');
             $table->string('merk')->default('-');
             $table->string('keterangan')->nullable('-');

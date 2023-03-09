@@ -22,7 +22,6 @@ use Laravel\Octane\Listeners\StopWorkerIfNecessary;
 use Laravel\Octane\Octane;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Octane Server
@@ -49,7 +48,7 @@ return [
     |
     */
 
-    'https' => env('OCTANE_HTTPS', false),
+    'https' => env('OCTANE_HTTPS', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -127,9 +126,7 @@ return [
     |
     */
 
-    'warm' => [
-        ...Octane::defaultServicesToWarm(),
-    ],
+    'warm' => [...Octane::defaultServicesToWarm()],
 
     'flush' => [
         //
@@ -217,5 +214,4 @@ return [
     */
 
     'max_execution_time' => 30,
-
 ];

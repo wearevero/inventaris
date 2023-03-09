@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Exports\UsersExport;
 use App\Imports\UsersImport;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
     public function index()
     {
         $users = User::get();
+
         return view('user.index', compact('users'));
     }
 
@@ -21,9 +21,10 @@ class UserController extends Controller
         return Excel::download(new UsersExport, 'data-users.xlsx');
     }
 
-    public function import() 
+    public function import()
     {
-        Excel::import(new UsersImport,request()->file('file'));
+        Excel::import(new UsersImport, request()->file('file'));
+
         return back();
     }
 }

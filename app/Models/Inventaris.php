@@ -10,12 +10,10 @@ class Inventaris extends Model
     use HasFactory;
 
     protected $rules = [
-        'status' => 'boolean'
+        'status' => 'boolean',
     ];
 
-    protected $guarded = [
-        'id'
-    ];
+    protected $guarded = ['id'];
 
     public function bagian()
     {
@@ -31,5 +29,4 @@ class Inventaris extends Model
     {
         return $this->belongsTo(Status::class);
     }
-
 }

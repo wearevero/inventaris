@@ -4,7 +4,7 @@
             @csrf
             <input type="file" name="file" />
             <button type="submit">Upload</button>
-            <a href="{{ route('inventaris.export') }}">
+            <a href="{{ route('inventaris.import') }}">
                 <button>
                     Excel
                 </button>

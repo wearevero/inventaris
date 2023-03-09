@@ -6,9 +6,11 @@
             </h1>
         </div>
 
-        <table class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle rounded-lg table-auto my-5">
+        <table
+            class="border-separate text-black text-center items-center border-spacing-5 w-full align-middle rounded-lg table-auto my-5">
             <thead class="">
-                <tr class="font-display tracking-widest" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="bottom-bottom">
+                <tr class="font-display tracking-widest" data-aos="fade-up" data-aos-delay="500"
+                    data-aos-anchor-placement="bottom-bottom">
                     <th class="px-5">Nama</th>
                     <th class="px-5">Bagian</th>
                     <th class="px-5">Kode</th>
@@ -17,49 +19,53 @@
                 </tr>
             </thead>
             <tbody class="">
-            @foreach ($datas as $d)
-                <tr class="items-center tracking-wider text-gray-700 font-montreal flex-row align-middle text-center">
-                    <td class="font-basement uppercase">{{ $d->nama_user }}</td>
-                    <td class="">{{ $d->bagian->nama }}</td>
-                    <td class="">{{ $d->kode }}</td>
-                    <td class="">
-                        <span>
-                            @if($d->status->id == 1)
-                                <span class="py-1 px-2 rounded-lg bg-green-300 text-black">
-                                    {{ $d->status->nama_status }}
-                                </span>
-                            @elseif($d->status->id == 2)
-                                <span class="py-1 px-2 rounded-lg bg-blue-300 text-black">
-                                    {{ $d->status->nama_status }}
-                                </span>
-                            @elseif($d->status->id == 3)
-                                <span class="py-1 px-2 rounded-lg bg-red-300 text-black">
-                                    {{ $d->status->nama_status }}
-                                </span>
-                            @endif
-                        </span>
-                    </td>
-                    <td class="flex text-black space-x-2 align-middle font-space items-center">
-                        <button type="submit" class="uppercase rounded-lg font-space hover:bg-blue-300 hover:text-white border-4 border-blue-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-blue-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-blue-300">
-                            <a href="{{ route('inventaris.show', $d->id) }}">
-                                Detail
-                            </a>
-                        </button>
-                        <button type="submit" class="uppercase rounded-lg font-space hover:bg-green-300 hover:text-white text-black border-4 border-green-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-green-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-green-300">
-                            <a href="{{ route('inventaris.edit', $d->id) }}">
-                                Update
-                            </a>
-                        </button>
-                        <form action="{{ route('inventaris.destroy', $d->id) }}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button type="submit" class="uppercase rounded-lg font-space hover:bg-rose-300 hover:text-white border-4 border-rose-300 text-black px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
-                                Delete
+                @foreach ($datas as $d)
+                    <tr
+                        class="items-center tracking-wider text-gray-700 font-montreal flex-row align-middle text-center">
+                        <td class="font-basement uppercase">{{ $d->nama_user }}</td>
+                        <td class="">{{ $d->bagian->nama }}</td>
+                        <td class="">{{ $d->kode }}</td>
+                        <td class="">
+                            <span>
+                                @if ($d->status->id == 1)
+                                    <span class="py-1 px-2 rounded-lg bg-green-300 text-black">
+                                        {{ $d->status->nama_status }}
+                                    </span>
+                                @elseif($d->status->id == 2)
+                                    <span class="py-1 px-2 rounded-lg bg-blue-300 text-black">
+                                        {{ $d->status->nama_status }}
+                                    </span>
+                                @elseif($d->status->id == 3)
+                                    <span class="py-1 px-2 rounded-lg bg-red-300 text-black">
+                                        {{ $d->status->nama_status }}
+                                    </span>
+                                @endif
+                            </span>
+                        </td>
+                        <td class="flex text-black space-x-2 align-middle font-space items-center">
+                            <button type="submit"
+                                class="uppercase rounded-lg font-space hover:bg-blue-300 hover:text-white border-4 border-blue-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-blue-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-blue-300">
+                                <a href="{{ route('inventaris.show', $d->id) }}">
+                                    Detail
+                                </a>
                             </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
+                            <button type="submit"
+                                class="uppercase rounded-lg font-space hover:bg-green-300 hover:text-white text-black border-4 border-green-300 px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-green-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-green-300">
+                                <a href="{{ route('inventaris.edit', $d->id) }}">
+                                    Update
+                                </a>
+                            </button>
+                            <form action="{{ route('inventaris.destroy', $d->id) }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit"
+                                    class="uppercase rounded-lg font-space hover:bg-rose-300 hover:text-white border-4 border-rose-300 text-black px-2 py-2 font-bold shadow-[4px_4px_0_0] shadow-rose-300 transition hover:shadow-none focus:outline-none focus:ring active:bg-rose-300">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

@@ -14,21 +14,24 @@
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)"
+                required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)"
+                required autocomplete="email" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
-            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-black">
                         Your email address is unverified.
 
-                        <button form="send-verification" class="underline text-sm text-black hover:text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero">
+                        <button form="send-verification"
+                            class="underline text-sm text-black hover:text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero">
                             {{ __('Click here to re-send the verification email.') }}
                         </button>
                     </p>
@@ -43,15 +46,11 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button class="inline-flex items-center px-4 py-2 bg-vero border border-transparent rounded-md font-semibold text-md font-montreal text-ivory uppercase tracking-wide hover:bg-vero/30 active:bg-vero focus:outline-none focus:ring-2 focus:ring-vero focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">{{ __('Update Profile') }}</x-primary-button>
+            <x-primary-button
+                class="inline-flex items-center px-4 py-2 bg-vero border border-transparent rounded-md font-semibold text-md font-montreal text-ivory uppercase tracking-wide hover:bg-vero/30 active:bg-vero focus:outline-none focus:ring-2 focus:ring-vero focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">{{ __('Update Profile') }}</x-primary-button>
             @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-black"
-                >Saved.</p>
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                    class="text-sm text-black">Saved.</p>
             @endif
         </div>
     </form>

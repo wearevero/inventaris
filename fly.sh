@@ -7,4 +7,4 @@ fi
 
 git commit -m "$msg"
 
-git push -u origin sweet
+git push -u origin staging

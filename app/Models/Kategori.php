@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory;
+
     protected $table = 'kategori';
+
     protected $guarded = ['id'];
 
     public function inventaris()
     {
         return $this->hasMany(Inventaris::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 }

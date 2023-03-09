@@ -3,36 +3,22 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
-
     'name' => env('APP_NAME', 'Inventaris'),
-
     'env' => env('APP_ENV', 'production'),
-
-    'debug' => (bool) env('APP_DEBUG', false),
-
+    'debug' => (bool) env('APP_DEBUG', true),
     'url' => env('APP_URL', 'http://localhost'),
-
     'asset_url' => env('ASSET_URL'),
-
     'timezone' => env('APP_TIMEZONE', 'Asia/Jakarta'),
-
-    'locale' => 'id',
-
+    'locale' => 'en',
     'fallback_locale' => 'en',
-
     'faker_locale' => 'en_US',
-
     'key' => env('APP_KEY'),
-
     'cipher' => 'AES-256-CBC',
-
     'maintenance' => [
         'driver' => 'file',
-        // 'store'  => 'redis',
     ],
 
     'providers' => [
-
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -55,20 +41,20 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+        App\Providers\HealthServiceProvider::class,
     ],
 
-
-    'aliases' => Facade::defaultAliases()->merge([
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class, 
-    ])->toArray(),
-
+    'aliases' => Facade::defaultAliases()
+        ->merge([
+            'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+            'Health' => App\Providers\HealthServiceProvider::class,
+        ])
+        ->toArray(),
 ];

@@ -4,6 +4,10 @@
 
 Program ini dibuat untuk bersenang senang (dibaca: eksperiment) dengan _cutting edge_ teknologi yang sedang populer pada saat ini (2022 - 2023), _becasuse why not?_
 
+Becanda, projek ini dibuat untuk memudahkan manajemen semua barang inventaris yang dimiliki PT. Veronique Indonesia.
+
+Dalam program ini, terdapat fitur _tracking_ barang yang dapat digunakan untuk melakukan pencarian & melihat detail barang.
+
 ## Requirement
 
 Untuk dapat menjalankan di _development mode_, diperlukan beberapa syarat, seperti:
@@ -19,10 +23,10 @@ Untuk dapat menjalankan di _development mode_, diperlukan beberapa syarat, seper
 2. Buka `bash` dan ketik perintah `composer install`, `npm install`
 3. Jika sudah, ketik `php artisan key:generate`
 4. Migrasi semua table yang ada dengan perintah: `php artisan migrate`
-5. Seed data sample dengan perintah `php artisan db:seed --class=UserSeeder`, `php artisan db:seed --class=BagianSeeder`, `php artisan db:seed --class=KategoriSeeder`, `php artisan db:seed --class=StatusSeeder`
+5. Seed semua data yang dibutuhkan dengan perintah `php artisan db:seed`
 6. Jika kelima langkah di atas dirasa sudah dilakukan, jalankan project dengan perintah `php artisan serve` & `npm run dev`
 7. Buka peramban (dibaca: _browser_) dengan port `:8000` i.e: `127.0.0.1:8000`
 
 ## License
 
-Inventaris is open-sourced mini software licensed under the [MIT license](./LICENSE).
+Inventaris is mini open-source software licensed under the [MIT license](./LICENSE).

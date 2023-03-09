@@ -27,8 +27,9 @@ module.exports = {
             colors: {
                 oranged: "#FF4500",
                 vero: "#00e0d4",
-                ivory: "#FFFFF0",
+                ivory: "#F9F6EE",
                 soft: "#E8E8E8",
+                jeruk: "#FF5733",
             },
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
@@ -36,6 +37,7 @@ module.exports = {
                 basement: "BasementGrotesque-Black, sans serif",
                 montreal: "Neue-Montreal-Regular-400, sans-serif",
                 space: "SpaceMono-Regular, serif",
+                silkBold: "Silk-Bold, serif",
             },
             backgroundColor: "#000000",
         },

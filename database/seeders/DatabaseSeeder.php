@@ -4,13 +4,17 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Inventaris;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        Inventaris::factory(50)->create();
+        $this->call([
+            UserSeeder::class,
+            BagianSeeder::class,
+            KategoriSeeder::class,
+            StatusSeeder::class,
+        ]);
     }
 }
