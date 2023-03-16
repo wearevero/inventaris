@@ -1,10 +1,11 @@
 {
+    "name": "@wearevero/inventaris",
     "private": true,
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "format": "npx prettier --w .",
-        "formatall": "./node_modules/.bin/prettier --write resources/**/*.blade.php ./node_modules/.bin/prettier --write resources/**/**/*.blade.php"
+        "pint": "./node_modules/.bin/prettier --write resources/**/*.blade.php ./node_modules/.bin/prettier --write resources/**/**/*.blade.php"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -20,6 +21,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
-        "@shufo/prettier-plugin-blade": "^1.8.8"
+        "@shufo/prettier-plugin-blade": "^1.8.8",
+        "i": "^0.3.7"
     }
 }

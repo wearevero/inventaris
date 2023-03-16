@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Exports\InventarisExport;
 use App\Imports\InventarisImport;
 use App\Models\Bagian;
@@ -65,7 +64,6 @@ class InventarisController extends Controller
         $bagians = Bagian::select('id', 'nama')->get();
         $kategoris = Kategori::select('id', 'nama')->get();
         $status = Status::select('id', 'nama_status')->get();
-
         return view(
             'inventaris.tambah',
             compact('bagians', 'kategoris', 'status')
@@ -104,7 +102,6 @@ class InventarisController extends Controller
         $bagians = Bagian::select('id', 'nama', 'slug')->get();
         $kategoris = Kategori::select('id', 'nama', 'slug')->get();
         $status = Status::select('id', 'nama_status')->get();
-
         return view(
             'inventaris.edit',
             compact('data', 'bagians', 'kategoris', 'status')
@@ -166,5 +163,18 @@ class InventarisController extends Controller
         });
 
         return view('inventaris.index', compact('datas'));
+    }
+
+    public function barcode() {
+        $datas = Inventaris::select('id')->get();
+        return view('inventaris.detail', compact('datas'));
+    }
+
+    public function cetakBarcode($id) 
+    {
+        $data = Inventaris::get();
+        return view('inventaris.cetak', [
+            'data' => Inventaris::findOrFail($id),
+        ]);
     }
 }
