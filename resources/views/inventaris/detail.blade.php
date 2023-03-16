@@ -2,8 +2,16 @@
     <div class="px-20 my-20 mx-auto uppercase justify-center items-center">
         <h1 class="text-gray-700 font-display text-2xl text-center tracking-wide">THE DETAIL OF : <span
                 class="text-black tracking-widest">{{ $data->nama_user }}</span> </h1>
-        <div class="my-10 pl-10 font-basement text-black tracking-wider">
-            <ul class="text-xl space-y-2 text-gray-700">
+        <div class="my-10 pl-10 font-montreal text-black tracking-wider">
+            <ul class="text-xl space-y-1 text-gray-700">
+                <li class="mb-5 flex space-x-7 font-montreal">
+                    {!! DNS1D::getBarcodeHTML($data->kode, 'UPCA') !!}
+                    <button class="bg-slate-500/10 text-slate-800 rounded-lg px-2 border-slate-800 hover:text-slate-500">
+                        <a href="{{ route('cetak.barcode') }}">
+                            Cetak Barcode
+                        </a>
+                    </button>
+                </li>
                 <li>Nama : <span class="text-black ml-1">{{ $data->nama_user }}</span></li>
                 <li>Bagian : <span class="text-black ml-1">{{ $data->bagian->nama }}</span></li>
                 <li>Kode : <span class="text-black ml-1">{{ $data->kode }}</span></li>
@@ -39,4 +47,10 @@
             </button>
         </div>
     </div>
+
+    <script>
+        $('.print').click(function() {
+            window.print();
+        });
+    </script>
 </x-app-layout>

@@ -49,12 +49,15 @@ return [
         App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         App\Providers\HealthServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class,
     ],
 
     'aliases' => Facade::defaultAliases()
         ->merge([
             'Excel' => Maatwebsite\Excel\Facades\Excel::class,
             'Health' => App\Providers\HealthServiceProvider::class,
+            'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+            'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
         ])
         ->toArray(),
 ];

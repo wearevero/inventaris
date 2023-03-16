@@ -122,7 +122,7 @@
                     <x-slot name="trigger">
                         <button
                             class="inline-flex tracking-wider uppercase items-center px-3 py-2 border-2 border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
-                            <div>login as {{ Auth::user()->name }}</div>
+                            <div>{{ Auth::user()->name }}</div>
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20">
