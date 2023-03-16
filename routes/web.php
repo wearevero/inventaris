@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TeamController;
+use App\Models\Inventaris;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
@@ -97,5 +98,8 @@ Route::controller(ProfileController::class)
         Route::patch('/profile', 'update')->name('profile.update');
         Route::delete('/profile', 'destroy')->name('profile.destroy');
     });
+
+// Route testing for generate barcode
+Route::get('/inventaris/cetak-barcode/{id}', [InventarisController::class, 'cetakBarcode'])->name('cetak.barcode');
 
 require __DIR__.'/auth.php';

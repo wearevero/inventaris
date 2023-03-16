@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{ url('/favicon.png') }}" type="image/x-icon" />
     <title>{{ $title == config('app.name') ? null : config('app.name') . ' — ' . $title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/print.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased">
