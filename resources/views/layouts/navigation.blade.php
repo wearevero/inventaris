@@ -1,14 +1,14 @@
-<nav x-data="{ open: false }" class="bg-white/30  text-white backdrop-blur-sm border-b border-black sticky z-10 top-0">
+<nav x-data="{ open: false }" class="bg-gray-500/10 backdrop-blur-md border-b border-geistWhite sticky z-10 top-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo
-                            class="block animate animate-bounce h-9 w-auto fill-vero hover:text-gray-200 text-gray-800 dark:text-rose-500" />
+                            class="block animate animate-bounce h-9 w-auto fill-geistHightlightPurple hover:fill-gray-200" />
                     </a>
                 </div>
-                <div class="hidden text-black space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Hello') }}
                     </x-nav-link>
@@ -23,7 +23,7 @@
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
                                 <button
-                                    class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
+                                    class="inline-flex items-center tracking-wide border-transparent uppercase text-md text-gray-500 border-geistWhite bg-transparent hover:text-geistWhite focus:outline-none transition ease-in-out duration-150">
                                     <div>Show Data</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link class="divide-y text-black" :href="route('bagian.index')">
+                                <x-dropdown-link class="divide-y text-geistForeground" :href="route('bagian.index')">
                                     {{ __('By Section') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('kategori.index')">
@@ -101,7 +101,7 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link class="divide-y text-black" href="{{ route('health') }}"
+                                <x-dropdown-link class="divide-y" href="{{ route('health') }}"
                                     target="_blank">
                                     {{ __('The health ?') }}
                                 </x-dropdown-link>
@@ -121,7 +121,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="inline-flex tracking-wider uppercase items-center px-3 py-2 border-2 border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
+                            class="inline-flex tracking-wider uppercase items-center px-3 py-2 border-2 border-transparent text-md rounded-md text-geistWhite border-geistWhite bg-transparent hover:text-gray-500 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -179,9 +179,9 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+        <div class="pt-4 pb-1 border-t border-gray-500">
             <div class="px-4">
-                <div class="font-medium text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-geistWhite">{{ Auth::user()->name }}</div>
             </div>
 
             <div class="mt-3 space-y-1">

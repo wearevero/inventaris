@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-vero text-vero" />
+                <x-application-logo class="w-20 h-20 fill-geistWhite" />
             </a>
         </x-slot>
 
@@ -14,7 +14,7 @@
             <div>
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required autofocus />
+                    required />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
@@ -30,20 +30,20 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox"
-                        class="rounded border-black text-vero shadow-sm focus:ring-vero dark:focus:ring-vero dark:focus:ring-offset-gray-800"
+                        class="rounded border-geistWhite bg-geistForeground text-geistWhite focus:ring-geistWhite focus:ring-offset-gray-800"
                         name="remember">
-                    <span class="ml-2 text-lg text-gray-700 font-montreal">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-md text-geistWhite font-montreal">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-gray-700 font-montreal text-xl hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vero dark:focus:ring-offset-gray-800"
+                <a class="text-geistWhite font-montreal text-lg hover:text-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-geistWhite focus:ring-offset-gray-800"
                     href="{{ route('register') }}">
-                    {{ __('Sign up') }}
+                    {{ __('Register') }}
                 </a>
 
                 <x-primary-button
-                    class="ml-3 px-4 py-2 rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-lg transition hover:shadow-none focus:outline-none focus:ring active:bg-vero active:">
+                    class="ml-3 rounded-xl font-montreal hover:bg-geistWhite hover:text-geistForeground hover:transition hover:ease-in-out border border-geistWhite text-geistWhite bg-gray-500/10 text-lg transition focus:outline-none focus:ring active:bg-geistWhite">
                     {{ __('Sign in') }}
                 </x-primary-button>
             </div>

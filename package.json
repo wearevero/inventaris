@@ -22,6 +22,8 @@
     },
     "dependencies": {
         "@shufo/prettier-plugin-blade": "^1.8.8",
-        "i": "^0.3.7"
+        "daisyui": "^2.51.4",
+        "i": "^0.3.7",
+        "install": "^0.13.0"
     }
 }

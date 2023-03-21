@@ -8,7 +8,5 @@
             "named_class": false
         }
     },
-    "exclude": [
-        "./vendor"
-    ]
+    "exclude": ["./vendor"]
 }

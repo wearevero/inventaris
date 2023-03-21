@@ -9,9 +9,9 @@ class Kategori extends Model
 {
     use HasFactory;
 
-    protected $table = 'kategori';
+    protected $table = "kategori";
 
-    protected $guarded = ['id'];
+    protected $guarded = ["id"];
 
     public function inventaris()
     {

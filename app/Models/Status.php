@@ -9,9 +9,9 @@ class Status extends Model
 {
     use HasFactory;
 
-    protected $table = 'status';
+    protected $table = "status";
 
-    protected $guard = ['id'];
+    protected $guard = ["id"];
 
     public function inventaris()
     {

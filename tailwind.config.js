@@ -25,9 +25,50 @@ module.exports = {
                 },
             },
             colors: {
+                // Primary color
+                geistForeground: '#000',
+                geistWhite: "#fff",
+
+                // Error
+                geistErrorLighter: '#f7d4d6',
+                geistErrorLight: '#ff1a1a',
+                geistError: '#e00',
+                geistErrorDark: '#c50000',
+
+                // Success
+                geistSuccessLighter: '#d3e5ff',
+                geistSuccessLight: '#3291ff',
+                geistSuccess: '#0070f3',
+                geistSuccessDark: '#0761d1',
+
+                // Warning
+                geistWarningLighter: '#ffefc',
+                geistWarningLight: '#f7b955',
+                geistWarning: '#f5a623',
+                geistWarningDark: '#ab570a',
+
+                // Violet
+                geistVioletLighter: '#d8ccf1',
+                geistVioletLight: '#8a63d2',
+                geistViolet: '#7928ca',
+                geistVioletDark: '#4c2889',
+
+                // Cyan
+                geistCyanLighter: '#aaffec',
+                geistCyanLight: '#79ffe1',
+                geistCyan: '#50e3c2',
+                geistCyanDark: '#29bc9b',
+
+                // Hightlight
+                geistHightlightPurple: '#f81ce5',
+                geistHightlightMagenta: '#eb367f',
+                geistHightlightPink: '#ff0080',
+                geistHightlightYellow: '#fff500',
+
                 oranged: "#FF4500",
                 vero: "#00e0d4",
-                ivory: "#F9F6EE",
+                ivory: "#000",
+                ivory2: "#F9F6EE",
                 soft: "#E8E8E8",
                 jeruk: "#FF5733",
             },
@@ -46,5 +87,9 @@ module.exports = {
     plugins: [
         require("@tailwindcss/forms"),
         require("tailwindcss-plugins/pagination"),
+        require("daisyui"),
     ],
+    daisyui: {
+        themes: ["cupcake", "dark", "cmyk"],
+    },
 };

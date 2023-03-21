@@ -1,67 +1,67 @@
 <?php
 
 return [
-    'docs' => [
-        'route' => '/docs',
-        'path' => '/resources/docs',
-        'landing' => 'overview',
-        'middleware' => ['web'],
+    "docs" => [
+        "route" => "/docs",
+        "path" => "/resources/docs",
+        "landing" => "overview",
+        "middleware" => ["web"],
     ],
 
-    'versions' => [
-        'default' => '1.0',
-        'published' => ['1.0'],
+    "versions" => [
+        "default" => "1.0",
+        "published" => ["1.0"],
     ],
 
-    'settings' => [
-        'auth' => true,
-        'guard' => null,
-        'ga_id' => '',
-        'middleware' => ['web'],
+    "settings" => [
+        "auth" => true,
+        "guard" => null,
+        "ga_id" => "",
+        "middleware" => ["web"],
     ],
 
-    'cache' => [
-        'enabled' => false,
-        'period' => 5,
+    "cache" => [
+        "enabled" => false,
+        "period" => 5,
     ],
 
-    'search' => [
-        'enabled' => false,
-        'default' => 'algolia',
-        'engines' => [
-            'internal' => [
-                'index' => ['h2', 'h3'],
+    "search" => [
+        "enabled" => false,
+        "default" => "algolia",
+        "engines" => [
+            "internal" => [
+                "index" => ["h2", "h3"],
             ],
-            'algolia' => [
-                'key' => '',
-                'index' => '',
+            "algolia" => [
+                "key" => "",
+                "index" => "",
             ],
         ],
     ],
 
-    'ui' => [
-        'code_theme' => 'dark', // or: light
-        'fav' => '', // eg: fav.png
-        'fa_v4_shims' => true, // Add FontAwesome v4 shims prevent BC break
-        'show_side_bar' => true,
-        'colors' => [
-            'primary' => '#787AF6',
-            'secondary' => '#2b9cf2',
+    "ui" => [
+        "code_theme" => "dark", // or: light
+        "fav" => "", // eg: fav.png
+        "fa_v4_shims" => true, // Add FontAwesome v4 shims prevent BC break
+        "show_side_bar" => true,
+        "colors" => [
+            "primary" => "#787AF6",
+            "secondary" => "#2b9cf2",
         ],
 
-        'theme_order' => null, // ['LaRecipeDarkTheme', 'customTheme']
+        "theme_order" => null, // ['LaRecipeDarkTheme', 'customTheme']
     ],
 
-    'seo' => [
-        'author' => '',
-        'description' => '',
-        'keywords' => '',
-        'og' => [
-            'title' => '',
-            'type' => 'article',
-            'url' => '',
-            'image' => '',
-            'description' => '',
+    "seo" => [
+        "author" => "",
+        "description" => "",
+        "keywords" => "",
+        "og" => [
+            "title" => "",
+            "type" => "article",
+            "url" => "",
+            "image" => "",
+            "description" => "",
         ],
     ],
 
@@ -78,12 +78,12 @@ return [
    |
    */
 
-    'forum' => [
-        'enabled' => false,
-        'default' => 'disqus',
-        'services' => [
-            'disqus' => [
-                'site_name' => '', // yoursite.disqus.com
+    "forum" => [
+        "enabled" => false,
+        "default" => "disqus",
+        "services" => [
+            "disqus" => [
+                "site_name" => "", // yoursite.disqus.com
             ],
         ],
     ],
@@ -100,15 +100,15 @@ return [
     |
     */
 
-    'packages' => [
-        'path' => 'larecipe-components',
+    "packages" => [
+        "path" => "larecipe-components",
     ],
 
-    'blade-parser' => [
-        'regex' => [
-            'code-blocks' => [
-                'match' => '/\<pre\>(.|\n)*?<\/pre\>/',
-                'replacement' => '<code-block>',
+    "blade-parser" => [
+        "regex" => [
+            "code-blocks" => [
+                "match" => '/\<pre\>(.|\n)*?<\/pre\>/',
+                "replacement" => "<code-block>",
             ],
         ],
     ],

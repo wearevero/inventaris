@@ -13,13 +13,13 @@ class SweetController extends Controller
         $data = Inventaris::query();
         $data->when($request->nama_user, function ($query) use ($request) {
             return $query->where(
-                'nama_user',
-                'like',
-                '%'.$request->nama_user.'%'
+                "nama_user",
+                "like",
+                "%" . $request->nama_user . "%"
             );
         });
 
-        return view('sweet.index', compact('data'));
+        return view("sweet.index", compact("data"));
     }
 
     public function create()

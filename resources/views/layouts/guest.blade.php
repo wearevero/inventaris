@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="cupcake">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +9,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="min-h-screen bg-black">
-    <div class="font-basement bg-black text-black antialiased">
+<body class="min-h-screen bg-geistForeground">
+    <div class="font-basement bg-geistForeground text-geistForeground antialiased">
         {{ $slot }}
     </div>
 </body>
-
 </html>
