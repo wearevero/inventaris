@@ -10,6 +10,6 @@ class DashboardController extends Controller
     {
         $data = User::get();
 
-        return view('dashboard', compact('data'));
+        return view("dashboard", compact("data"));
     }
 }

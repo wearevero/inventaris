@@ -19,13 +19,13 @@ class AppServiceProvider extends ServiceProvider
         Health::checks([
             DatabaseCheck::new(),
             PingCheck::new()
-                ->url('127.0.0.1')
+                ->url("127.0.0.1")
                 ->timeout(2)
-                ->name('development preview'),
+                ->name("development preview"),
             PingCheck::new()
-                ->url('10.10.11.3')
+                ->url("10.10.11.3")
                 ->timeout(2)
-                ->name('Production preview'),
+                ->name("Production preview"),
             OptimizedAppCheck::new()
                 ->checkConfig()
                 ->checkRoutes(),

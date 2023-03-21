@@ -13,7 +13,7 @@ class StatusController extends Controller
         $datas = Inventaris::all();
         $status = Status::all();
 
-        return view('status.index', compact('status', 'datas'));
+        return view("status.index", compact("status", "datas"));
     }
 
     public function create()
@@ -48,15 +48,15 @@ class StatusController extends Controller
 
     public function show_status($slug)
     {
-        $datas = Inventaris::whereHas('status', function ($query) use ($slug) {
-            return $query->where('slug', $slug);
+        $datas = Inventaris::whereHas("status", function ($query) use ($slug) {
+            return $query->where("slug", $slug);
         })->get();
-        $status = Status::where('slug', $slug)->get();
+        $status = Status::where("slug", $slug)->get();
 
-        return view('status.slug', [
-            'datas' => $datas,
-            'status' => $status,
-            'slug' => $slug,
+        return view("status.slug", [
+            "datas" => $datas,
+            "status" => $status,
+            "slug" => $slug,
         ]);
     }
 }

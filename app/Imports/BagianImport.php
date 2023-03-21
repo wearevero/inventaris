@@ -10,8 +10,8 @@ class BagianImport implements ToModel
     public function model(array $row)
     {
         return new Bagian([
-            'nama' => $row[1],
-            'slug' => $row[2],
+            "nama" => $row[1],
+            "slug" => $row[2],
         ]);
     }
 }

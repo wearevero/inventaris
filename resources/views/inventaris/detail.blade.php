@@ -7,7 +7,7 @@
                 <li class="mb-5 flex space-x-7 font-montreal">
                     {!! DNS1D::getBarcodeHTML($data->kode, 'UPCA') !!}
                     <button class="bg-slate-500/10 text-slate-800 rounded-lg px-2 border-slate-800 hover:text-slate-500">
-                        <a href="{{ route('cetak.barcode') }}">
+                        <a href="{{ route('cetak.barcode', $data->id) }}">
                             Cetak Barcode
                         </a>
                     </button>
