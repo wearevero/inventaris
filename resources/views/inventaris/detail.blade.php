@@ -5,36 +5,36 @@
         <div class="my-10 pl-10 font-montreal text-black tracking-wider">
             <ul class="text-xl space-y-1 text-gray-700">
                 <li class="mb-5 flex space-x-7 font-montreal">
-                    {!! DNS1D::getBarcodeHTML($data->kode, 'UPCA') !!}
+                    {!! DNS1D::getBarcodeHTML('123456789', 'UPCA') !!}
                     <button class="bg-slate-500/10 text-slate-800 rounded-lg px-2 border-slate-800 hover:text-slate-500">
                         <a href="{{ route('cetak.barcode', $data->id) }}">
                             Cetak Barcode
                         </a>
                     </button>
                 </li>
-                <li>Nama : <span class="text-black ml-1">{{ $data->nama_user }}</span></li>
-                <li>Bagian : <span class="text-black ml-1">{{ $data->bagian->nama }}</span></li>
-                <li>Kode : <span class="text-black ml-1">{{ $data->kode }}</span></li>
-                <li>Th. Pembelian : <span class="text-black ml-1">{{ $data->th_pembelian }}</span></li>
-                <li>CPU : <span class="text-black ml-1">{{ $data->spec }}</span></li>
-                <li>Memory : <span class="text-black ml-1">{{ $data->memory }}</span></li>
-                <li>Merk : <span class="text-black ml-1">{{ $data->merk }}</span></li>
-                <li>Size Monitor : <span class="text-black ml-1">{{ $data->size_monitor }}</span></li>
-                <li>Kategori : <span class="text-black ml-1">{{ $data->kategori->nama }}</span></li>
+                <li>Nama : <span class="text-wgite ml-1">{{ $data->nama_user }}</span></li>
+                <li>Bagian : <span class="text-white ml-1">{{ $data->bagian->nama }}</span></li>
+                <li>Kode : <span class="text-white ml-1">{{ $data->kode }}</span></li>
+                <li>Th. Pembelian : <span class="text-white ml-1">{{ $data->th_pembelian }}</span></li>
+                <li>CPU : <span class="text-white ml-1">{{ $data->spec }}</span></li>
+                <li>Memory : <span class="text-white ml-1">{{ $data->memory }}</span></li>
+                <li>Merk : <span class="text-white ml-1">{{ $data->merk }}</span></li>
+                <li>Size Monitor : <span class="text-white ml-1">{{ $data->size_monitor }}</span></li>
+                <li>Kategori : <span class="text-white ml-1">{{ $data->kategori->nama }}</span></li>
                 <li>Keterangan :
                     @if ($data->keterangan == null)
-                        <span class="text-black ml-1">Barang ini tidak memiliki Keterangan apapun</span>
+                        <span class="text-white ml-1">Barang ini tidak memiliki Keterangan apapun</span>
                     @elseif($data->keterangan != null)
-                        <span class="text-black ml-1">{{ $data->keterangan }}</span>
+                        <span class="text-white ml-1">{{ $data->keterangan }}</span>
                     @endif
                 </li>
-                <li>Current location : <span class="text-black ml-1">{{ $data->bagian->nama }}</span></li>
+                <li>Current location : <span class="text-white ml-1">{{ $data->bagian->nama }}</span></li>
                 <li>Current status :
-                    <span class="text-black ml-1">
+                    <span class="text-white ml-1">
                         {{ $data->status->nama_status }}
                     </span>
                 </li>
-                <li>Last updated : <span class="text-black ml-1">{{ $data->updated_at }} wib</span></li>
+                <li>Last updated : <span class="text-white ml-1">{{ $data->updated_at }} wib</span></li>
             </ul>
         </div>
 

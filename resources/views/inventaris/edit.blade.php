@@ -35,10 +35,11 @@
                 <x-input-label for="kategori" :value="__('Kategori')" />
                 <select name="kategori" id="kategori"
                     class="mb-3 mt-1 border-gray-300 w-full rounded-md text-lg outline-none focus:ring-vero text-black active:outline-none focus:outline-vero">
-                    <option value=""> {{ $data->kategori->nama }} </option>
+                    <option value="">{{ $data->kategori->nama }}</option>
                     @foreach ($kategoris as $kategori)
-                        <option value="{{ $kategori->id }}" {{ old('id') == $kategori->id ? 'selected' : null }}>
-                            {{ $kategori->nama }}</option>
+                        <option value="{{ $kategori->id }}" {{ old('kategori_id') == $kategori->id ? 'selected' : null }}>
+                            {{ $kategori->nama }}
+                        </option>
                     @endforeach
                 </select>
             </div>

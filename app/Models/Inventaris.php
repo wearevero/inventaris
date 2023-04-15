@@ -9,6 +9,21 @@ class Inventaris extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nama_user',
+        'bagian_id',
+        'th_pembelian',
+        'memory',
+        'spec',
+        'kode',
+        'merk',
+        'keterangan',
+        'posisi',
+        'size_monitor',
+        'kategori_id',
+        'status_id'
+    ];
+
     protected $rules = [
         "status" => "boolean",
     ];
