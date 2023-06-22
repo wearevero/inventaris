@@ -50,6 +50,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         App\Providers\HealthServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
     ],
 
     "aliases" => Facade::defaultAliases()

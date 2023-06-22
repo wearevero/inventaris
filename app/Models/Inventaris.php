@@ -4,10 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Inventaris extends Model
 {
     use HasFactory;
+    use Searchable;
+
+    public function toSearchableArray()
+    {
+        return [
+            'nama_user' => $this->nama_user,
+            'kode' => $this->kode,
+        ];
+    }
 
     protected $fillable = [
         'nama_user',

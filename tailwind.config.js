@@ -87,9 +87,5 @@ module.exports = {
     plugins: [
         require("@tailwindcss/forms"),
         require("tailwindcss-plugins/pagination"),
-        require("daisyui"),
     ],
-    daisyui: {
-        themes: ["cupcake", "dark", "cmyk"],
-    },
 };

@@ -25,7 +25,7 @@
                         Veronique Research Dept. All rights reserved.</li>
                 </ul>
 
-                <ul class="flex text-geistHightlightPurple gap-6 mt-8">
+                <ul class="flex text-geistSuccessLight gap-6 mt-8">
                     <li>
                         <a href="https://github.com/wearevero" rel="noreferrer" target="_blank"
                             class="transition hover:opacity-75">

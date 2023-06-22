@@ -3,7 +3,7 @@
     <x-auth-card class="pb-20">
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="animate w-20 h-20 fill-vero text-vero" />
+                <x-application-logo class="animate w-20 h-20 fill-geistSuccessLight" />
             </a>
         </x-slot>
 
@@ -119,7 +119,7 @@
 
             <div>
                 <x-input-label for="keterangan" :value="__('Keterangan')" />
-                <textarea id="keterangan" class="rounded-md text-black font-montreal text-lg mt-1 w-full" name="keterangan"
+                <textarea id="keterangan" class="rounded-md bg-transparent text-geistWhite font-montreal text-lg mt-1 w-full" name="keterangan"
                     value="{{ $data->keterangan }}" autofocus placeholder="{{ $data->keterangan }}"">
                     {{ $data->keterangan }}
                 </textarea>
@@ -128,7 +128,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-primary-button
-                    class="ml-4 px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
+                    class="ml-4 px-4 py-2 uppercase rounded-lg font-space hover:bg-transparent text-white border-4 border-geistWhite bg-geistForeground font-bold shadow-[6px_6px_0_0] shadow-geistWhite text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-geistWhite">
                     Update
                 </x-primary-button>
             </div>

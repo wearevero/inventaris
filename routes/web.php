@@ -35,7 +35,6 @@ Route::controller(InventarisController::class)
         Route::post("/import", "import")->name("inventaris.import");
         Route::get("/export", "export")->name("inventaris.export");
         Route::get("/cari", "cari")->name("inventaris.cari");
-        Route::get("/search", "search")->name("inventaris.search");
         Route::get("/cetak-barcode/{id}", "cetakBarcode")->name(
             "cetak.barcode"
         );

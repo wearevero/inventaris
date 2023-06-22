@@ -3,28 +3,30 @@
         <div class="">
             <x-slot name="logo">
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current mt-10 text-vero" />
+                    <x-application-logo class="w-20 h-20 fill-geistSuccessLight mt-10" />
                 </a>
             </x-slot>
             <div class="z-50">
-                <h1 class="text-center text-black font-basement font-bold text-2xl my-5">
+                <h1 class="text-center text-geistWhite font-basement font-bold text-2xl my-5">
                     Import Data
                 </h1>
                 <form method="post" enctype="multipart/form-data" class="flex space-x-5"
                     action="{{ route('inventaris.import') }}">
                     @csrf
                     <input type="file" name="file"
-                        class="p-1 items-center rounded-md bg-transparent border border-black border-dashed" required />
+                        class="p-1 items-center rounded-md bg-transparent border border-geistWhite border-dashed" required />
                     <button type="submit"
-                        class="px-4 uppercase rounded-lg font-space hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[6px_6px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">Upload</button>
+                        class="px-4 uppercase rounded-lg font-space hover:bg-geistWhite text-geistWhite hover:text-black border-4 border-geistWhite bg-transparent font-bold shadow-[6px_6px_0_0] shadow-geistWhite text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-geistWhite">
+                        Upload
+                    </button>
                 </form>
             </div>
 
-            <hr class="dark:background-white my-10 border-b border-solid border-vero" />
+            <hr class="dark:background-white my-10 border-b border-solid border-geistWhite" />
 
             {{-- Input Manual --}}
             <div class="">
-                <h1 class="text-center font-basement font-bold mb-5 text-black text-2xl">
+                <h1 class="text-center font-basement font-bold mb-5 text-geistWhite text-2xl">
                     Input Data
                 </h1>
                 <form method="POST" action="{{ route('inventaris.store') }}">
@@ -144,14 +146,14 @@
                     {{-- Keterangan --}}
                     <div>
                         <x-input-label for="keterangan" :value="__('Keterangan')" />
-                        <textarea id="keterangan" class="rounded-md text-black font-montreal text-lg mt-1 w-full" name="keterangan"
+                        <textarea id="keterangan" class="rounded-md text-geistWhite bg-transparent font-montreal text-lg mt-1 w-full" name="keterangan"
                             value="{{ old('keterangan') }}" autofocus placeholder="Barang ini blablabla..."></textarea>
                         <x-input-error :messages="$errors->get('keterangan')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
                         <x-primary-button
-                            class="ml-4 px-4 uppercase rounded-lg font-montreal hover:bg-vero hover:text-white border-4 border-vero bg-white font-bold shadow-[4px_4px_0_0] shadow-vero text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-vero">
+                            class="ml-4 px-4 py-2 uppercase rounded-lg font-space hover:bg-transparent text-white border-4 border-geistWhite bg-geistForeground font-bold shadow-[6px_6px_0_0] shadow-geistWhite text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-geistWhite">
                             {{ __('Tambah') }}
                         </x-primary-button>
                     </div>
