@@ -14,24 +14,11 @@ class InventarisController extends Controller
 {
     public function index(Request $request)
     {
-        // $users = Inventaris::query();
-        // $datas = Inventaris::query();
-        // $status = Status::get();
-        // $kategoris = Kategori::get();
-        // $bagians = Bagian::get();
-
-        // $users->when($request->nama_user, function($query) use ($request) {
-        //     return $query->where('nama_user', 'like', '%'.$request->nama_user.'%');
-        // });
-
-        // $users->when($request->bagian_id, function($query) use ($request) {
-        //     return $query->where('bagian_id', '=',$request->bagian_id);
-        // });
         $status = Status::select('id', 'nama_status')->get();
         $bagians = Bagian::select('id', 'nama')->get();
         $kategoris = Kategori::select('id', 'nama')->get();
         $datas = Inventaris::query();
-        $users = Inventaris::query();
+        $users = Inventaris::query()->with('status', 'bagian', 'kategori');
         $count = $users->count();
 
         $users->when($request->nama_user, function($query) use ($request) {
@@ -49,24 +36,8 @@ class InventarisController extends Controller
             return $query->where('bagian_id', '=', $request->bagian_id);
         });
 
-
-        // if ($request->keyword) {
-        //     $datas = Inventaris::search($request->keyword);
-        //     $status = Status::get();
-        //     $bagians = Bagian::select("id", "nama")->get();
-        //     $kategoris = Kategori::select("id", "nama")->get();
-        //     $users = Inventaris::paginate(15);
-        // } else {
-        //     $datas = Inventaris::with('kategori')->select('id', 'nama_user')->paginate(15);
-        //     $status = Status::get();
-        //     $bagians = Bagian::select("id", "nama")->get();
-        //     $kategoris = Kategori::select("id", "nama")->get();
-        //     $users = Inventaris::with('bagian', 'kategori', 'kategori', 'status')->paginate(15);
-        // }
-        // $count = Inventaris::query()->count();
-
         return view(
-            "inventaris.index", compact("status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(5), 'datas' => $datas->paginate(5)],
+            "inventaris.index", compact("status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(10), 'datas' => $datas->paginate(10)],
         );
     }
 

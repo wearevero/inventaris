@@ -14,7 +14,7 @@
                     action="{{ route('inventaris.import') }}">
                     @csrf
                     <input type="file" name="file"
-                        class="p-1 items-center rounded-md bg-transparent border border-geistWhite border-dashed" required />
+                        class="p-1 items-center text-geistWhite rounded-md bg-transparent border border-geistWhite border-dashed" required />
                     <button type="submit"
                         class="px-4 uppercase rounded-lg font-space hover:bg-geistWhite text-geistWhite hover:text-black border-4 border-geistWhite bg-transparent font-bold shadow-[6px_6px_0_0] shadow-geistWhite text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-geistWhite">
                         Upload
