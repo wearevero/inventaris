@@ -5,7 +5,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo
-                            class="block animate animate-bounce h-9 w-auto fill-geistHightlightPurple hover:fill-gray-200" />
+                            class="block animate animate-bounce h-9 w-auto fill-geistSuccessLight hover:fill-gray-200" />
                     </a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -14,7 +14,7 @@
                     </x-nav-link>
 
                     {{-- INVENTARIS MENU --}}
-                    <x-nav-link :href="route('inventaris.index')" :active="request()->routeIs('inventaris.index')">
+                    <x-nav-link :href="route('inventaris.index')" :active="request()->routeIs('inventaris.*')">
                         {{ __('Inventaris') }}
                     </x-nav-link>
 
@@ -23,7 +23,7 @@
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
                                 <button
-                                    class="inline-flex items-center tracking-wide border-transparent uppercase text-md text-gray-500 border-geistWhite bg-transparent hover:text-geistWhite focus:outline-none transition ease-in-out duration-150">
+                                    class="inline-flex items-center tracking-wide border-transparent focus:text-geistWhite uppercase text-md text-gray-500 border-geistWhite bg-transparent hover:text-geistWhite focus:outline-none transition ease-in-out duration-150">
                                     <div>Show Data</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
                                 <button
-                                    class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
+                                    class="inline-flex items-center tracking-wider border-transparent uppercase text-md leading-4 font-medium rounded-md text-gray-500 border-geistWhite bg-transparent active:text-geistWhite focus:text-geistWhite hover:text-geistWhite focus:outline-none transition ease-in-out duration-150">
                                     <div>New</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@
                         <x-dropdown align="left" width="48">
                             <x-slot name="trigger">
                                 <button
-                                    class="inline-flex items-center tracking-wider border-transparent uppercase text-sm leading-4 font-medium rounded-md text-gray-700 border-vero bg-transparent hover:text-vero focus:outline-none transition ease-in-out duration-150">
+                                    class="inline-flex items-center tracking-wider border-transparent uppercase text-md leading-4 font-medium rounded-md text-gray-500 border-geistWhite bg-transparent hover:text-geistWhite focus:text-geistWhite focus:outline-none transition ease-in-out duration-150">
                                     <div>other</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"

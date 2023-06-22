@@ -7,7 +7,7 @@
                     veronique inventory system :
                 </h1>
                 <br><br>
-                <h1 class="font-display tracking-wide space-y-5 text-5xl text-geistHightlightPurple" data-aos="fade-up"
+                <h1 class="font-display tracking-wide space-y-5 text-5xl text-geistSuccessLight" data-aos="fade-up"
                     data-aos-easing="linear" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     Bring Your Thing, we will manage the rest
                 </h1>
