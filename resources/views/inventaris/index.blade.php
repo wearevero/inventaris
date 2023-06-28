@@ -44,12 +44,18 @@
                                     </option>
                                 @endforeach
                             </select>
-                <input name="nama_user" type="text" placeholder="Vero"
+                <input name="nama_user" type="text" placeholder="Cari nama"
                     class="py-2 border-geistWhite border text-geistWhite focus:border-geistWhite tracking-wide focus:ring-0 font-montreal text-center rounded-xl bg-geistForeground uppercase" />
                 <button
                     class="px-4 py-1 text-geistWhite bg-gray-500/10 rounded-lg tracking-wide font-montreal border-2 hover:bg-gray-300/10 border-geistWhite text-lg transition focus:outline-none"
                     type="submit">
                     Search
+                </button>
+                <button
+                    name="keyword"
+                    class="px-4 py-1 text-geistErrorLight bg-geistErrorLight/10 rounded-lg tracking-wide font-montreal border-2 hover:bg-geistErrorLight-300/10 border-geistErrorLight text-lg transition focus:outline-none"
+                    type="submit">
+                    Reset
                 </button>
             </form>
             {{-- End search function --}}

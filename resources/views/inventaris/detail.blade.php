@@ -5,13 +5,15 @@
         <div class="my-10 pl-10 font-montreal text-geistWhite tracking-wider">
             <ul class="text-xl space-y-1 text-geistWhite">
                 <li class="mb-5 flex space-x-7 font-montreal fill-geistWhite text-geistWhite">
-                    <span class="fill-geistWhite border border-geistWhite bg-geistWhite p-3 rounded-lg">{!! DNS1D::getBarcodeHTML(1234567890, 'UPCA') !!}</span>
+                    <span class="fill-geistWhite border border-geistWhite bg-geistWhite p-3 rounded-lg">{!! DNS1D::getBarcodeHTML($data->kode, 'C128') !!}</span>
                     <button class="bg-slate-500/10 text-geistWhite rounded-lg px-3 border border-geistWhite">
-                        <a href="{{ route('cetak.barcode', $data->id) }}">
-                            Cetak Barcode
+                        <a href="{{ route('cetak.barcode', $data->id) }}" target="_blank">
+                            Print Barcode
                         </a>
                     </button>
-                    <span class="bg-geistErrorLight/10 text-geistErrorLight border p-2 flex items-center justify-center text-sm border-geistErrorLight rounded-full">under development</span>
+                    <span class="bg-transparent text-geistCyanLight border-2 p-2 flex items-center justify-center text-sm border-geistCyanLight rounded-full">
+                        it's new, lets try it!
+                    </span>
                 </li>
                 <li>Nama : <span class="text-geistWhite ml-1">{{ $data->nama_user }}</span></li>
                 <li>Bagian : <span class="text-white ml-1">{{ $data->bagian->nama }}</span></li>
@@ -42,16 +44,10 @@
         <div class="px-10">
             <button
                 class="px-4 py-2 uppercase rounded-lg font-space hover:bg-transparent text-white border-4 border-geistWhite bg-geistForeground font-bold shadow-[6px_6px_0_0] shadow-geistWhite text-xl transition hover:shadow-none focus:outline-none focus:ring active:bg-geistWhite">
-                <a href="{{ route('inventaris.index') }}">
+                <a href="{{ str_replace(url('/'), '', url()->previous()) }}">
                     ← Back
                 </a>
             </button>
         </div>
     </div>
-
-    <script>
-        $('.print').click(function() {
-            window.print();
-        });
-    </script>
 </x-app-layout>

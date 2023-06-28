@@ -1,14 +1,19 @@
-<div class="fill-geistWhite bg-black text-geistWhite">
-    
-</div>
-
-{{-- <script type='text/javascript'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url('/favicon.png') }}" type="image/x-icon" />
+    <title>Print Barcode {{ $data->kode }}</title>
+</head>
+<body>
+    <div class="fill-black bg-black text-black">
+        <img src="data:image/png;base64, {{ DNS1D::getBarcodePNG($data->kode,'C128') }}" height="60" width="180" />
+    </div>
+    <script type='text/javascript'>
     window.onload = function() {
         window.print();
     }
-</script> --}}
-
-<x-app-layout title="Cetak Barcode">
-    <span class="fill-geistWhite flex my-10 text-center px-10 border border-geistWhite bg-geistWhite p-3 rounded-lg">{!! DNS1D::getBarcodeHTML(1234567890, 'UPCA') !!}</span>
-</x-app-layout>
-
+</script> 
+</body>
+</html>
