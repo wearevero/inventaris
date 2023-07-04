@@ -81,10 +81,18 @@
                 </tr>
             </thead>
             <tbody class="">
+                @foreach($users as $index => $item)
+                    <p class="text-white">
+                        {{ $index + 1 }}.
+                    </p>
+                @endforeach
+                {{ $no = 1 }}
                 @foreach ($users as $data)
                     <tr
                         class="items-center tracking-wide text-lg text-geistWhite font-montreal flex-row align-middle text-center">
-                        <td>{{ $data->id }}.</td>
+                        <td>
+                            {{ $no++ }}.
+                        </td>
                         <td class="font-basement uppercase">{{ $data->nama_user }}</td>
                         <td>{{ $data->bagian->nama }}</td>
                         <td>{{ $data->kode }}</td>

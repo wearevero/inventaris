@@ -20,6 +20,7 @@ class InventarisController extends Controller
         $datas = Inventaris::query();
         $users = Inventaris::query()->with('status', 'bagian', 'kategori');
         $count = $users->count();
+        $no = 1;
 
         $users->when($request->nama_user, function($query) use ($request) {
             return $query->where('nama_user', 'like', '%' . $request->nama_user . '%');
@@ -35,9 +36,8 @@ class InventarisController extends Controller
         $users->when($request->bagian_id, function($query) use ($request) {
             return $query->where('bagian_id', '=', $request->bagian_id);
         });
-
-        return view(
-            "inventaris.index", compact("status", 'bagians', 'kategoris', 'count'), ['users' => $users->paginate(10), 'datas' => $datas->paginate(10)],
+        return view( "inventaris.index", 
+            compact("status", 'bagians', 'kategoris', 'no'), ['users' => $users->paginate(10), 'datas' => $datas->paginate(10),]
         );
     }
 
